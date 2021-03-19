@@ -42,7 +42,7 @@
   min-height: 40px
   // max-height: 40px
   // max-height: 40px
-  width: 200px
+  // width: 200px
   transition: all 0.2s ease-in-out
   // +pro
   +center
@@ -91,15 +91,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 //------.tabs__wrapper--Dep--------
 .akr
   +bg(#3D5AFE)
@@ -111,41 +102,14 @@
 //-------------
 //------.akr__wrapper--------
 .akr__wrapper
-  // +alic
-  // +jucs
-  // +jucb
-  // width:
-  // height:
-  // flex: 0 1 100%
-  // margin: 0 0 0 0
   padding: 2% 0
   height: auto
-  // position: relative
-  // display: none
-  // display: flex
-  // display: grid
-  // grid-template-columns:
-  // grid-template-rows:
-  // grid-template-areas:
-  // grid-area:
-  @media (max-width: 1199px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-  @media (max-width: 767px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-//-------------
 //------.akr__body--------
 .akr__body
   +fdc
-  +alic
+  +alis
   flex: 0 1 100%
-  padding: 6% 0 2%
-  @media (max-width: 1199px)
-    +jucb
-
+  padding: 0
 
 //------.akr__item--------
 .akr__item
@@ -154,9 +118,10 @@
   +bg(lighten($active,20%))
   +border(1px,darken($active, 30%))
   min-height: 40px
-  width: 200px
+  width: 100%
   display: table!important
   transition: all 0.2s ease-in-out
+  margin: 0 0 10px 0
   &.act
     max-height: 100%
     
@@ -167,68 +132,25 @@
   &:hover
     & .tabs-item__title
       color: #006064
-//-------------
 
 //------.akr-item--------
 .akr-item
-  // +alic
-  // +jucs
-  // +jucb
-  // width:
-  // height:
-  // flex: 0 1 100%
-  // margin: 0 0 0 0
-  // padding: 0 0 0 0
-  // position: relative
-  // display: none
-  // display: flex
-  // display: grid
-  // grid-template-columns:
-  // grid-template-rows:
-  // grid-template-areas:
-  // grid-area:
   +center
-  @media (max-width: 1199px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-  @media (max-width: 767px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-//-------------
 
 //------.akr-item__title--------
 .akr-item__title
-  +center
+  +jucs
+  +alic
   min-height: 40px
   width :100%
   padding: 0 10px
   position: relative
-  @media (max-width: 1199px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-  @media (max-width: 767px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-//-------------
-
 //------.akr-item__img--------
 .akr-item__img
   transform: rotate(0deg)
   margin: 0 0 0 20px
   transition: all 0.2s ease-in-out
   +absolute(auto,auto,50%,auto,10px,0%,-50%)
-  @media (max-width: 1199px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
-  @media (max-width: 767px)
-    // flex: 0 1 100%
-    // margin: 0 0 0 0
-    // padding: 0 0 0 0
 //-------------
 .akr-drop
   display: none
@@ -238,6 +160,3 @@
     font-weight: 300
   &.act
     +bg(lighten($active,30%))
-        
-    // border-bottom-right-radius: 5px
-    // border-bottom-left-radius: 5px
