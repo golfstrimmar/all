@@ -1,0 +1,514 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 РАЗНЫЕ СКРИПТЫ
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 на skick заполняет точку  информацией из атрибута data слайда.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span делаем пустой массив
+                                    p  let array = [];
+                                    span._2 проходимся по слайдам и в массив загоняем значение атриута data кажого слайда
+                                    p  $.each ( $(".slider-js-2 .art_article-data-item"), function (index) {
+                                    p  let t = $(this).attr("data");
+                                    p       array.push(t);
+                                    p    });
+                                    span._2 делаем пустой массив под фильтрацию
+                                    p let result = [];
+                                    span._2 поскольку slick делает много слайдов - отфильтровываем только часть которая потом простов slick повторяется. это оригинал, заданный пользователем
+                                    p var q = (array.length - 1) / 2;
+                                    p array.filter((item, index) => {
+                                    p if (index > q) return result.push(item);
+                                    p });
+                                    span._2 перебираем точки и в каждую записываем текст из элементов отфильтрованного массива то есть из значений полей data каждого слайда
+                                    p var i = 0;
+                                    p var values = $(".slider-js-2 .slick-dots li ").each(function () {
+                                    p return $(this).text(result[i++]);
+                                    p });
+                                    span._1 реализован на artrade/ slider.sass стр.176 / mySlick.js стр.53 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 background меняет цвет по ховеру рандомно из набора оттенков
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 прописываем массив оттенков
+                                    p $(".random-color").mouseenter(function () {
+                                    p   const color = [
+                                    p     "#FDFFBC",
+                                    p     "#E7D9EA",
+                                    p     "#CFEBD2",
+                                    p     "#FCD1D1",
+                                    p     "#D3E0EA",
+                                    p     "#EFF7E1",
+                                    p     "#FFEEBB",
+                                    p     "#FFDCDC",
+                                    p     "#D3E0DC",
+                                    p     "#BEE5D3",
+                                    p     "#D3E0DC",
+                                    p     "#D6B0B1",
+                                    p   ];
+                                    span._2 объявляем функцию вычисления случайного числа из диапазона  min, max. загоняем ее в перемен i
+                                    P  function randomInteger(min, max) {
+                                    P    let rand = min + Math.random() * (max + 1 - min);
+                                    P    return Math.floor(rand);
+                                    P  }
+                                    p  var i = randomInteger(0, 11);
+                                    span._2 случайно берем один из цветов массива 
+                                    p  var hue = color[i];
+                                    span._2 даем нашему блоку цвет , заодно и тень
+                                    p  $(this)
+                                    p    .css({ background: hue, "box-shadow": "0px -25px 15px -10px" + hue });
+                                    p });
+                                    span._2 уходим с блока - цвет востанавливается
+                                    p 
+                                    p $(".random-color").mouseleave(function () {
+                                    p   $(this)
+                                    p     .css({ background: "white", "box-shadow": "0px -25px 15px -10px #fff" });
+                                    p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 селект в option есть картинка. например переключатель языков в шапке
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  $(".select").each(function () {
+                                    span._2 объявляем переменные
+                                    p  const _this = $(this),
+                                    p  selectOption = _this.find("option"),
+                                    p  selectOptionLength = selectOption.length,
+                                    p  selectedOption = selectOption.filter(":selected"),
+                                    p  duration = 150; // длительность анимации
+                                    span._2 скрываем дефолтный селект
+                                    p _this.hide();
+                                    span._2 делаем искуственный класс вместо селекта
+                                    p _this.wrap('<div class="select"></div>');
+                                    span._2 делаем искуственный класс эмулятор селекта. в него помещаем и картинку из опции 
+                                    p   $("<div>", {
+                                    p     class: "new-select",
+                                    p     text: _this.children("option:selected").text(),
+                                    p   })
+                                    p     .prepend(
+                                    p       $("<img>", {
+                                    p         class: "new-select__img",
+                                    p         src: _this.children("option:selected").val(),
+                                    p       })
+                                    p     )
+                                    p     .insertAfter(_this);
+                                    
+                                    span._2 туда же выпадашку
+                                    p  const selectHead = _this.next(".new-select");
+                                    p  $("<div>", {
+                                    p    class: "new-select__list",
+                                    p  }).insertAfter(selectHead);
+                                    span._2 перебираем массив из опций  и формируем пункты псевдоселекта уже с картками
+                                    p  const selectList = selectHead.next(".new-select__list");
+                                    p  for (let i = 0; i < selectOptionLength; i++) {
+                                    p    $("<div>", {
+                                    p      class: "new-select__item",
+                                    p      html: $("<span>", {
+                                    p        text: selectOption.eq(i).text(),
+                                    p      }),
+                                    p    })
+                                    p      .attr("data-value", selectOption.eq(i).text())
+                                    p      .prepend(
+                                    p        $("<img>", {
+                                    p          class: "new-select__img",
+                                    p          src: selectOption.eq(i).val(),
+                                    p        })
+                                    p      )
+                                    p      .appendTo(selectList);
+                                    p    }
+                                    p  const selectItem = selectList.find(".new-select__item");
+                                    p  selectList.slideUp(0);
+                                    span._2 по клику в голову разворачиваем псевдоселект
+                                    span._2 по клику в пункт загоняем в голову весь html из пункта псевдоселекта 
+                                    p  selectHead.on("click", function () {
+                                    p    if (!$(this).hasClass("on")) {
+                                    p      $(this).addClass("on");
+                                    p      selectList.slideDown(duration);
+                                    p
+                                    p      selectItem.on("click", function () {
+                                    p        let chooseItem = $(this).data("value");
+                                    p
+                                    p        $("select").val(chooseItem).attr("selected", "selected");
+                                    p        selectHead.html(
+                                    p          $(this).html()
+                                    p          );
+                                    p
+                                    p        selectList.slideUp(duration);
+                                    p        selectHead.removeClass("on");
+                                    p      });
+                                    p    } else {
+                                    p      $(this).removeClass("on");
+                                    p      selectList.slideUp(duration);
+                                    p    }
+                                    p  });
+                                    p });
+                                    span._1 реализован на mobile-cards/select.js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  фильтрует список по буквам из инпута
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p   $(document).ready(function(){  
+                                p     $("#demoInput").on("keyup", function() {  
+                                span._2 снимаем букву с инпута или несколько букв
+                                p       var value = $(this).val().toLowerCase();  
+                                span._2 формируем новый массив из пунктов которые совпадают с буквой
+                                p       $("#demoList li").filter(function() {  
+                                p      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)  
+                                p     });
+                                p     });
+                                p   });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  если страница доскроливается до нижнего блока например  -- скрываются какие-то другие блоки
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 #march-soc --нижний блок #soc-aside--левый лок(будет скрываться)
+                                    p $(document).ready(function (e) {
+                                    p   $(window).scroll(function (e) {
+                                    span._2 проверяем есть ли нижний  блок
+                                    p     if ($("#march-soc").length > 0) {
+                                    span._2 нахдим его отступ от верха окна
+                                    p let distanceTop = $("#march-soc").offset().top;
+                                    span._2 находим высоту окна
+                                    p let viewPort = window.innerHeight;
+                                    span._2 Viewport - это видимая пользователю область веб-страницы. distanceTop - viewPort = 0 если блок только появился на странице. если к нему прибавить 50 то будет этот момент какбы откладываться. то есть ему будет позволено выехать на 50. pageYOffset - свойство окна Window , доступное только для чтения. Это то же свойство, что и scrollY и, как таковое, оно тоже возвращает количество пикселей, на которое прокручен документ по вертикали (вниз или вверх). Значение свойства равное 0.0 говорит о том, что в данный момент верхний край документа Document совпадает с верхним краем области содержимого окна. то есть если документ докрутился до нашего числа и и начал крутиться дальше ---> что-то делаем. например скрываем  дубль какого-то блока
+                                    p       if (window.pageYOffset > distanceTop - viewPort + 50) {
+                                    p         $("#soc-aside").css("opacity", "0");
+                                    p       } else {
+                                    p         $("#soc-aside").css("opacity", "1");
+                                    p       }
+                                    p     }
+                                    p   });
+                                    p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 для slick/ если окно больше 1000 слик превращается в набор блоков. и обратно
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  span._2 ерзаем окно --- slick  - включается выключается
+                                  p $(window).on('resize', function(e){
+                                  span._2 Переменная, по которой узнаем запущен слайдер или нет.
+                                  span._2 Храним её в data
+                                  p   var init = $(".slider-js-1").data("init-slider");
+                                  span._2 Если окно меньше 1000
+                                  p   if(window.innerWidth < 1000){
+                                  p       if (init != 1) {
+                                  p         $(".slider-js-1")
+                                  p           .slick({
+                                  p             dots: true,
+                                  p             arrows: true,
+                                  p             slidesToShow: 1,
+                                  p             speed: 500,
+                                  p             easing: "ease",
+                                  p             cssEase: "linear",
+                                  p             centerMode: false,
+                                  p             autoplay: true,
+                                  p             infinite: true,
+                                  p             nextArrow: $(".slider__arrow_next--1"),
+                                  p             prevArrow: $(".slider__arrow_prev--1"),
+                                  p           })
+                                  p           .data({ "init-slider": 1 });
+                                  p       }
+                                  span._2 если окно больше 1000  - выключаем слайдер
+                                  p  else {
+                                  p  $(".slider-js-1")
+                                  p    .slick("unslick")
+                                  p    .data({ "init-slider": 0 })
+                                  p  }
+                                  p
+                                  p }).trigger('resize');
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 скроллинг по якорям
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p  $(".search-transfer-links").on("click", "a", function (event) {
+                                span._2 исключаем стандартную реакцию браузера
+                                p    event.preventDefault();
+                                span._2 получем идентификатор блока из атрибута href
+                                p    var id = $(this).attr("href"),
+                                span._2 находим высоту, на которой расположен блок
+                                p      top = $(id).offset().top - 150;
+                                p    // $("a").removeClass("menu__link-active");
+                                p    // $(this).addClass("menu__link-active");
+                                span._2 анимируем переход к блоку, время: 800 мс
+                                p    $("body,html").animate({ scrollTop: top  }, 800);
+                                p  });
+                                span._2 здесь пункты меню переключаются когда доскроливаем до блока
+                                p $(window).scroll(function () {
+                                p   var $section = $("section");
+                                p   $section.each(function (i, el) {
+                                p     var top = $(el).offset().top - 100;
+                                p     var bottom = top + $(el).height();
+                                p     var scroll = $(window).scrollTop();
+                                p     var id = $(el).attr("id");
+                                p
+                                p     if (scroll > top && scroll < bottom) {
+                                p       $("a").removeClass("menu__link-active");
+                                p       $('a[href="#' + id + '"').addClass("menu__link-active");
+                                p     }
+                                p   });
+                                p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 копируем содержимое класса .copytext в буффер
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p $(document).ready(function (e) {
+                                p function copytext(el) {
+                                p var $tmp = $("<`textarea`>");
+                                p $("body").append($tmp);
+                                p $tmp.val($(el).text()).select();
+                                p document.execCommand("copy");
+                                p     $tmp.remove();
+                                p   }
+                                p   $(".copytext").on("click", function () {
+                                p     copytext($(this));
+                                p   });
+                                p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 .path где кликнули -- там всплывает бэйджик и пропадает через время 1000. сочетает с копированием буфер например
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p (function () {
+                                p   var hint = document.createElement("div");
+                                span._2 изначально невидимый клаcc
+                                p   hint.className = "hint"; 
+                                p   document.body.appendChild(hint);
+                                p 
+                                p   var path = document.getElementsByClassName("path");
+                                p   var i;
+                                p   for (i = 0; i < path.length; i++) {
+                                p     path[i].addEventListener("click", function (e) {
+                                span._2       // hint.innerText = this.dataset.description;
+                                p 
+                                p       hint.innerText = "Скопировано!";
+                                p       hint.style.display = "inline-block";
+                                p 
+                                span._2       /* Условие для координат всплывающего блока. 
+                                span._2     Через (e.pageX + Любое_Число) можно настраивать положение блока */
+                                p       if (e.pageX + hint.offsetWidth < document.body.offsetWidth) {
+                                span._2         /* e.pageX == расстояние от мышки до левого края страницы, в пикселях
+                                span._2       hint.offsetWidth == ширина всплывающей подсказки
+                                span._2      Если их сумма оказывается больше ширины body - сработает else */
+                                p         hint.style.cssText = `
+                                p             opacity: 1; 
+                                p             `;
+                                p 
+                                p         hint.style.top = e.pageY + 33 + "px";
+                                p         hint.style.left = e.pageX -20+ "px";
+                                p 
+                                p         setTimeout(function () {
+                                p           hint.style.cssText = `
+                                p             opacity: 0; 
+                                p             `;
+                                p         }, 1000);
+                                p       } else {
+                                p         hint.style.top = e.pageY + 10 + "px";
+                                p         hint.style.left = e.pageX - hint.offsetWidth - 10 + "px";
+                                p       }
+                                span._2       /* 'e' - всего лишь переменная в фукнции... там могло бы быть
+                                span._2        function (bubu) { bubu.pageX; } */
+                                p     });
+                                p   }
+                                span._2   /* Добавляем событие 'клик' на всю страницу и каждый раз запускаем функцию*/
+                                span._2  // document.addEventListener("click", function (e) {
+                                span._2  //   /*Если e.target (кликнутый элемент) имеет класс "path" - разворачиваемся*/
+                                span._2   //   if (e.target.className.match("path")) {
+                                span._2  //     return;
+                                span._2   //   }
+                                span._2   //   /* А если нет - скрываем блок */
+                                span._2   //   hint.style.display = "none";
+                                span._2   // });
+                                p })();
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 кнопка БОЛЬШЕ. здесь добавляется по три карточки по кнопке. изначально кнопки нет. и когда карточки заканчиваются - кнопка тоже исчезает
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p $(document).ready(function (e) {
+                                  span._2 тут открывается например планка аккордеона. можно в любой список поставить тоже
+                                  p   $(".accordion__item--profile").each(function () {
+                                  span._2 делаем массив из всех карточек
+                                  p     let array = Array.from($(this).find(".history .video-catalog__item"));
+                                  span._2 загоняем кнопку доавления карточек в переменную 
+                                  p     let btn = $(this).find(".history__button");
+                                  span._2 открываем планку аккордеона. видим карточки. если их меньше 3 то добавлять нечего и кнопки нет тоже / если больше- кнопка появляется
+                                  p     $(this)
+                                  p       .find(".akr-title-js")
+                                  p       .on("click", function () {
+                                  p         if (array.length <= 3) {
+                                  p           btn.css("opacity", "0");
+                                  p         }
+                                  span._2 перебираем массив карточек и скрываем все после 3-x 
+                                  p         $.each(array, function (index) {
+                                  p           if (2 < index) {
+                                  p             $(this).addClass("_hide").slideUp();
+                                  p           }
+                                  p         });
+                                  p       });
+                                  
+                                  p     btn.on("click", function () {
+                                  span._2 лпаем по кнопке . загоняем в переменную первый скрытый элемент
+                                  p       let number = $(this).parent().siblings("._hide:first").index();
+                                  span._2 последнему скрытому элементу делаем класс last. plcm он в блоке, который перед кнопкой. 
+                                  p       $(this).parent().prev().addClass("_last");
+                                  span._2 перебираем массив в карточками и отсчитываем следующие 3 скрытых и открываем их 
+                                  p       $.each(array, function (index) {
+                                  p         let i = number + 3;
+                                  p         if (i > index) {
+                                  p           $(this).slideDown(200).removeClass("_hide");
+                                  span._2 если карточка открыта и она последняя -- скрываем кнопку 
+                                  p           if ($(this).hasClass("_last") && !$(this).hasClass("_hide")) {
+                                  p             $(this).next().find(".history__button").css("opacity", "0");
+                                  p           }
+                                  p         }
+                                  p       });
+                                  p     });
+                                  p   });
+                                  p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 .carryover каждое предложение с новой строки/ хорошо для стихов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p $(document).ready(function (e) {
+                                p   const div = document.querySelectorAll(".carryover");
+                                p   div.forEach(function (enter) {
+                                p     var s = enter.textContent;
+                                p     s = s.replace(/([A-Я])/g, "<`br/>" + "$1").trim();
+                                p     return (enter.innerHTML = s);
+                                p   });
+                                p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 селект имеет ссылки в опциях и по клику делает переход по ним
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+                                  p $(document).ready(function () {
+                                  p $(".select").each(function () {
+                                  p   const _this = $(this),
+                                  p     selectOption = _this.find("option"),
+                                  p     selectOptionLength = selectOption.length,
+                                  p     selectedOption = selectOption.filter(":selected"),
+                                  p     duration = 200; // длительность анимации
+                                  p 
+                                  p   _this.hide();
+                                  p   _this.wrap('<div class="select"></div>');
+                                  p   $("<`div>", {
+                                  p     class: "new-select",
+                                  p     text: _this.children("option:disabled").text(),
+                                  p   }).insertAfter(_this);
+                                  p 
+                                  p   const selectHead = _this.next(".new-select");
+                                  p 
+                                  p   $("<`div>", {
+                                  p     class: "new-select__list",
+                                  p   }).insertAfter(selectHead);
+                                  p 
+                                  p   const selectList = selectHead.next(".new-select__list");
+                                  span._2 вот зесь берется ссылка из атриута опции 
+                                  p   for (let i = 0; i < selectOptionLength; i++) {
+                                  p     $("<`div>", {
+                                  p       class: "new-select__item",
+                                  p       html: $("<`span>", {
+                                  p         text: selectOption.eq(i).text(),
+                                  p       }),
+                                  p     })
+                                  p       .attr("data-value", selectOption.eq(i).val())
+                                  p       .appendTo(selectList);
+                                  p   }
+                                  p 
+                                  p   $(".new-select__item:first-child").addClass("choosen");
+                                  p   const selectItem = selectList.find(".new-select__item");
+                                  p   selectList.slideUp(0);
+                                  p 
+                                  p   selectHead.on("click", function () {
+                                  p     if (!$(this).hasClass("on")) {
+                                  p       $(this).addClass("on");
+                                  p       selectList.slideDown(duration);
+                                  p     } else {
+                                  p       $(this).removeClass("on");
+                                  p       selectList.slideUp(duration);
+                                  p     }
+                                  p   });
+                                  p 
+                                  p   selectItem.on("click", function () {
+                                  span._2 выранному пункту добавляем класс choosen и доавляем данные
+                                  p     $(".new-select__item").removeClass("choosen");
+                                  p     let chooseItem = $(this).addClass("choosen").data("value");
+                                  p     $("select").val(chooseItem).attr("selected", "selected");
+                                  p     selectHead.text($(this).find("span").text());
+                                  p     selectList.slideUp(duration);
+                                  p     selectHead.removeClass("on");
+                                  span._2 собственно перенаправление по ссылке
+                                  p     var location = $(this).attr("data-value");
+                                  p     window.location.href = location;
+                                  p   });
+                                  p });
+                                  p });
+                                  p $(document).ready(function () {
+                                  p   $(".select").on("click", function () {
+                                  p     let selectImg = $(this).siblings(".block__icon");
+                                  p     selectImg.toggleClass("img-active");
+                                  p   });
+                                  p });
+                                  p $(document).mouseup(function (e) {
+                                  p   var div = $(".select"); 
+                                  p   if (
+                                  p     !div.is(e.target) && 
+                                  p     div.has(e.target).length === 0
+                                  p   ) {
+                                  p     $(".new-select").removeClass("on");
+                                  p     $(".new-select__list").slideUp(300);
+                                  p   }
+                                  p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 убирает hover с любого устройства Touch
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p if (
+                                p   "ontouchstart" in window ||
+                                p   (window.DocumentTouch && document instanceof DocumentTouch)
+                                p ) {
+                                p } else {
+                                p   document.body.classList.add("no-touch");
+                                p } 
+                        li.akr__item.akr-item                       
+                            .akr-item__title.akr-title-js
+                              h4
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p 3333333333333333333333333333
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p 3333333333333333333333333333
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p 3333333333333333333333333333
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p 3333333333333333333333333333
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p 3333333333333333333333333333

@@ -1,0 +1,439 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 sass
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 псевдоклассы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/Pseudo-classes
+                                    p  &:last-child
+                                    p  margin: 0 0 0 0
+                                    p  &:first-child
+                                    p  &:nth-child(1)
+                                    p  &:last-child
+                                    p  &:not(:first-child)
+                                    p    &:active
+                                    p    &:any
+                                    p    &:any-link
+                                    p    &:checked
+                                    p    &:default
+                                    p    &:defined
+                                    p    &:dir()
+                                    p    &:disabled
+                                    p    &:empty
+                                    p    &:enabled
+                                    p    &:first
+                                    p    &:first-child
+                                    p    &:first-of-type
+                                    p    &:fullscreen
+                                    p    &:focus
+                                    p    &:hover
+                                    p    &:indeterminate
+                                    p    &:in-range
+                                    p    &:invalid
+                                    p    &:lang()
+                                    p    &:last-child
+                                    p    &:last-of-type
+                                    p    &:left
+                                    p    &:link
+                                    p    &:not()
+                                    p    &:nth-child()
+                                    p    &:nth-last-child()
+                                    p    &:nth-last-of-type()
+                                    p    &:nth-of-type()
+                                    p    &:only-child
+                                    p    &:only-of-type
+                                    p    &:optional
+                                    p    &:out-of-range
+                                    p    &:read-only
+                                    p    &:read-write
+                                    p    &:required
+                                    p    &:right
+                                    p    &:root
+                                    p    &:scope (en-US)
+                                    p    &:target
+                                    p    &:valid
+                                    p    &:visited
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 добавляет свойства без добавления класса
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  %prominent
+                                    p  @extend %prominent;
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 добавит все свойства класса .prominent  все-таки потянется в конечный файл css 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  @extend .prominent
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 осветление цвета
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p color: lighten($color_success, 50%) 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 затемнение цвета
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p color: darken($color_success, 50%) 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 создание миксина
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p @mixin box-shadow
+                                    p    box-shadow: 0px 5px 14px 4px rgba(0, 0, 0, 0.5)
+                                    p @include box-shadow 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 перебор в цикле
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p @for $i from 1 through 12
+                                    p  .col-#{`$i`}
+                                    p    background-color: lighten(#0D47A1, $i * 8%)
+                                    span._2 см. код
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 каждое слово будет с новой строки
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p   display: table-caption
+                                    p  
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 адаптивное свойство
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  padding: 0 calc(minpx + (50-min)*((100vw-320px)/(1200-320))) 0
+                                    span._2    будет работать от 1200 до 320
+                                    span._2  container: max-width: 1200px
+                                    span._2  минимальное значение окна  --- 320
+                                    span._2   максимальное значение окна  --- 1200
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 медиазапросы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/@media
+                                    p  @media (max-width: 1200px) 
+                                    p @media (min-width: ) and (max-width: )
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 border
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p border-radius: 50%
+                                    p border-top: 1px solid
+                                    p border-bottom: 1px solid
+                                    p border-left: 1px solid
+                                    p border-right: 1px solid
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 border-radius
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  border-top-right-radius: 5px
+                                    p  border-top-left-radius: 5px
+                                    p  border-bottom-left-radius: 5px
+                                    p  border-bottom-right-radius: 5px
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 box-shadow
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator
+                                    p  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05)
+                                    p  box-shadow: 10px 5px 5px red
+                                    p  box-shadow: 60px -16px teal
+                                    p  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2)
+                                    p  box-shadow: inset 5em 1em gold
+                                    p  box-shadow: 3px 3px red, -1em 0 .4em olive
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 text-shadow
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/text-shadow
+                                    p text-shadow: 1px 1px 2px pink
+                                    p text-shadow: #FC0 1px 0 10px
+                                    p text-shadow: 5px 5px #558ABB
+                                    p text-shadow: red 2px 5px
+                                    p text-shadow: 5px 10px
+                                    p text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 спецсимволы html
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 http://htmlbook.ru/samhtml/tekst/spetssimvoly
+                                    p ^ 
+                                    p |
+                                    p &nbsp;   пробел
+                                    p &rarr; &#8594; → стрелка вправо
+                                    p &copy;
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 Устанавливает направление текста
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p writing-mode: lr-tb | rl-tb | tb-rl | bt-rl | tb-lr | bt-lr
+                                    p "Значения"
+                                    p "lr-tb"
+                                    p "Устанавливает направление текста слева направо."
+                                    p "rl-tb"
+                                    p "Задает направление текста справа налево."
+                                    p "tb-rl"
+                                    p "Текст располагается вертикально и выравнивается по верхнему и правому краю."
+                                    p "bt-rl"
+                                    p "Текст располагается вертикально и выравнивается по нижнему и правому краю."
+                                    p "tb-lr"
+                                    p "Текст располагается вертикально и выравнивается по верхнему и левому краю."
+                                    p "bt-lr"
+                                    p "Текст располагается вертикально и выравнивается по нижнему и левому краю."
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 display
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  /* < display-outside> values */
+                                    p  display: block;
+                                    p  display: inline;
+                                    p  display: run-in;
+                                    p  
+                                    p  /* < display-inside> values */
+                                    p  display: flow;
+                                    p  display: flow-root;
+                                    p  display: table;
+                                    p  display: flex;
+                                    p  display: grid;
+                                    p  display: ruby;
+                                    p  
+                                    p  /* < display-outside> plus < display-inside> values */
+                                    p  display: block flow;
+                                    p  display: inline table;
+                                    p  display: flex run-in;
+                                    p  
+                                    p  /* < display-listitem> values */
+                                    p  display: list-item;
+                                    p  display: list-item block;
+                                    p  display: list-item inline;
+                                    p  display: list-item flow;
+                                    p  display: list-item flow-root;
+                                    p  display: list-item block flow;
+                                    p  display: list-item block flow-root;
+                                    p  display: flow list-item block;
+                                    p  
+                                    p  /* < display-internal> values */
+                                    p  display: table-row-group;
+                                    p  display: table-header-group;
+                                    p  display: table-footer-group;
+                                    p  display: table-row;
+                                    p  display: table-cell;
+                                    p  display: table-column-group;
+                                    p  display: table-column;
+                                    p  display: table-caption;
+                                    p  display: ruby-base;
+                                    p  display: ruby-text;
+                                    p  display: ruby-base-container;
+                                    p  display: ruby-text-container;
+                                    p  
+                                    p  /* < display-box> values */
+                                    p  display: contents;
+                                    p  display: none;
+                                    p  
+                                    p  /* < display-legacy> values */
+                                    p  display: inline-block;
+                                    p  display: inline-table;
+                                    p  display: inline-flex;
+                                    p  display: inline-grid;
+                                    p  
+                                    p  /* Global values */
+                                    p  display: inherit;
+                                    p  display: initial;
+                                    p  display: unset;
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 background-img на sass
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p +background-img("/assets/img/")
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 background-img на pug
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p на pug
+                                    p .buy-item(style="background-image: url('assets/img/cat/cat-img-6.webp')")
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 background-repeat-size-position
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  background-repeat: no-repeat
+                                    p  background-size: cover
+                                    p  background-position: center
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 background: linear-gradient
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/linear-gradient()
+                                    span._2 https://active-vision.ru/icon/gradient/
+                                    p background: linear-gradient(#e66465, #9198e5)
+                                    p background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%)
+                                    hr
+                                    p background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                                    p  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                                    p  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 сдвиг текста от начала строки
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/text-indent
+                                    p text-indent: 55px
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 text-decoration
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
+                                    p text-decoration: underline
+                                    p text-decoration: underline dotted
+                                    p text-decoration: underline dotted red
+                                    p text-decoration: green wavy underline
+                                    p text-decoration: underline overline #FF3028
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 графические эффекты изображения
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/filter
+                                    p filter: url(resources.svg);
+                                    p filter: blur(5px);
+                                    p filter: brightness(0.4);
+                                    p filter: contrast(200%);
+                                    p filter: drop-shadow(16px 16px 20px blue);
+                                    p filter: grayscale(50%);
+                                    p filter: hue-rotate(90deg);
+                                    p filter: invert(75%);
+                                    p filter: opacity(25%);
+                                    p filter: saturate(30%);
+                                    p filter: sepia(60%);
+                                    p 
+                                    p /* Применение нескольких фильтров */
+                                    p filter: contrast(175%) brightness(3%);
+                                    p 
+                                    p /* Глобальные значения */
+                                    p filter: inherit;
+                                    p filter: initial;
+                                    p filter: unset;
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 вращает блок
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 вращает блок
+                                    p animation: rotate 5s infinite linear
+                                    p @keyframes rotate{
+                                    p   0% {}
+                                    p 100% {
+                                    p transform: rotate(360deg);
+                                    p }
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 white-space
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/white-space
+                                    p white-space: normal
+                                    p white-space: nowrap
+                                    p white-space: pre
+                                    p white-space: pre-wrap
+                                    p white-space: pre-line
+                                    p white-space: break-spaces
+                                    p 
+                                    p /* Глобальные значения */
+                                    p white-space: inherit
+                                    p white-space: initial
+                                    p white-space: unset
+                                    p 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 CSS-селекторы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors
+                                    p *
+                                    p [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
+                                    p A > B      -----  дочерние
+                                    p A ~ B      ------ соседи
+                                    p A + B     --------  следующего соседнего элемента
+                                    p 
+                                    p
+                                    p
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 Знак ::
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p Знак :: позволяет выбрать вещи, которых нет в HTML.
+                                    p p::first-line соответствует первой линии абзаца <`p>
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 обращение к родителю. только scss
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p .child{
+                                    p   .parent & {}
+                                    p }
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p 
+                                    p 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p 
+                                    p 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p 
+                                    p 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p 
+                                    p 
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p 
+                                    p 
