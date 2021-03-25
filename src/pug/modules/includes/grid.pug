@@ -1,0 +1,535 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 grid
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-template-columns
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                span._2 https://developer.mozilla.org/ru/docs/Web/CSS/grid-template-columns
+                                span._2 https://basicweb.ru/css/css_pr_grid-template-columns.php
+                                p grid-template-columns: 10% 50%  1fr
+                                p grid-template-columns: 1fr 60px
+                                p grid-template-columns: auto auto
+                                p grid-template-columns: 1fr 2fr  3fr
+                                p grid-template-columns: min-content 200px max-content
+                                p grid-template-columns: 100px 200px minmax(100px,300px)
+                                p grid-template-columns:  repeat(3, 1fr)
+                                span._2  параметр fit-content проверяет длину находящихся в них элементов и задаёт размер по самому длинному слову.Если же параметр будет ниже указанного размера, то он будет составлять именно столько, сколько указано в fit-content. В данном случае, размер колонки будет минимально - 100px.
+                                p grid-template-columns: auto fit-content(100px)
+                                span._2 каждая строка заполнена возможным количеством колонок, учитывая их длину в 100px. Когда в строке не остается места, то элементы переходят на следующую строку.
+                                p grid-template-columns:repeat(auto-fill,100px)
+                                span._2 auto-fit  --дотягивает элементы. пустое пространство исчезнет
+                                br
+                                span._2 синтаксис 
+                                p /* Keyword value */
+
+                                span._2
+                                span._2
+                                span._2
+                                span._2
+                                span._2
+                                p grid-template-columns: none
+                                br 
+                                p /* `<`track-list> values */
+                                p grid-template-columns: 100px 1fr
+                                p grid-template-columns: [linename] 100px
+                                p grid-template-columns: [linename1] 100px [linename2 linename3]
+                                p grid-template-columns: minmax(100px, 1fr)
+                                p grid-template-columns: fit-content(40%)
+                                p grid-template-columns: repeat(3, 200px)
+                                br 
+                                p /* <`auto-track-list> values */
+                                p grid-template-columns: 200px repeat(auto-fill, 100px) 300px
+                                p grid-template-columns: minmax(100px, max-content)
+                                p                        repeat(auto-fill, 200px) 20%
+                                p grid-template-columns: [linename1] 100px [linename2]
+                                p                        repeat(auto-fit, [linename3 linename4] 300px)
+                                p                        100px
+                                p grid-template-columns: [linename1 linename2] 100px
+                                p                        repeat(auto-fit, [linename1] 300px) [linename3]
+                                br
+                                p /* Global values */
+                                p grid-template-columns: inherit
+                                p grid-template-columns: initial
+                                p grid-template-columns: unset
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-gap
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p column-gap: 
+                                p row-gap:
+                                p grid-gap: 
+                        
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-auto-columns
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  span._2 https://xsltdev.ru/css/grid-auto-columns/
+                                  p /* Keyword values */
+                                  p grid-auto-columns: min-content
+                                  p grid-auto-columns: max-content
+                                  p grid-auto-columns: auto
+                                  br 
+                                  p /* <`length> values */
+                                  p grid-auto-columns: 100px
+                                  p grid-auto-columns: 20cm
+                                  p grid-auto-columns: 50vmax
+                                  br 
+                                  p /* <`percentage> values */
+                                  p grid-auto-columns: 10%
+                                  p grid-auto-columns: 33.3%
+                                  br 
+                                  p /* <`flex> values */
+                                  p grid-auto-columns: 0.5fr
+                                  p grid-auto-columns: 3fr
+                                  br 
+                                  p /* minmax() values */
+                                  p grid-auto-columns: minmax(100px, auto)
+                                  p grid-auto-columns: minmax(max-content, 2fr)
+                                  p grid-auto-columns: minmax(20%, 80vmax)
+                                  br
+                                  p /* fit-content() values */
+                                  p grid-auto-columns: fit-content(400px)
+                                  p grid-auto-columns: fit-content(5cm)
+                                  p grid-auto-columns: fit-content(20%)
+                                  br
+                                  p /* multiple track-size values */
+                                  p grid-auto-columns: min-content max-content auto
+                                  p grid-auto-columns: 100px 150px 390px
+                                  p grid-auto-columns: 10% 33.3%
+                                  p grid-auto-columns: 0.5fr 3fr 1fr
+                                  p grid-auto-columns: minmax(100px, auto) minmax(
+                                  p     max-content,
+                                  p     2fr
+                                  p   )
+                                  p   minmax(20%, 80vmax)
+                                  p grid-auto-columns: 100px minmax(100px, auto) 10% 0.5fr fit-content(
+                                  p     400px
+                                  p   )
+                                  br
+                                  p /* Global values */
+                                  p grid-auto-columns: inherit
+                                  p grid-auto-columns: initial
+                                  p grid-auto-columns: unset
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-template-rows
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p grid-template-rows: repeat(3, 1fr)
+                              br
+                              p /* Keyword value */
+                              p grid-template-rows: none;
+                              br 
+                              p /* <`track-list> values */
+                              p grid-template-rows: 100px 1fr;
+                              p grid-template-rows: [linename] 100px
+                              p grid-template-rows: [linename1] 100px [linename2 linename3]
+                              p grid-template-rows: minmax(100px, 1fr)
+                              p grid-template-rows: fit-content(40%)
+                              p grid-template-rows: repeat(3, 200px)
+                              br 
+                              p /* <`auto-track-list> values */
+                              p grid-template-rows: 200px repeat(auto-fill, 100px) 300px
+                              p grid-template-rows:
+                              p   minmax(100px, max-content)
+                              p   repeat(auto-fill, 200px) 20%
+                              p grid-template-rows:
+                              p   [linename1] 100px [linename2]
+                              p   repeat(auto-fit, [linename3 linename4] 300px)
+                              p   100px;
+                              p grid-template-rows:
+                              p   [linename1 linename2] 100px
+                              p   repeat(auto-fit, [linename1] 300px) [linename3]
+                              br 
+                              p /* Global values */
+                              p grid-template-rows: inherit
+                              p grid-template-rows: initial
+                              p grid-template-rows: unset
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-template-areas
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p grid-template-areas: "area1 area2" "area1 area2"  "area1 ." "area1 area2"  "area1 area2"
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-area
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    
+                                    p /* Keyword values */
+                                    p grid-area: auto
+                                    p grid-area: auto / auto
+                                    p grid-area: auto / auto / auto
+                                    p grid-area: auto / auto / auto / auto
+                                    p 
+                                    p /* <`custom-ident> values */
+                                    p grid-area: some-grid-area
+                                    p grid-area: some-grid-area / another-grid-area
+                                    p 
+                                    p /* <`integer> && <`custom-ident>? values */
+                                    p grid-area: some-grid-area 4
+                                    p grid-area: some-grid-area 4 / 2 another-grid-area
+                                    p 
+                                    p /* span && [ <`integer> || <`custom-ident> ] values */
+                                    p grid-area: span 3
+                                    p grid-area: span 3 / span some-grid-area
+                                    p grid-area: 2 span / another-grid-area span
+                                    p 
+                                    p /* Global values */
+                                    p grid-area: inherit
+                                    p grid-area: initial
+                                    p grid-area: unset
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-template
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                        span._2 Свойство grid-template — сокращение для grid-template-rows, grid-template-columns, и grid-template-areas.
+                                        p /* Keyword value */
+                                        p grid-template: none
+                                        p /* grid-template-rows / grid-template-columns values */
+                                        p grid-template: 100px 1fr / 50px 1fr
+                                        p grid-template: auto 1fr / auto 1fr auto
+                                        p grid-template: [linename] 100px / [columnname1] 30% [columnname2] 70%
+                                        p grid-template: fit-content(100px) / fit-content(40%)
+                                        p /* grid-template-areas grid-template-rows / grid-template-column values */
+                                        p grid-template:
+                                        p   'a a a'
+                                        p   'b b b'
+                                        p grid-template:
+                                        p   'a a a' 20%
+                                        p   'b b b' auto
+                                        p grid-template:
+                                        p   [header-top] 'a a a' [header-bottom]
+                                        p   [main-top] 'b b b' 1fr [main-bottom]
+                                        p   / auto 1fr auto
+                                        p /* Global values */
+                                        p grid-template: inherit
+                                        p grid-template: initial
+                                        p grid-template: unset
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 для блоков
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p grid-column-start: 3
+                                p grid-column-end: 4
+                                p grid-row-start: 3
+                                p grid-row-end: 4
+                                p grid-column:3/4
+                                p grid-row:3/4
+                                p grid-area: 1/3/4/4
+                                p grid-area:  grid-row-start/grid-column-start/grid-row-end/grid-column-end
+                                p grid-column:  col 1/span 4
+                                p grid-row: row 3/row 9
+                                p grid-column:  span 2
+                                p grid-row:  span 2
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 align-items
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p /* Align to cross-start */
+                                  p align-items: flex-start
+                                  p 
+                                  p /* Align to cross-end */
+                                  p align-items: flex-end
+                                  p 
+                                  p /* Центрировать элементы в поперечной оси */
+                                  p align-items: center
+                                  p 
+                                  p /* Выровняйте базовые линии предметов */
+                                  p align-items: baseline
+                                  p 
+                                  p /* Растянуть предметы, чтобы соответствовать */
+                                  p align-items: stretch
+                                  p 
+                                  p /* Глобальные значения */
+                                  p align-items: inherit
+                                  p align-items: initial
+                                  p align-items: unset
+
+
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 align-self
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 https://webref.ru/css/align-self
+                                    p /* Keyword values */
+                                    p align-self: auto;
+                                    p align-self: normal
+                                    p 
+                                    p /* Positional alignment */
+                                    p /* align-self does not take left and right values */
+                                    p align-self: center; /* Put the item around the center */
+                                    p align-self: start; /* Put the item at the start */
+                                    p align-self: end; /* Put the item at the end */
+                                    p align-self: self-start; /* Align the item flush at the start */
+                                    p align-self: self-end; /* Align the item flush at the end */
+                                    p align-self: flex-start; /* Put the flex item at the start */
+                                    p align-self: flex-end; /* Put the flex item at the end */
+                                    p 
+                                    p /* Baseline alignment */
+                                    p align-self: baseline
+                                    p align-self: first baseline
+                                    p align-self: last baseline
+                                    p align-self: stretch; /* Stretch 'auto'-sized items to fit the container */
+                                    p 
+                                    p /* Overflow alignment */
+                                    p align-self: safe center
+                                    p align-self: unsafe center
+                                    p 
+                                    p /* Global values */
+                                    p align-self: inherit
+                                    p align-self: initial
+                                    p align-self: unset
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 align-content
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                      p /* Основное позиционное выравнивание */
+                                      p /* align-content не принимает значения left и right */
+                                      p align-content: center;     /* Расположить элементы вокруг центра */
+                                      p align-content: start;      /* Расположить элементы в начале */
+                                      p align-content: end;        /* Расположить элементы в конце */
+                                      p align-content: flex-start; /* Расположить элементы flex в начале */
+                                      p align-content: flex-end;   /* Расположить элементы flex в конце */
+                                      p 
+                                      p /* Нормальное выравнивание */
+                                      p align-content: normal;
+                                      p 
+                                      p /* Выравнивание по базовой линии */
+                                      p align-content: baseline;
+                                      p align-content: first baseline;
+                                      p align-content: last baseline;
+                                      p 
+                                      p /* Распределённое выравнивание */
+                                      p align-content: space-between; /* Распределить элементы равномерно
+                                      p                                  Первый элемент находится на одном уровне с началом,
+                                      p                                  последней - совпадает с концом */
+                                      p align-content: space-around;  /* Распределить элементы равномерно
+                                      p                                  Элементы имеют половинное пространство
+                                      p                                  на каждом конце */
+                                      p align-content: space-evenly;  /* Распределить элементы равномерно
+                                      p                                  Элементы имеют одинаковое пространство вокруг них */
+                                      p align-content: stretch;       /* Распределить элементы равномерно
+                                      p                                  Растянуть 'auto'-размерные элементы, чтобы заполнить
+                                      p                                  контейнер */
+                                      p 
+                                      p /* Выравнивание переполнения (overflow) */
+                                      p align-content: safe center;
+                                      p align-content: unsafe center;
+                                      p 
+                                      p /* Глобальные значения */
+                                      p align-content: inherit;
+                                      p align-content: initial;
+                                      p align-content: unset;
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 justify-content
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p /* Позиционное выравнивание */
+                                  p justify-content: center     /* Выравнивание элементов по центру */
+                                  p justify-content: start      /* Выравнивание элементов в начале */
+                                  p justify-content: end        /* Выравнивание элементов в конце */
+                                  p justify-content: flex-start /* Выравнивание флекс-элементов с начала */
+                                  p justify-content: flex-end   /* Выравнивание флекс-элементов с конца */
+                                  p justify-content: left       /* Выравнивание элементов по левому краю */
+                                  p justify-content: right      /* Выравнивание элементов по правому краю */
+                                  p 
+                                  p /* Выравнивание относительно осевой линии */
+                                  p justify-content: baseline
+                                  p justify-content: first baseline
+                                  p justify-content: last baseline
+                                  p 
+                                  p /* Распределенное выравнивание */
+                                  p justify-content: space-between /* Равномерно распределяет все элементы по ширине flex-блока.
+                                  p                                    Первый элемент вначале, последний в конце */
+                                  p justify-content: space-around  /* Равномерно распределяет все элементы по ширине flex-блока.
+                                  p                                    Все элементы имеют полноразмерное пространство
+                                  p 
+                                  p                                    с обоих концов */
+                                  p justify-content: space-evenly  /* Равномерно распределяет все элементы по ширине flex-блока.
+                                  p                                    Все элементы имеют равное пространство вокруг */
+                                  p justify-content: stretch       /* Равномерно распределяет все элементы по ширине flex-блока.
+                                  p                                    Все элементы имеют "авто-размер", чтобы соответствовать
+                                  p 
+                                  p                                    контейнеру */
+                                  p 
+                                  p /* Выравнивание при переполнении */
+                                  p justify-content: safe center
+                                  p justify-content: unsafe center
+                                  p 
+                                  p /* Глобальные значения */
+                                  p justify-content: inherit
+                                  p justify-content: initial
+                                  p justify-content: unset
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 justify-items
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  img(src="assets/img/justify-items.png",alt="img")
+                                  p /* Основные ключевые слова */
+                                  p justify-items: auto
+                                  p justify-items: normal
+                                  p justify-items: stretch
+                                  p 
+                                  p /* Выравнивание положения */
+                                  p justify-items: center    /* Выровнять элементы по центру */
+                                  p justify-items: start     /* Выровнять элементы в начале */
+                                  p justify-items: end       /* Выровнять элементы в конце */
+                                  p justify-items: flex-start /* Эквивалентно 'start'. Обратите внимание, что justify-items игнорируется в разметке Flexbox. */
+                                  p justify-items: flex-end   /* Эквивалентно 'end'. Обратите внимание, что justify-items игнорируется в разметке Flexbox. */
+                                  p justify-items: self-start
+                                  p justify-items: self-end
+                                  p justify-items: left       /* Выровнять элементы по левому краю */
+                                  p justify-items: right     /* Выровнять элементы по правому краю */
+                                  p 
+                                  p /* Исходное выравнивание */
+                                  p justify-items: baseline
+                                  p justify-items: first baseline
+                                  p justify-items: last baseline
+                                  p 
+                                  p /* Выравнивание при переполнении (только для выравнивания положения) */
+                                  p justify-items: safe center
+                                  p justify-items: unsafe center
+                                  p 
+                                  p /* Унаследованное выравнивание */
+                                  p justify-items: legacy right
+                                  p justify-items: legacy left
+                                  p justify-items: legacy center
+                                  p 
+                                  p /* Глобальные значения */
+                                  p justify-items: inherit
+                                  p justify-items: initial
+                                  p justify-items: unset
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 Шаблоны грид-областей
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p .header 
+                                p     grid-area: hd
+                                p 
+                                p .footer 
+                                p     grid-area: ft
+                                p 
+                                p .content 
+                                p     grid-area: mai
+                                p 
+                                p .sidebar 
+                                p     grid-area: sd
+                                p 
+                                p .wrapper 
+                                p     display: grid
+                                p     grid-template-columns: repeat(9, 1fr)
+                                p     grid-auto-rows: minmax(100px, auto)
+                                p     grid-template-areas:  "hd hd hd hd   hd   hd   hd   hd   hd"  "sd sd sd main main main main main main"  "ft ft ft ft   ft   ft   ft   ft   ft"
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 justify-self
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    img(src="assets/img/justify-self.png",alt="img")
+                                    p /* Basic keywords */
+                                    p justify-self: auto
+                                    p justify-self: normal
+                                    p justify-self: stretch
+                                    p 
+                                    p /* Positional alignment */
+                                    p justify-self: center /* Pack item around the center */
+                                    p justify-self: start /* Pack item from the start */
+                                    p justify-self: end /* Pack item from the end */
+                                    p justify-self: flex-start /* Pack flex item from the start */
+                                    p justify-self: flex-end /* Pack flex item from the end */
+                                    p justify-self: self-start
+                                    p justify-self: self-end
+                                    p justify-self: left /* Pack item from the left */
+                                    p justify-self: right /* Pack item from the right */
+                                    p 
+                                    p /* Baseline alignment */
+                                    p justify-self: baseline
+                                    p justify-self: first baseline
+                                    p justify-self: last baseline
+                                    p 
+                                    p /* Overflow alignment (for positional alignment only) */
+                                    p justify-self: safe center
+                                    p justify-self: unsafe center
+                                    p 
+                                    p /* Global values */
+                                    p justify-self: inherit
+                                    p justify-self: initial
+                                    p justify-self: unset
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 grid-auto-flow
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p /* Ключевые свойства и значения */
+                                p grid-auto-flow: row;
+                                p grid-auto-flow: column
+                                p grid-auto-flow: dense
+                                p grid-auto-flow: row dense
+                                p grid-auto-flow: column dense
+                                p 
+                                p /* Глобальные значения */
+                                p grid-auto-flow: inherit
+                                p grid-auto-flow: initial
+                                p grid-auto-flow: unset
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 order
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              p order: 1
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

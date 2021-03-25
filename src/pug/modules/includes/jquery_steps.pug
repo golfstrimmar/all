@@ -1,0 +1,154 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 steps
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  проходимся по слайдам и в массив загоняем значение атриута data кажого слайда
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  $.each ( $(".slider-js-2 .art_article-data-item"), function (index) {
+                                    p  let t = $(this).attr("data");
+                                    p       array.push(t);
+                                    p    });
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 фильтр 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 array --старый массив
+                                    p var q = (array.length - 1) / 2;
+                                    p array.filter((item, index) => {
+                                    p if (index > q) return result.push(item);
+                                    p });
+                                    span._2 result  --новый массив
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 each
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2
+                                    p var values = $(".slider-js-2 .slick-dots li ").each(function () {
+                                    p return $(this).text(result[i++]);
+                                    p });
+                                    span._2
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  какой-то массив. например цветовых оттенков
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p   const color = [
+                                    p     "#FDFFBC",
+                                    p     "#E7D9EA",
+                                    p     "#CFEBD2",
+                                    p     "#FCD1D1",
+                                    p     "#D3E0EA",
+                                    p     "#EFF7E1",
+                                    p     "#FFEEBB",
+                                    p     "#FFDCDC",
+                                    p     "#D3E0DC",
+                                    p     "#BEE5D3",
+                                    p     "#D3E0DC",
+                                    p     "#D6B0B1",
+                                    p   ];
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 объявляем функцию вычисления случайного числа из диапазона  min, max. загоняем ее в перемен i 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    
+                                    P  function randomInteger(min, max) {
+                                    P    let rand = min + Math.random() * (max + 1 - min);
+                                    P    return Math.floor(rand);
+                                    P  }
+                                    p  var i = randomInteger(0, 11);
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 делаем искуственный класс эмулятор селекта. в него помещаем и картинку из опции 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p   $("<`div>", {
+                                    p     class: "new-select",
+                                    p     text: _this.children("option:selected").text(),
+                                    p   })
+                                    p     .prepend(
+                                    p       $("<`img>", {
+                                    p         class: "new-select__img",
+                                    p         src: _this.children("option:selected").val(),
+                                    p       })
+                                    p     )
+                                    p     .insertAfter(_this);
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  создание какого-то div и помещаем его в конец другого div
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p    $("<`div>", {
+                                    p      class: "new-select__item",
+                                    p      html: $("<`span>", {
+                                    p        text: selectOption.eq(i).text(),
+                                    p      }),
+                                    p    }).appendTo(selectList);
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 цикл for 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    span._2 формируеет массив из опций селекта например
+                                    p var ddd = $(this).find("option")
+                                    p  for (let i = 0; i < ddd.length ; i++) {
+                                    p    $("<`div>", {
+                                    p      class: "new-select__item",
+                                    p      html: $("<`span>", {
+                                    p        text: selectOption.eq(i).text(),
+                                    p      }),
+                                    p    })
+                                    p      .attr("data-value", selectOption.eq(i).text())
+                                    p      .prepend(
+                                    p        $("<`img>", {
+                                    p          class: "new-select__img",
+                                    p          src: selectOption.eq(i).val(),
+                                    p        })
+                                    p      )
+                                    p      .appendTo(selectList);
+                                    p    }
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+

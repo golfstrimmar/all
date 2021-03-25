@@ -1,0 +1,449 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 js
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 все 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p window.onload=function(){}
+                                    span._2 --------------------------------- 
+                                    p function _(el) {
+                                    p return document.querySelector(el);
+                                    p }
+                                    p let sample= _(".sample");
+                                    span._2 --------- -->
+                                    p sample.onclick = activeItem;
+                                    p 
+                                    p function activeItem(){
+                                    p this.classList.toggle("board");
+                                    p  }
+                                    p 
+                                    p 	или
+                                    p sample.onclick = function activeItem(){
+                                    p this.classList.toggle("board");
+                                    p  }		
+                                    span._2 - ------- 
+                                    p 
+                                    p 
+                                    p document.querySelector(selector);
+                                    p document.getElementById()
+                                    p document.getElementsByTagName(имяТега)
+                                    p document.getElementsByClassName()
+                                    p document.querySelectorAll(selector);
+                                    p document.querySelector('button');
+                                    p document.createElement(tagName);
+                                    p 
+                                    p parent.querySelector('.filmname');
+                                    p 
+                                    p ele.appendChild(childEle)
+                                    p ele.removeChild(strong);
+                                    p ele.replaceChild(newChildEle, oldChileEle)
+                                    p 
+                                    p ele.cloneNode(true);
+                                    p ele.insertBefore(newEle, refEle);
+                                    p getComputedStyle(ele, [pseudoEle])
+                                    p 
+                                    p ele.setAttribute(name, value);
+                                    p ele.getAttribute(name);
+                                    p ele.removeAttribute(name);
+                                    p 
+                                    p elem.classList.add("class")
+                                    p elem.classList.remove("class")
+                                    p elem.classList.toggle("class")
+                                    p elem.classList.contains("class")  
+                                    p 
+                                    p elem.style.backgroundColor = "red"
+                                    p div.style.cssText=`background-color: yellow;width: 100px;`
+                                    p div.setAttribute('style', 'color: red...')
+                                    p four.style.background="red";  ---обращение напрямую по id = four
+                                    p 
+                                    p .children;
+                                    p .parentElement;
+                                    p nextElementSibling
+                                    p .previousElementSibling
+                                    p 
+                                    p .addEventListener('click',foo);
+                                    p .removeEventListener('click',foo);
+                                    p 
+                                    p .addEventListener('click', function (event) {});
+                                    p if (window.pageYOffset > 200) {};
+                                    p window.addEventListener('resize', function (event) {});
+                                    p if (document.documentElement.clientWidth > 768) {
+                                    p 
+                                    p setTimeout(function () {
+                                    p drop.style.display = "none";
+                                    p }, 200);
+                                    p this.querySelector(".icon");   ---ищет внутри this элемент с классом icon
+                                    p parent = document.querySelector('.parent');
+                                    p children = parent.children;   --найдет массив детей
+                                    p this.querySelectorAll(".icon");   ---ищет внутри this все  элементы с классом icon(массив)
+                                    span._2 элемент предшествует указанному элементу в списке дочерних элементов родительского элемента 
+                                    p .previousElementSibling, 
+                                    span._2 следующий сразу за указанным в списке дочерних элементов родительского элемента,
+                                    p nextElementSibling
+
+                                    span._2 установить элементу текстовый контент. При этом все дочерние узлы будут удалены и заменены единственным текстовым узлом,содержащий этот           контент. 
+
+                                    span._2 Свойство textContent позволяет получить текстовый контент указанного узла и всех его потомков. Данное значение можно представить как          конкатенацию (сложение) все текстовых  p узлов, которые являются потомками узла, для которого вызывается данное свойство.
+
+                                    p elem.textContent="sample";
+
+                                    span._2 Метод querySelector() возвращает первый элемент, который соответствует одному или более CSS селекторам. Если совпадения
+                                    p не будет, то он вернет null. 
+                                    p querySelector()
+                                    p var ele = document.querySelector(selector);
+                                    span._2 возвращает все элементы, которые подходят под указанный CSS селектор. 
+                                    p  querySelectorAll()
+                                    p var eles = document.querySelectorAll(selector);
+                                    span._2 пример 
+                                    p var paragraphs = document.querySelectorAll('p');
+                                    p for(var p of paragraphs)
+                                    p p.style.color = 'blue';
+                                    span._2 ========================================
+                                    span._2 хранит в себе псевдомассив дочерних узлов элемента (теги, комментарии и текстовые узлы)
+                                    p childNodes
+                                    p Получим все дочерние узлы элемента и выведем на экран их содержимое:
+                                    span._2  коментарий
+                                    p <`div id="parent">текст<`p>абзац<`/p>
+                                    p <`/div>
+                                    p let parent = document.querySelector('#parent');
+                                    p let nodes = parent.childNodes;
+                                    p 
+                                    p for (let node of nodes) {
+                                    p console.log(node.textContent);
+                                    p }
+                                    p Выведем содержимое первого узла:
+                                    p console.log(parent.childNodes[0].textContent);
+                                    span._2 ===================================================
+                                    span._2 возвращает ссылку на элемент, который имеет атрибут id с указанным значением. 
+                                    p document.getElementById()
+                                    p 
+                                    span._2 возвращает массив, содержащий ссылки на все элементы указанного типа, находящиеся в HTML-документе. Ссылки на элементы в
+                                    p массиве будут представлены в том же порядке, в каком эти элементы расположены в исходном коде документа.Если в качестве передаваемого аргумента           указать символ "*"                          p (звёздочка), метод вернёт все элементы, расположенные в
+                                    p HTML-документе. 
+                                    p document.getElementsByTagName(имяТега)
+                                    p 
+                                    p 
+                                    span._2 Метод  возвращает объект NodeList, содержащий все элементы, у которых значение атрибута
+                                    span._2 class совпадает с переданной методу строкой.При вызове метода getElementsByClassName() для объекта document, выполняется поиск по всему           документу, включая корневой
+                                    span._2 элемент. Если метод вызывается для объекта element, то поиск выполняется только среди потомков данного элемента. 
+                                    p document.getElementsByClassName()
+                                    p 
+                                    span._2 ------------onclick---------------
+                                    p .onclick = function (event) {
+                                    p 
+                                    p };
+                                    span._2 ----------------------------
+                                    p 
+                                    span._2 События отображают то, что случается с HTML элементом, например клик, фокусировка или загрузка — то на что можно
+                                    span._2 реагировать с JavaScript. Мы можем назначить JS функции, чтобы слушать эти события в элементах и соответственно делать
+                                    span._2 какие-либо действия когда это событие происходит. 
+                                    span._2 https://medium.com/@stasonmars/         p15-javascript-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%B2%D0%B5%D0%B1-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D        1%87%D0%B8%D0%BA%D0%BE%D0%Bp 2-e92ea6c22e32 
+                                    p addEventListener()
+                                    p 
+                                    span._2 пример 
+                                    p .addEventListener('click', function (event) {
+                                    p document.querySelector('.block').style.cssText = `
+                                    p left: -100vw`;
+                                    p });
+                                    p 
+                                    p 
+                                    span._2 пример 
+                                    p 	var btn = document.querySelector('button');
+                                    p btn.addEventListener('click',foo);
+                                    p function foo() { alert('hello'); }
+                                    p 
+                                    p 
+                                    span._2 удаляет слушатель события по клику по имени foo из элемента < button>. 
+                                    p ele.removeEventListener(evt, listener, [options]);
+                                    span._2 пример 
+                                    p btn.removeEventListener('click',foo);
+                                    p 
+                                    span._2 создаёт HTML элемент, используя имя HTML тега, такое как ‘p’ или ‘div’. 
+                                    p document.createElement(tagName);
+                                    p 
+                                    span._2 добавляет элемент, как последний потомок HTML элементу, который включен в этот метод. 
+                                    p ele.appendChild(childEle)
+                                    p 
+                                    span._2 удаляет указанный элемент потомок из HTML элемента, который вызывает этот метод. 
+                                    p div.removeChild(strong);
+                                    p 
+                                    span._2 заменяет элемент потомок другим элементом, 
+                                    p ele.replaceChild(newChildEle, oldChileEle)
+                                    p 
+                                    span._2 --создает копию элемента----
+                                    p var dupeEle = ele.cloneNode([deep])
+                                    span._2 -- пример 
+                                    p var strong = document.querySelector('strong');
+                                    p var copy = strong.cloneNode(true);
+                                    p var div = document.querySelector('div');
+                                    p div.appendChild(copy);
+                                    p 
+                                    span._2 Метод insertBefore() добавляет указанный элемент потомок перед другим элементом потомком. Этот метод вызывается родительским элементом. 
+                                    p ele.insertBefore(newEle, refEle);
+                                    p ele — родительский элемент.
+                                    p newEle — новый HTML элемент, который вставится.
+                                    p refEle — элемент потомок ele, перед которым будет вставлен newEle.
+                                    p 
+                                    span._2 возвращает read-only вычисленные значения всех CSS свойств указанного HTML элемента. 
+                                    p var style = getComputedStyle(ele, [pseudoEle])
+                                    span._2 пример 
+                                    p var style = getComputedStyle(document.querySelector('div'));
+                                    p alert(style.width);
+                                    p 
+                                    p 
+                                    span._2 Метод setAttribute() добавляет новый атрибут HTML элементу, так и меняет его значение для уже существующих. 
+                                    p ele.setAttribute(name, value);
+                                    span._2 ele — это HTML элемент, к которому будет добавлен атрибут или чей атрибут будет изменен.
+                                    p name — имя атрибута
+                                    p value — значение атрибута
+                                    span._2 пример 
+                                    p var div = document.querySelector('div');
+                                    p div.setAttribute('contenteditable', '')
+                                    p 
+                                    span._2 возвращает значение указанного атрибута, 
+                                    p ele.getAttribute(name);
+                                    p ele — HTML элемент, чей атрибут запрашивается.
+                                    p name — имя атрибута.
+                                    span._2 пример 
+                                    p var div = document.querySelector('div');
+                                    p alert(div.getAttribute('contenteditable'))
+                                    p 
+                                    span._2 удаляет заданное значение конкретного элемента HTML. 
+                                    p ele.removeAttribute(name);
+                                    p ele — HTML элемент чей атрибут будет удален.
+                                    p name — имя атрибута.
+                                    span._2 пример 
+                                    p var div = document.querySelector('div');
+                                    p div.removeAttribute('contenteditable');
+                                    p 
+                                    span._2 добавить/удалить класс. 
+                                    p elem.classList.add/remove("class")
+                                    p 
+                                    span._2 – добавить класс, если его нет, иначе удалить. 
+                                    p elem.classList.toggle("class")
+                                    p 
+                                    span._2 – проверка наличия класса, возвращает true/false. 
+                                    p elem.classList.contains("class") 
+                                    p 
+                                    span._2 Для свойства из нескольких слов используется camelCase: 
+                                    p elem.style.backgroundColor ="red";
+                                    p 
+                                    p 
+                                    span._2 Стили с браузерным префиксом, например, -moz-border-radius, -webkit-border-radius преобразуются по тому же принципу:дефис означает          заглавную букву. 
+                                    p button.style.MozBorderRadius = '5px';
+                                    p 
+                                    p 
+                                    span._2 Для задания нескольких стилей в одной строке используется специальное свойство style.cssText: 
+                                    p div.style.cssText=`color: red !important;
+                                    p background-color: yellow;
+                                    p width: 100px;
+                                    p text-align: center;
+                                    p `;
+                                    p 
+                                    span._2 То же самое можно сделать установкой атрибута: 
+                                    p div.setAttribute('style', 'color: red...').
+                                    p 
+                                    p 
+                                    span._2 insertAdjacentHTML 
+                                    p разбирает указанный текст как HTML или XML и вставляет полученные узлы (nodes) в DOM дерево в указанную позицию. Данная функция не переписывает           имеющиеся элементы, что                           p предотвращает дополнительную сериализацию и поэтому работает быстрее, чем манипуляции с           innerHTML.
+                                    p 
+                                    p const $site = document.querySelector("#site");
+                                    p $site.insertAdjacentHTML("beforeend", html);
+                                    p 
+                                    span._2 map() 
+                                    p Метод map() создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
+                                    p 
+                                    p 
+                                    p 
+                                    span._2 события изменения окна 
+                                    span._2 // ----прокрутка окна - header меняется в размерах и цвете 
+                                    p    window.addEventListener("scroll", function (event) {
+                                    p      if (window.pageYOffset > 100) {
+                                    p        document.querySelector(".header").classList.add("responciveHeader");
+                                    p        document
+                                    p          .querySelector(".header__menu")
+                                    p          .setAttribute("style", "top: 60px");
+                                    p      } else {
+                                    p        document.querySelector(".header").classList.remove("responciveHeader");
+                                    p        document
+                                    p          .querySelector(".header__menu")
+                                    p          .setAttribute("style", "top: 70px");
+                                    p      }
+                                    p      <!-- // header освобождается от свойств для мобилки -->
+                                    p      if (window.innerWidth >= 768) {
+                                    p        document
+                                    p          .querySelector(".header__menu")
+                                    p          .setAttribute("style", "top: 0px");
+                                    p      }
+                                    p    });
+                                    p 
+                                    span._2 изменение ширины окна 
+                                    p window.addEventListener("resize", function (event) {
+                                    p    if (window.innerWidth >= 768) {
+                                    p      document.querySelector(".header__menu").setAttribute("style", "top: 0px");
+                                    p    }else{
+                                    p       if (window.pageYOffset > 100) {
+                                    p         document
+                                    p           .querySelector(".header__menu")
+                                    p           .setAttribute("style", "top: 60px");
+                                    p       } else {
+                                    p         document.querySelector(".header__menu").setAttribute("style", "top: 70px");
+                                    p       }
+                                    p 
+                                    p    }
+                                    p  });
+                                    p 
+                                    p 
+                                    p 
+                                    p 
+                                    p переберем в цикле всех потомков элемента и выведем их содержимое: 
+                                    p let parent = document.querySelector('#parent');
+                                    p let elems = parent.children;
+                                    p 
+                                    p for (let elem of elems) {
+                                    p console.log(elem.innerHTML);
+                                    p }
+                                    span._2 =================
+                                    p parentElement содержит родительский элемент.
+                                    p let elem = document.querySelector('#elem');
+                                    p let id = elem.parentElement.id;
+                                    p 
+                                    p console.log(id);
+                                    p 
+                                 
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 array-methods https://learn.javascript.ru/array-methods 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p arr.push(...items) – добавляет элементы в конец,
+                                    p arr.pop() – извлекает элемент из конца,
+                                    p arr.shift() – извлекает элемент из начала,
+                                    p arr.unshift(...items) – добавляет элементы в начало.
+                                    p .reverse()
+                                    p .join('') --собирает в строку отдельные элементы массива
+                                    p .trim()
+                                    p .split('')--разбивает на буквы
+                                    p .concat
+                                    p Math.trunc () ---метод объекта Math возвращает целую часть из числа отвергая дробно.
+                                    p 
+                                    p  min = Math.ceil(min); --- вычисляет и возвращает наименьшее целое число, которое больше или равно переданному числу (округляет число вверх)
+                                    p   max = Math.floor(max); --- вычисляет и возвращает наибольшее целое число, которое меньше или равно переданному числу (округляет число вниз)
+                                    p   например
+                                    p function getRandomIntFromRange(min, max) {
+                                    p   min = Math.ceil(min); // вычисляет и возвращает наименьшее целое число, которое больше или равно переданному числу (округляет число вверх)
+                                    p   max = Math.floor(max); // вычисляет и возвращает наибольшее целое число, которое меньше или равно переданному числу (округляет число вниз)
+                                    p   return Math.floor(Math.random() * (max - min)) + min; 
+                                    p }                         
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p вычисляет и возвращает наибольшее целое число, которое меньше или равно переданному числу (округляет число вниз) 
+                              p max = Math.floor(max);
+                              p slice e,s (копирует с 1 до 3)
+                              p arr.slice(1, 3)
+                              p splice с позиции 2  удалить 0 элементов вставить "сложный", "язык"
+                              p arr.splice(2, 0, "сложный", "язык");
+                              p filter ---вернет новый массив без элементов с заголовком tag.title <--это переменная
+                              p какой-то массив.filter((item, i, arr) => {
+                              p           if (item === tag.title) {
+                              p             arr.splice(i, 1);
+                              p           }
+                              p       }
+                              p .find
+                              p concat создать массив из: arr и [3,4] и [5,6]
+                              p  arr.concat([3, 4], [5, 6])
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  ищет item  ищет справа налево, начиная с индекса from, и возвращает индекс, на котором был найден искомый элемент, в противном случае -1.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p arr.lastIndexOf(item, from)
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  ищет item, начиная с индекса from, и возвращает индекс, на котором был найден искомый элемент, в противном случае -1.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p arr.indexOf(item, from)
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 .includes ищет item, начиная с индекса from, и возвращает true, если поиск успешен 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p arr.includes(item, from) – .
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  .find  ищет item, начиная с индекса from, и возвращает true, если поиск успешен
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p let result = arr.find(function(item, index, array) {
+                                    p   // если true - возвращается текущий элемент и перебор прерывается
+                                    p   // если все итерации оказались ложными, возвращается undefined
+                                    p });
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  filter
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p let results = arr.filter(function(item, index, array) {
+                                    p   // если true - элемент добавляется к результату, и перебор продолжается
+                                    p   // возвращается пустой массив в случае, если ничего не найдено
+                                    p });
+                                    p пример 
+                                    p let users = [
+                                    p   {id: 1, name: "Вася"},
+                                    p   {id: 2, name: "Петя"},
+                                    p   {id: 3, name: "Маша"}
+                                    p ];
+                                    p   возвращает массив, состоящий из двух первых пользователей 
+                                    p users.filter(item => item.id < 3);
+                                    p 
+                                    p  вернет массив из клторого будет удален элемент Петя 
+                                    p users.filter((item, i, arr) => {
+                                    p           if (name  === "Петя") {
+                                    p             arr.splice(i, 1);
+                                    p           }
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  поиск в массиве по id 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                
+                                span._2 =========================================================================
+                                p const post_id = this.wallPosts.findIndex(post => post.id === id)
+                                p toLowerCase()
+                                p toUpperCase()
+                                p typeof -- выводит тип данных
+                                p indexOf() 
+                                p позволяет возвратить индекс искомого элемента в массиве при первом совпадении, или -1 если элемент не найден. 
+
+                        li.akr__item.akr-item  
+                          .akr-item__title.akr-title-js
+                              h4._5 стрелоччные функции 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                          span._2 ============ 
+                                          p let double = function(n) { return n * 2 }
+                                          p тоже что и
+                                          p let double = n => n * 2;
+                                          p 
+                                          p или  data: () => ({ ... })
+                                          p тоже что и
+                                          p data(){ return  (...) }
+

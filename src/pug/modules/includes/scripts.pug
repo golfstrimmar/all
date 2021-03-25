@@ -6,10 +6,89 @@
                     ul.akr__body
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
+                              h4._5 независимые табы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p $(document).ready(function () {
+                                  p let titleTab=  $(".tabs-title-js");
+                                  p 
+                                  p titleTab.on("click", function () {
+                                  p 
+                                  p let dropTab = $(this).siblings(".tabs-drop-js");
+                                  p let imgTab = $(this).find(".tabs-img-js");
+                                  p 
+                                  p if ($(this).hasClass("act")) {
+                                  p   setTimeout(function () {
+                                  p     dropTab.removeClass("act");
+                                  p   }, 200);
+                                  p   $(this).removeClass("act");
+                                  p   dropTab.slideUp(200);
+                                  p   imgTab.css("transform", " translateY(-50%) rotate(0deg)");
+                                  p }
+                                  p else {
+                                  p   $(this).addClass("act");
+                                  p   imgTab.css("transform", "translateY(-50%) rotate(180deg)");
+                                  p   dropTab.addClass("act").slideDown(200);
+                                  p }	
+                                  p });
+                                  p })
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 аккордион 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p $(document).ready(function (e) {
+                                  p   let titleTab = $(".akr-title-js");
+                                  p   titleTab.on("click", function () {
+                                  p     let dropTab = $(this).siblings(".akr-drop-js");
+                                  p     let imgTab = $(this).find(".akr-item-img-js");
+                                  p     let parent = $(this).parent(".akr__item");
+                                  p 
+                                  p     if ($(this).hasClass("act")) {
+                                  p       $(this).removeClass("act");
+                                  p       dropTab.slideUp(200).removeClass("act");
+                                  p       imgTab.css("transform", "translateY(-50%) rotate(0deg)");
+                                  p       
+                                  p     } else {
+                                  p $(this).addClass("act");
+                                  p imgTab.css("transform", "translateY(-50%) rotate(180deg)");
+                                  p dropTab.addClass("act").slideDown(200);
+                                  p     $(".akr__item").not(parent).find(".akr-drop-js").slideUp(200);
+                                  p     $(".akr__item").not(parent).find(".akr-title-js").removeClass("act");
+                                  p     $(".akr__item")
+                                  p       .not(parent)
+                                  p       .find(".akr-item-img-js")
+                                  p       .css("transform", "translateY(-50%) rotate(0deg)");
+                                  p     }
+                                  p   });
+                                  p });
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 одиночная выпадашка.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p $(document).ready(function (e) {
+                                p $("").on("click", function () {
+                                p   let drop = $("");
+                                p   let icon = $(this).find("i");
+                                p   
+                                p   if ($(this).hasClass("act")) {
+                                p     drop.slideUp(200);
+                                p     $(this).removeClass("act");
+                                p     icon.css("transform", "rotate(0deg)");
+                                p   } else {
+                                p     drop.slideDown(200);
+                                p     $(this).addClass("act");
+                                p     icon.css("transform", "rotate(180deg)");
+                                p   }
+                                p });
+                                p });   
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
                               h4._5 на skick заполняет точку  информацией из атрибута data слайда.
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
-                                    span делаем пустой массив
+                                    span._2 делаем пустой массив
                                     p  let array = [];
                                     span._2 проходимся по слайдам и в массив загоняем значение атриута data кажого слайда
                                     p  $.each ( $(".slider-js-2 .art_article-data-item"), function (index) {
@@ -18,7 +97,7 @@
                                     p    });
                                     span._2 делаем пустой массив под фильтрацию
                                     p let result = [];
-                                    span._2 поскольку slick делает много слайдов - отфильтровываем только часть которая потом простов slick повторяется. это оригинал, заданный пользователем
+                                    span._2 поскольку slick делает много слайдов - отфильтровываем только часть которая потом просто  в slick повторяется. это оригинал, заданный пользователем
                                     p var q = (array.length - 1) / 2;
                                     p array.filter((item, index) => {
                                     p if (index > q) return result.push(item);
@@ -83,14 +162,14 @@
                                     span._2 скрываем дефолтный селект
                                     p _this.hide();
                                     span._2 делаем искуственный класс вместо селекта
-                                    p _this.wrap('<div class="select"></div>');
+                                    p _this.wrap('<`div class="select"><`/div>');
                                     span._2 делаем искуственный класс эмулятор селекта. в него помещаем и картинку из опции 
-                                    p   $("<div>", {
+                                    p   $("<`div>", {
                                     p     class: "new-select",
                                     p     text: _this.children("option:selected").text(),
                                     p   })
                                     p     .prepend(
-                                    p       $("<img>", {
+                                    p       $("<`img>", {
                                     p         class: "new-select__img",
                                     p         src: _this.children("option:selected").val(),
                                     p       })
@@ -99,21 +178,21 @@
                                     
                                     span._2 туда же выпадашку
                                     p  const selectHead = _this.next(".new-select");
-                                    p  $("<div>", {
+                                    p  $("<`div>", {
                                     p    class: "new-select__list",
                                     p  }).insertAfter(selectHead);
                                     span._2 перебираем массив из опций  и формируем пункты псевдоселекта уже с картками
                                     p  const selectList = selectHead.next(".new-select__list");
                                     p  for (let i = 0; i < selectOptionLength; i++) {
-                                    p    $("<div>", {
+                                    p    $("<`div>", {
                                     p      class: "new-select__item",
-                                    p      html: $("<span>", {
+                                    p      html: $("<`span>", {
                                     p        text: selectOption.eq(i).text(),
                                     p      }),
                                     p    })
                                     p      .attr("data-value", selectOption.eq(i).text())
                                     p      .prepend(
-                                    p        $("<img>", {
+                                    p        $("<`img>", {
                                     p          class: "new-select__img",
                                     p          src: selectOption.eq(i).val(),
                                     p        })
