@@ -1,6 +1,2052 @@
+
 .tabs-item
                   .tabs-item__title.tabs-title-js
-                    h3._0 js
+                    h3._0 DOM
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 все подряд 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                        p const windowWidth = window.innerWidth;
+                                        p console.log(`Ширина окна браузера: ${windowWidth}px`);
+                                        p console.log(navigator.userAgent);
+                                        p if (navigator.userAgent.includes("Chrome")) {
+                                        p 	console.log('Браузер Хром');
+                                        p } else if (navigator.userAgent.includes("Firefox")) {
+                                        p 	console.log('Браузер Firefox');
+                                        p }
+                                        p console.log(navigator.platform);
+                                        p console.log(location.href);
+                                        p location.href = "https://fls.guru";
+                                        p history.back();
+                                        p history.forward();
+                                        p alert("Привет!");
+                                        p const confirmResult = confirm("Хочешь научиться верстать?");
+                                        p const promptResult = prompt("Кто ты по жизни?");
+                                        p const htmlElement = document.documentElement;
+                                        p const headElement = document.head;
+                                        p const bodyElement = document.body;
+                                        p const firstChildNode = bodyElement.firstChild;
+                                        p const lastChildNode = bodyElement.lastChild;
+                                        p const childNodes = bodyElement.childNodes;
+                                        p console.log(bodyElement.hasChildNodes());
+                                        p for (let node of childNodes) {
+                                        p 	console.log(node); // покажет все узлы из коллекции
+                                        p }
+                                        p const previousSiblingNode = bodyElement.previousSibling;
+                                        p const nextSiblingNode = bodyElement.nextSibling;
+                                        p const parentNode = bodyElement.parentNode;
+                                        p const childNodes = bodyElement.childNodes;
+                                        p const bodyСhildren = bodyElement.children;
+                                        p const firstChild = bodyElement.firstElementChild;
+                                        p const lastChild = bodyElement.lastElementChild;
+                                        p const previousSibling = bodyElement.previousElementSibling;
+                                        p const nextSibling = bodyElement.nextElementSibling;
+                                        p const parentElement = bodyElement.parentElement;
+                                        p const elemsOne = document.querySelectorAll('.lesson__list');
+                                        p const elemsTwo = document.querySelectorAll('li');
+                                        p const elemsThree =	document.querySelectorAll('li.lesson__item-list');
+                                        p const elemsFour =document.querySelectorAll('.lesson__list>li');
+                                        p const elemsFive =	document.querySelectorAll('.lesson__list, .lesson__text');
+                                        p const elemsSix =	document.querySelectorAll('.lesson__list .lesson__text');
+                                        p const elemsSeven =	document.querySelectorAll('#listItem');
+                                        p const elemsEight =	document.querySelectorAll('[data-item]');
+                                        p const elemsNine =document.querySelectorAll('[data-item="85"]');
+                                        p const elems = document.querySelectorAll('li');
+                                        p console.log(elems[2]);
+                                        p for (const item of elems) {
+                                        p 	console.log(item);
+                                        p }
+                                        p elems.forEach(item => {
+                                        p 	console.log(item);
+                                        p });
+                                        p const subList = document.querySelectorAll('.lesson__sub-list');
+                                        p const subItems = subList[0].querySelectorAll('li');
+                                        p const subList =	document.querySelectorAll('.lesson__sub-list');
+                                        p const listItems =	subList[0].querySelectorAll('.lesson__list .lesson__item-sub-list');
+                                        p elem.querySelector(CSS);
+                                        p const lessonList = document.querySelectorAll('.lesson__list')[0];
+                                        p const lessonList = document.querySelector('.lesson__list');
+                                        p document.getElementById(ID)
+                                        p const elem = document.getElementById('listItem');
+                                        p elem.getElementsByTagName(tag)
+                                        p const elems = document.getElementsByTagName('li');
+                                        p lem.getElementsByClassName(className)
+                                        p const elems = document.getElementsByClassName('lesson__item-list');
+                                        p document.getElementById(ID) и elem.getElementsBy*
+                                        p getElementsBy*
+                                        p document.getElementsByName(name) возвращает элементы с
+                                        p const elems = document.getElementsByName('list');
+                                        p const listStatic = document.querySelectorAll('.lesson__item-list');
+                                        p const listLive = document.getElementsByClassName('lesson__item-list');
+                                        p const lessonList = document.querySelector('.lesson__list');
+                                        p lessonList.insertAdjacentHTML(
+                                        p 	"beforeend",
+                                        p 	'<`li class="lesson__item-list">Новый пункт<`/li>'
+                                        p );
+                                        p const elem = document.querySelector('.lesson__item-sub-list');
+                                        p const parentList = elem.closest('.lesson__list');
+                                        p const elems = document.querySelectorAll('.lesson__item-list');
+                                        p for (let elem of elems) {
+                                        p 	if (elem.matches('[class$="lesson__item-list_red"]')) {
+                                        p 		console.log('Крассный');
+                                        p 	} else if (elem.matches('[class$="lesson__item-list_blue"]')) {
+                                        p 		console.log('Синий');
+                                        p 	}
+                                        p }
+                                        p const text = document.querySelector('.lesson__text');
+                                        p const list = text.nextElementSibling;
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p const textElementContent = textElement.innerHTML;
+                                        p textElement.innerHTML = `Живи, а работай в свободное время!`;
+                                        p textElement.innerHTML =
+                                        p 	`<`p>${textElementContent}<`/p> <`p>Живи, а работай в
+                                        p 	<`span class="yellow">свободное<`/span> время!<`/p>`;
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p const textElementContent = textElement.outerHTML;
+                                        p console.log(textElementContent);
+                                        p textElement.outerHTML = `<`p>Живи, а работай в
+                                        p 	<`span class="yellow">свободное<`/span> время!<`/p>`;
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p const textElementContent = textElement.textContent;
+                                        p textElement.textContent = `<`p>Живи, а работай в
+                                        p 	<`span class="yellow">свободное<`/span> время!<`/p>`;
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p const getComment = textElement.nextSibling;
+                                        p console.log(getComment.data);
+                                        p getComment.data = 'Привет';
+                                        p console.log(getComment.data);
+                                        p const newElement = document.createElement('div');
+                                        p newElement.innerHTML = `Живи, а работай в
+                                        p 	<`span class="yellow">свободное<`/span> время!`;
+                                        p console.log(newElement);
+                                        p const newText = document.createTextNode('Привет!');
+                                        p console.log(newText);
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p const newElement = document.createElement('div');
+                                        p newElement.innerHTML = `Живи, а работай в
+                                        p 	<`span class="yellow">свободное<`/span> время!`;
+                                        p // Вставляем новый элемент...
+                                        p //...перед объектом
+                                        p //textElement.before(newElement);
+                                        p //...после объекта
+                                        p //textElement.after(newElement);
+                                        p //...внутрь и в начало объекта
+                                        p //textElement.prepend(newElement);
+                                        p //...внутрь и в конец объекта
+                                        p //textElement.append(newElement);
+                                        p // Вставка нескольких фрагментов сразу
+                                        p //textElement.append(newElement, "Привет!");
+                                        p // Можно вставлять строку
+                                        p textElement.append(`Живи, а работай в
+                                        p 	 время!`);
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p textElement.insertAdjacentHTML(	'afterend',	`<`p> Живи, а работай в  время! <`/p>`);
+                                        p "beforebegin" – вставить html непосредственно перед textElement,
+                                        p "afterbegin" – вставить html в начало textElement,
+                                        p "beforeend" – вставить html в конец textElement,
+                                        p "afterend" – вставить html непосредственно после textElement.
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p textElement.insertAdjacentText(
+                                        p 	'beforeend',
+                                        p 	`Живи, а работай в
+                                        p  время!`
+                                        p )
+                                        p const newElement = document.createElement('div');
+                                        p newElement.innerHTML = `Живи, а работай в
+                                        p 	<`span class="yellow">свободное<`/span> время!`;
+                                        p textElement.insertAdjacentElement(
+                                        p 	'beforeend',
+                                        p 	newElement
+                                        p );
+                                        p const lessonBlock = document.querySelector('.lesson');
+                                        p const title = document.querySelector('h3');
+                                        p lessonBlock.append(title);
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p const cloneTextElement = textElement.cloneNode();
+                                        p const cloneTextElement = textElement.cloneNode(true);
+                                        p const lessonBlock = document.querySelector('.lesson');
+                                        p lessonBlock.append(cloneTextElement);
+                                        p const textElement = document.querySelector('.lesson__text');
+                                        p textElement.remove();
+                                        p const element = document.querySelector('.lesson__item-list_red');
+                                        p const elementClassNames = element.className;
+                                        p console.log(elementClassNames);
+                                        p element.className = "red";
+                                        p const element = document.querySelector('.lesson__item-list_red');
+                                        p element.classList.add('active');
+                                        p element.classList.remove('active');
+                                        p element.classList.toggle('active');
+                                        p element.classList.contains('active');
+                                        p element.classList.add('active');
+                                        p if (element.classList.contains('active')) {
+                                        p 	console.log(`У element есть класс active!`);
+                                        p }
+                                        p for (let className of element.classList) {
+                                        p 	console.log(className);
+                                        p }
+                                        p element.style.color = "red";
+                                        p element.style.marginBottom = "30px";
+                                        p element.style.zIndex = "10";
+                                        p console.log(element.style.marginBottom);
+                                        p element.style.marginBottom = "";
+                                        p style.cssText
+                                        p const element = document.querySelector('.lesson__item-list_red');
+                                        p element.style.cssText = `
+                                        p 	margin-bottom: 30px;
+                                        p 	color:red;
+                                        p `;
+                                        p getComputedStyle(element, [pseudo])
+                                        p console.log(element.style.fontSize);
+                                        p const elementStyle = getComputedStyle(element);
+                                        p console.log(elementStyle.fontSize);
+                                        p const elementBeforeStyle = getComputedStyle(element, "::before");
+                                        p console.log(elementBeforeStyle.backgroundColor);
+                                        p console.log(elementStyle.paddingLeft);
+                                        p console.log(elementStyle.padding); // В FF <`empty string>
+                                        p const element = document.querySelector('.lesson__item-list_red');
+                                        p const elementStyle = getComputedStyle(element);
+                                        p elementStyle.paddingLeft = "50px";
+                                        p const element = document.querySelector('.lesson__item-list_red');
+                                        p const elementStyle = getComputedStyle(element);
+                                        p console.log(elementStyle.paddingLeft);
+                                        p const paddingLeft = parseInt(elementStyle.paddingLeft);
+                                        p console.log(paddingLeft);
+                                        p element.style.marginLeft = "20px";
+                                        p const link = document.querySelector('.lesson__link');
+                                        p const input = document.querySelector('.lesson__input');
+                                        p console.log(link.href);
+                                        p console.log(input.href);
+                                        p console.log(input.value);
+                                        p console.log(link.value);
+                                        p console.dir(link);
+                                        p const lessonText = document.querySelector('.lesson__text');
+                                        p lessonText.hasAttribute('name');
+                                        p lessonText.getAttribute('name');
+                                        p lessonText.setAttribute('name', 'value');
+                                        p lessonText.removeAttribute('name');
+                                        p lessonText.setAttribute('some-attribute', 'some-value');
+                                        p if (lessonText.hasAttribute('some-attribute')) {
+                                        p 	console.log('some-attribute существует!');
+                                        p }
+                                        p const input = document.querySelector('.lesson__input');
+                                        p input.setAttribute('id', '123');
+                                        p console.log(input.id);
+                                        p input.id = "321";
+                                        p console.log(input.getAttribute('id'));
+                                        p input.setAttribute('value', 'Привет!');
+                                        p console.log(input.value);
+                                        p input.value = "Как дела?";
+                                        p console.log(input.getAttribute('value'));
+                                        p const lessonText = document.querySelector('.lesson__text');
+                                        p console.log(lessonText.dataset.size);
+                                        p lessonText.dataset.size = "5810";
+                                        p console.log(lessonText.dataset.size);
+                                        p console.log(lessonText.dataset.sizeValue);
+                                        p const link = document.querySelector('.lesson__link');
+                                        p console.log(link.tagName);
+                                        p link.hidden = true;
+                                        p console.log(link.hidden);
+                      
+                     
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5  Ширина окна браузера
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const windowWidth = window.innerWidth;
+                            p console.log(`Ширина окна браузера: ${windowWidth}px`);
+                          
+
+
+                
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Navigator
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p С помощью объекта navigator,
+                                p мы можем получить информацию о самом
+                                p браузере и операционной системе.
+                                h5 Браузер
+                                p console.log(navigator.userAgent);
+                                p if (navigator.userAgent.includes("Chrome")) {
+                                p 	console.log('Браузер Хром');
+                                p } else if (navigator.userAgent.includes("Firefox")) {
+                                p 	console.log('Браузер Firefox');
+                                p }
+                                h5  Платформа
+                                p console.log(navigator.platform);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Location
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p С помощью объекта location мы можем
+                                p получить текущий URL или
+                                p перенаправить браузер по новому адресу.
+                                h5 Получаем URL
+                                p console.log(location.href);
+                                h5 Меняем URL
+                                p location.href = "https://fls.guru";
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 History
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Объект history позволяет
+                              p управлять историей браузера,
+                              p передвигаться по посещенным ранее страницам.
+                              p history.back();
+                              p history.forward();
+
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Alert Сonfirm Prompt
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Alert
+                                p alert("Привет!");
+                                p Сonfirm
+                                p const confirmResult = confirm("Хочешь научиться верстать?");
+                                p console.log(confirmResult);
+                                p Prompt
+                                p const promptResult = prompt("Кто ты по жизни?");
+                                p console.log(promptResult);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Навигация по документу
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Самые верхние элементы дерева
+                              p доступны как свойства объекта document
+                              p const htmlElement = document.documentElement;
+                              p const headElement = document.head;
+                              p const bodyElement = document.body;
+                              p console.log(htmlElement);
+                              p console.log(headElement);
+                              p console.log(bodyElement);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Первый и последний дочерние элементы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const firstChildNode = bodyElement.firstChild;
+                              p const lastChildNode = bodyElement.lastChild;
+                              p В документе, возможено, есть ещё «какой-то HTML-код»,
+                              p но на момент выполнения скрипта браузер ещё
+                              p до него не дошёл.
+                              p Поэтому следует размещать скрипт в самом конце
+                              p документа
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Коллекция childNodes
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Коллекция childNodes содержит список всех детей, 
+                              p включая текстовые узлы.
+                              p const childNodes = bodyElement.childNodes;
+                              p Отличия от массивов:
+                              p 1.Для перебора коллекции мы можем использовать for..of:
+                              p 2.Методы массивов не будут работать, потому что
+                              p коллекция – это не массив
+                              p Перебор коллекции
+                              p for (let node of childNodes) {
+                              p 	console.log(node); // покажет все узлы из коллекции
+                              p }
+                              p "Живые" коллекции
+                              p Почти все DOM-коллекции, за небольшим исключением, "живые".
+                              p Другими словами, они отражают текущее состояние DOM.
+                              p Если мы сохраним ссылку на body.childNodes и добавим/удалим
+                              p узлы в DOM, то они появятся в сохранённой коллекции автоматически.
+                              p Еще вернемся к этому позже.
+                              p DOM-коллекции, и даже более – все навигационные свойства,
+                              p перечисленные далее, доступны только для чтения.
+                              p Мы не можем заменить один дочерний узел на другой,
+                              p просто написав childNodes[i] = ....
+                              p Для изменения DOM требуются другие методы.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Для проверки наличия дочерних узлов  hasChildNodes
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Для проверки наличия дочерних узлов 
+                                p существует также специальная функция hasChildNodes()
+                                p console.log(bodyElement.hasChildNodes());
+                                p childNodes похож на массив. На самом деле это не массив,
+                                p а коллекция – особый перебираемый объект - псевдомассив.
+                          .akr__drop.akr-drop.akr-drop-js
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Соседние и родительский узлы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p const previousSiblingNode = bodyElement.previousSibling;
+                                p const nextSiblingNode = bodyElement.nextSibling;
+                                p const parentNode = bodyElement.parentNode;
+                                strong коллекция всех дочерних узлов
+                                p const childNodes = bodyElement.childNodes;
+                      p Но для большинства задач текстовые узлы иузлы-комментарии нам не нужны. Мы хотим манипулировать узлами-элементами, которые представляют собой теги и формируют структуру страницы.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 коллекция всех дочерних элементов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const bodyСhildren = bodyElement.children;
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Первый и последний дочерние элементы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const firstChild = bodyElement.firstElementChild;
+                            p const lastChild = bodyElement.lastElementChild;
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Соседние и родительский элементы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const previousSibling = bodyElement.previousElementSibling;
+                              p const nextSibling = bodyElement.nextElementSibling;
+                              p const parentElement = bodyElement.parentElement;
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по селектору класса
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const elemsOne = document.querySelectorAll('.lesson__list');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по селектору тега
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const elemsTwo = document.querySelectorAll('li');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по смешанному селектору тега и класса
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const elemsThree =document.querySelectorAll('li.lesson__item-list');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по нескольким классам
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const elemsFive =document.querySelectorAll('.lesson__list, .lesson__text');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по вложенным классам
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const elemsSix =document.querySelectorAll('.lesson__list .lesson__text');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по тегу первого уровня вложенности
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const elemsFour =document.querySelectorAll('.lesson__list>li');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по ID
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const elemsSeven =document.querySelectorAll('#listItem');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по атрибуту
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const elemsEight =document.querySelectorAll('[data-item]');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Поиск по атрибуту со значением
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const elemsNine =document.querySelectorAll('[data-item="85"]');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 querySelectorAll - статичная коллекция. Получение конкретного элемента коллекции
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p const elems = document.querySelectorAll('li');
+                            p console.log(elems[2]);
+                            p for (const item of elems) {
+                            p 	console.log(item);
+                            p }
+                            p elems.forEach(item => {
+                            p 	console.log(item);
+                            p });
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Искать можно не только в document но и в конкретном теге
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const subList = document.querySelectorAll('.lesson__sub-list');
+                              p const subItems = subList[0].querySelectorAll('li');
+                              p console.log(subItems);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Неожиданный результат поиска
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p const subList =
+                                p 	document.querySelectorAll('.lesson__sub-list');
+                                p const listItems =
+                                p 	subList[0].querySelectorAll('.lesson__list .lesson__item-sub-list');
+                                p console.log(listItems);
+                                p В данном примере,
+                                p когда мы выбрали ".lesson__list .lesson__item-sub-list"
+                                p в контексте <`ul> с классом "lesson__sub-list", элемент с классом
+                                p ".lesson__item-sub-list" были всё равно найден, хотя
+                                p .lesson__list не является потомком элемента в котором происходил
+                                p поиск (".lesson__sub-list").
+                                p По умолчанию, querySelectorAll() проверяет только последний
+                                p элемент без учёта контекста.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Возвращает первый элемент внутри elem, соответствующий данному CSS-селектору.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p elem.querySelector(CSS);
+                            p const lessonList = document.querySelectorAll('.lesson__list')[0];
+                            p const lessonList = document.querySelector('.lesson__list');
+                            p console.log(lessonList);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 document.getElementById(ID)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Если у элемента есть атрибут id,
+                              p то мы можем получить его вызовом document.getElementById(id),
+                              p где бы он ни находился.
+                              p const elem = document.getElementById('listItem');
+                              p console.log(elem);
+                              p 1. id - уникален
+                              p 2. Поиск полько внутри document.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5  elem.getElementsByTagName(tag) ищет элементы с данным тегом и возвращает ихколлекцию.Передав "*" вместо тега, можно получить всех потомков.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p elem.getElementsByTagName(tag)
+                              p const elems = document.getElementsByTagName('li');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 lem.getElementsByClassName(className)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p возвращает элементы, которые имеют данный CSS - класс.
+                            p const elems = document.getElementsByClassName('lesson__item-list');
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 document.getElementById(ID) и elem.getElementsBy*
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p На данный момент, они используются редко,
+                                    p так как querySelectorAll может их заменить.
+                                    p Но отличия все же есть!
+                                    p //getElementsBy*
+                                    p // ВНИМАНИЕ - getElementsBy.. а не getElementBy..
+                                    p document.getElementsByName(name) возвращает элементы с
+                                    p заданным атрибутом name.Очень редко используется.
+                                    p Поиск полько внутри document.
+                                    p const elems = document.getElementsByName('list');
+                                    p console.log(elems);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Живая статическа коллекции
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p  Получаем статическую коллекцию
+                              p const listStatic = document.querySelectorAll('.lesson__item-list');
+                              p  Получаем "живую" коллекцию
+                              p const listLive = document.getElementsByClassName('lesson__item-list');
+                              p console.log(listStatic);
+                              p console.log(listLive);
+                  
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 closest
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Метод elem.closest(css) ищет ближайшего предка,
+                              p который соответствует CSS - селектору.Сам элемент
+                              p также включается в поиск.
+                              p 
+                              p Предки элемента это родитель, родитель родителя,
+                              p его родитель и так далее.Вместе они образуют цепочку
+                              p иерархии от элемента до вершины.
+                              p 
+                              p Другими словами, метод closest поднимается вверх от
+                              p элемента и проверяет каждого из родителей.Если он
+                              p соответствует селектору, поиск прекращается. Метод возвращает
+                              p либо предка, либо null, если такой элемент не найден.
+                              p 
+                              p Напомню свойство parentElement возвращает только
+                              p непосредственного родителя элемента
+                              p const elem = document.querySelector('.lesson__item-sub-list');
+                              p const parentList = elem.closest('.lesson__list');
+                              p console.log(parentList);
+                              p Очень полезный метод, часто используется для проверки
+                              p на существование того или иного родителя, либо для изменения
+                              p родителя конкретного элемента
+
+
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Создаем новый HTML-объект
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const lessonList = document.querySelector('.lesson__list');
+                              p lessonList.insertAdjacentHTML(
+                              p 	"beforeend",
+                              p 	'<`li class="lesson__item-list">Новый пункт<`/li>'
+                              p   );
+                   
+                    
+                
+                    
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Проверка matches
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p ничего не ищет, а проверяет, удовлетворяет ли
+                              p элемент CSS-селектору, и возвращает true или false.
+                              p const elems = document.querySelectorAll('.lesson__item-list');
+                              p for (let elem of elems) {
+                              p 	if (elem.matches('[class$="lesson__item-list_red"]')) {
+                              p 		console.log('Крассный');
+                              p 	} else if (elem.matches('[class$="lesson__item-list_blue"]')) {
+                              p 		console.log('Синий');
+                              p 	}
+                              p }
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 получив объект тем или иным способом мы можем применять свойства навигации 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p const text = document.querySelector('.lesson__text');
+                                p const list = text.nextElementSibling;
+                                p console.log(list);
+                      h2 Изменение документа
+                      
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Cодержимое элемента innerHTML
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p // Получаем объект
+                              p const textElement = document.querySelector('.lesson__text');
+                              p // Получаем содержимое объекта "как есть" вместе с HTML
+                              p const textElementContent = textElement.innerHTML;
+                              p console.log(textElementContent);
+                              p // Перезаписываем содержимое объекта
+                              p textElement.innerHTML = `Живи, а работай в свободное время!`;
+                              p // Дописываем содержимое объекта
+                              p textElement.innerHTML =
+                              p 	`<`p>${textElementContent}<`/p> <`p>Живи, а работай в
+                              p 	<`span class="yellow">свободное<`/span> время!<`/p>`;
+                              p console.log(textElement.innerHTML);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Cодержимое элемента целиком outerHTML
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p // Получаем объект
+                              p const textElement = document.querySelector('.lesson__text');
+                              p // Получаем содержимое объекта "как есть"
+                              p // вместе с HTML, а также сам элемент
+                              p const textElementContent = textElement.outerHTML;
+                              p console.log(textElementContent);
+                              p textElement.outerHTML = `<`p>Живи, а работай в
+                              p 	<`span class="yellow">свободное<`/span> время!<`/p>`;
+                              p console.log(textElement.outerHTML);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Просто текст элемента textContent
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Получаем объект
+                                p const textElement = document.querySelector('.lesson__text');
+                                p const textElementContent = textElement.textContent;
+                                p console.log(textElementContent);
+                                p Полезная возможность textContent - записывать
+                                p текст «безопасным способом».
+                                p textElement.textContent = `<`p>Живи, а работай в
+                                p 	<`span class="yellow">свободное<`/span> время!<`/p>`;
+                                p console.log(textElement.textContent);
+                                p Мы не хотим, чтобы на сайте появлялся произвольный HTML-код.
+                                p Присваивание через textContent – один из способов от
+                                p этого защититься.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 data
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Cодержимое текстового узла/комментария
+                                p // Получаем объект
+                                p const textElement = document.querySelector('.lesson__text');
+                                p const getComment = textElement.nextSibling;
+                                p console.log(getComment);
+                                p console.log(getComment.data);
+                                p // Изменение текстового узла/комментария
+                                p getComment.data = 'Привет';
+                                p console.log(getComment.data);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Создание элементов и узлов.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p // Создание нового элемента (тега)
+                              p const newElement = document.createElement('div');
+                              p // Наполняем новый элемент
+                              p newElement.innerHTML = `Живи, а работай в
+                              p 	<`span class="yellow">свободное<`/span> время!`;
+                              p console.log(newElement);
+                              p // Создание нового текстового узла
+                              p const newText = document.createTextNode('Привет!');
+                              p console.log(newText);
+                              p Созданные объекты находятся в константах,
+                              p но не являются частью документа
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Методы вставки
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                  p // Получаем объект
+                                  p const textElement = document.querySelector('.lesson__text');
+                                  p 
+                                  p // Создание нового элемента (тега)
+                                  p const newElement = document.createElement('div');
+                                  p // Наполняем новый элемент
+                                  p newElement.innerHTML = `Живи, а работай в
+                                  p 	<`span class="yellow">свободное<`/span> время!`;
+                                  p 
+                                  p // Вставляем новый элемент...
+                                  p 
+                                  p //...перед объектом
+                                  p //textElement.before(newElement);
+                                  p //...после объекта
+                                  p //textElement.after(newElement);
+                                  p //...внутрь и в начало объекта
+                                  p //textElement.prepend(newElement);
+                                  p //...внутрь и в конец объекта
+                                  p //textElement.append(newElement);
+                                  p 
+                                  p // Вставка нескольких фрагментов сразу
+                                  p //textElement.append(newElement, "Привет!");
+                                  p 
+                                  p // Можно вставлять строку
+                                  p textElement.append(`Живи, а работай в
+                                  p 	<`span class="yellow">свободное<`/span> время!`);
+                                  p Другими словами, строки вставляются безопасным способом,
+                                  p как делает это textContent. Поэтому эти методы могут
+                                  p использоваться только для вставки DOM-узлов или
+                                  p текстовых фрагментов. А что, если мы хотим вставить
+                                  p HTML именно "как HTML", со всеми тегами и прочим,
+                                  p как это делает innerHTML?
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 insertAdjacentHTML/Text/Element
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Получаем объект
+                                p const textElement = document.querySelector('.lesson__text');
+                                p // Вставляем текст, HTML, элемент
+                                p textElement.insertAdjacentHTML(
+                                p 	'afterend',
+                                p 	`<`p>Живи, а работай в
+                                p 	<`span class="yellow">свободное<`/span> время!<`/p>`
+                                p );
+                                p "beforebegin" – вставить html непосредственно перед textElement,
+                                p "afterbegin" – вставить html в начало textElement,
+                                p "beforeend" – вставить html в конец textElement,
+                                p "afterend" – вставить html непосредственно после textElement.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Дополнительно существуют insertAdjacentText и insertAdjacentElement
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p // Получаем объект
+                              p const textElement = document.querySelector('.lesson__text');
+                              p // Вставляем текст
+                              p textElement.insertAdjacentText(
+                              p 	'beforeend',
+                              p 	`Живи, а работай в
+                              p 	<`span class="yellow">свободное<`/span> время!`
+                              p )
+                              p // Создание нового элемента (тега)
+                              p const newElement = document.createElement('div');
+                              p // Наполняем новый элемент
+                              p newElement.innerHTML = `Живи, а работай в
+                              p 	<`span class="yellow">свободное<`/span> время!`;
+                              p 
+                              p // Вставляем элемент
+                              p textElement.insertAdjacentElement(
+                              p 	'beforeend',
+                              p 	newElement
+                              p );
+                              p На практике часто используется только insertAdjacentHTML.
+                              p Потому что для элементов и текста у нас есть методы
+                              p append/prepend/before/after – их быстрее написать,
+                              p и они могут вставлять как узлы, так и текст.
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Перенос элемента
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Мы можем вставлять не только новые узлы,
+                              p но и переносить существующие.
+                              p Все методы вставки автоматически
+                              p удаляют узлы со старых мест.
+                              p // Получаем объект
+                              p const lessonBlock = document.querySelector('.lesson');
+                              p // Получаем объект
+                              p const title = document.querySelector('h3');
+                              p // Переносим title в конец блока lessonBlock
+                              p lessonBlock.append(title);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Клонирование узлов cloneNode
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p Если нужен не перенос а именно копия элемента
+                              p // Получаем объект
+                              p const textElement = document.querySelector('.lesson__text');
+                              p // Клонирование без дочерних элементов
+                              p //const cloneTextElement = textElement.cloneNode();
+                              p // Глубокое клонирование вместе с содержимым
+                              p const cloneTextElement = textElement.cloneNode(true);
+                              p const lessonBlock = document.querySelector('.lesson');
+                              p lessonBlock.append(cloneTextElement);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Удаление узлов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p // Получаем объект
+                              p const textElement = document.querySelector('.lesson__text');
+                              p // Удаляем объект
+                              p textElement.remove();
+                      h2 Стили и классы
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Управление классами
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Свойства className и classList
+                                p Изменение класса является одним
+                                p из наиболее часто используемых действий в JavaScript.
+                                p // Свойство className
+                                p // Получаем элемент
+                                p const element = document.querySelector('.lesson__item-list_red');
+                                p // Получаем имена классов
+                                p const elementClassNames = element.className;
+                                p console.log(elementClassNames);
+                                p // Перезаписываем имя класса
+                                p element.className = "red";
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Свойство classList
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                  p Специальный объект с методами для добавления/удаления
+                                  p одного класса.
+                                  p // Получаем элемент
+                                  p //const element = document.querySelector('.lesson__item-list_red');
+                                  p // Добавить класс
+                                  p element.classList.add('active');
+                                  p // Удалить класс
+                                  p element.classList.remove('active');
+                                  p // Добавить класс, если его нет, а если есть удалить.
+                                  p element.classList.toggle('active');
+                                  p // Проверка наличия класса, возвращает true/false.
+                                  p element.classList.contains('active');
+                                  p // Добавляем класс
+                                  p element.classList.add('active');
+                                  p // Проверяем наличие класса
+                                  p if (element.classList.contains('active')) {
+                                  p 	console.log(`У element есть класс active!`);
+                                  p }
+                                  p //classList является перебираемым, поэтому можно 
+                                  p //перечислить все классы при помощи for..of
+                                  p for (let className of element.classList) {
+                                  p 	console.log(className);
+                                  p }
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Управление стилями
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // element.style
+                                p // Задаем стиль с помощью CSS свойства
+                                p element.style.color = "red";
+                                p // Для свойства из нескольких слов используется camelCase:
+                                p // margin-bottom
+                                p element.style.marginBottom = "30px";
+                                p // z-index
+                                p element.style.zIndex = "10";
+                                p // и т.д.
+                                p // Каждое свойство пишется отдельно
+                                p // Получение значения свойства
+                                p // Только если оно записано в атрибуте style
+                                p console.log(element.style.marginBottom);
+                                p // Сброс стиля
+                                p element.style.marginBottom = "";
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Полная перезапись стилей
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p style.cssText
+                              p // Получаем элемент
+                              p const element = document.querySelector('.lesson__item-list_red');
+                              p element.style.cssText = `
+                              p 	margin-bottom: 30px;
+                              p 	color:red;
+                              p `;
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Вычисленные стили.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p getComputedStyle(element, [pseudo])
+                                p // Получение значения свойства
+                                p // Только если оно записано в атрибуте style
+                                p console.log(element.style.fontSize);
+                                p // Стиль элемента
+                                p const elementStyle = getComputedStyle(element);
+                                p console.log(elementStyle.fontSize);
+                                p // Стиль псевдоэлемента
+                                p const elementBeforeStyle = getComputedStyle(element, "::before");
+                                p console.log(elementBeforeStyle.backgroundColor);
+                                p // Чтобы получить конкретное значение
+                                p // Следует писать точное (полное) свойство
+                                p // Получаем точное значение
+                                p console.log(elementStyle.paddingLeft);
+                                p // Получаем не предсказуемую запись
+                                p console.log(elementStyle.padding); // В FF <`empty string>
+                                p // Получаем элемент
+                                p const element = document.querySelector('.lesson__item-list_red');
+                                p // Стиль элемента
+                                p const elementStyle = getComputedStyle(element);
+                                p //Только для чтения
+                                p elementStyle.paddingLeft = "50px";
+                                p // Лайвхаки
+                                p // Получаем элемент
+                                p const element = document.querySelector('.lesson__item-list_red');
+                                p // Стиль элемента
+                                p const elementStyle = getComputedStyle(element);
+                                p console.log(elementStyle.paddingLeft);
+                                p //Получаем число
+                                p const paddingLeft = parseInt(elementStyle.paddingLeft);
+                                p console.log(paddingLeft);
+                                p //Помним про единицы измерения
+                                p element.style.marginLeft = "20px";
+                                p Как мы уже поняли, из JS мы можем управлять как классами
+                                p так и стилями объекта.
+                                p Управлять классами – более приоритетный вариант по
+                                p сравнению со стилями.
+                                p Манипулировать свойством style следует только в том случае,
+                                p если классы нам помочь не могут. Например, при изменении
+                                p координатов объекта на лету.
+                                p Одним словом, если мы можем возложить решение
+                                p той или иной задачи на плечи CSS путем манипуляции с классами,
+                                p то так и следует сделать!
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Атрибуты и свойства
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p У разных DOM-элементов могут быть разные свойства.
+                              p Например, у тега <`a>, есть свойства, связанные со ссылками,
+                              p а у тега <`input> – свойства, связанные с полем ввода и т.д.
+                              p В HTML у тегов могут быть атрибуты.
+                              p Когда браузер парсит HTML, чтобы создать
+                              p DOM-объекты для тегов, он распознаёт стандартные
+                              p атрибуты и создаёт DOM-свойства для них.
+                              p Каждый DOM-узел принадлежит соответствующему встроенному классу.
+                              p const link = document.querySelector('.lesson__link');
+                              p const input = document.querySelector('.lesson__input');
+                              p console.log(link.href);
+                              p console.log(input.href);
+                              p console.log(input.value);
+                              p console.log(link.value);
+                              p //Получить список доступных свойств
+                              p console.dir(link);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Произвольные атрибуты
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p //Получаем элемент
+                                p //const lessonText = document.querySelector('.lesson__text');
+                                p //Проверяем наличие атрибута.
+                                p lessonText.hasAttribute('name');
+                                p //Получаем значение атрибута.
+                                p lessonText.getAttribute('name');
+                                p //Устанавливаем значение атрибута.
+                                p lessonText.setAttribute('name', 'value');
+                                p //Удаляем атрибут.
+                                p lessonText.removeAttribute('name');
+                                p // Пример
+                                p // Устанавливаем значение атрибута
+                                p lessonText.setAttribute('some-attribute', 'some-value');
+                                p //Проверяем наличие атрибута
+                                p if (lessonText.hasAttribute('some-attribute')) {
+                                p 	console.log('some-attribute существует!');
+                                p }
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Синхронизация между атрибутами и свойствами
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Мы можем обратиться к тому или иному свойству через
+                                p методы доступа к атрибутам.
+                                p Когда стандартный атрибут изменяется, соответствующее
+                                p свойство автоматически обновляется.
+                                p Это работает и в обратную сторону (за некоторыми исключениями).
+                                p //Получаем элемент
+                                p //const input = document.querySelector('.lesson__input');
+                                p input.setAttribute('id', '123');
+                                p console.log(input.id);
+                                p input.id = "321";
+                                p console.log(input.getAttribute('id'));
+                                p // НО
+                                p input.setAttribute('value', 'Привет!');
+                                p console.log(input.value);
+                                p input.value = "Как дела?";
+                                p console.log(input.getAttribute('value'));
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Нестандартные атрибуты, dataset
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Мы уже использовали произвольные атрибуты,
+                                p но это рискованно.
+                                p Все атрибуты, начинающиеся с префикса «data-»,
+                                p зарезервированы для использования программистами.
+                                p Они доступны в свойстве dataset.
+                                p //Получаем элемент
+                                p const lessonText = document.querySelector('.lesson__text');
+                                p //Получаем data-атрибут
+                                p console.log(lessonText.dataset.size);
+                                p //Перезаписываем data-атрибут
+                                p lessonText.dataset.size = "5810";
+                                p console.log(lessonText.dataset.size);
+                                p // data-size-value
+                                p console.log(lessonText.dataset.sizeValue);
+                      li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h5._5 Полезные свойства
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p const link = document.querySelector('.lesson__link');
+                              p //Получаем тег элемента
+                              p console.log(link.tagName);
+                              p //Скрыть/показать элемент
+                              p link.hidden = true;
+                              p console.log(link.hidden);
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 объекты 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Создание объекта 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p   let userInfo = new Object(); // синтаксис "конструктор объекта"
+                                p   let userInfo = {};  // синтаксис "литерал объекта"
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Свойства объектов. Ключ + значение
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p //У каждого свойства есть ключ
+                                p //(также называемый «имя» или «идентификатор»).
+                                p //После имени свойства следует двоеточие ":",
+                                p //и затем указывается значение свойства.
+                                p //Если в объекте несколько свойств,
+                                p //то они перечисляются через запятую.
+                                p let userInfo = {
+                                p 	name: "Вася", // Свойство объекта
+                                p 	age: 30, // Последняя (висячая) запятая
+                                p };
+                                p console.log(userInfo);
+                                p console.log(userInfo.name);
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Имена свойств
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Имя из двух и больше слов
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	"likes javascript": true,
+                                p };
+                                p console.log(userInfo.name);
+                                p console.log(userInfo['name']);
+                                p console.log(userInfo["likes javascript"]);
+                          
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  Вычисляемое либо передаваемое имя
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Вычисляем имя
+                                p let firstPart = "likes";
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	[firstPart + " javascript"]: true,
+                                p };
+                                p console.log(userInfo["likes javascript"]);
+                                p // Передаем имя
+                                p let firstPart = "likes";
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	[firstPart]: true,
+                                p };
+                                p console.log(userInfo[firstPart]);
+                                p 
+                                p // Преимущество квадратных скобок
+                                p //let key = "name";
+                                p //console.log(userInfo[key]);
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  Зарезервированные слова в именах
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	let: "Вася",
+                                p 	for: 30,
+                                p };
+                                p console.log(userInfo.let);
+                                p console.log(userInfo.for);
+
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Имена = строки либо символы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	0: "Вася", // 0 тоже самое что "0"
+                                p };
+                                p console.log(userInfo[0]);
+                                p console.log(userInfo["0"]);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Тип данных Symbol
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Создаём символ id с описанием (именем) "id"
+                                p let id = Symbol("id");
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	[id]: "Некое значение"
+                                p };
+                                p console.log(userInfo);
+                                p 
+                                p // Основное применение символов:
+                                p // 1.«Скрытые» свойства объектов
+                                p //		Символьное свойство не появится в for..in
+                                p // 2. Использование системных символов
+                                p // 	Symbol.iterator, Symbol.toPrimitive и т.д.
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Вложенность
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	}
+                                p }
+                                p console.log(userInfo);
+                                p console.log(userInfo.address);
+                                p console.log(userInfo.address.city);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Свойство из переменной
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p function makeUserInfo(name, age) {
+                                p 	return {
+                                p 		name: name,
+                                p 		age: age,
+                                p 		// ...другие свойства
+                                p 	};
+                                p }
+                                p let user = makeUserInfo("Вася", 30);
+                                p console.log(user);
+
+                                p function makeUserInfo(name, age) {
+                                p 	return {
+                                p 		name, // Тоже самое что и  name: name,
+                                p 		age,// Тоже самое что и  age: age,
+                                p 		"likes javascript": true,
+                                p 		// ...другие свойства
+                                p 	};
+                                p }
+                                p let user = makeUserInfo("Вася", 30);
+                                p console.log(user);
+
+
+                        h2 Изменение объекта
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Добавление свойства
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p }
+                                p console.log(userInfo);
+                                p userInfo.age = 30;
+                                p console.log(userInfo);
+                                p userInfo['likes javascript'] = true;
+                                p console.log(userInfo);
+                                p userInfo.address = {
+                                p 	city: "Uzhhorod",
+                                p 	street: "Freedom",
+                                p };
+                                p console.log(userInfo);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Удаление свойства
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	"likes javascript": true
+                                p }
+                                p console.log(userInfo);
+                                p 
+                                p delete userInfo.age;
+                                p 
+                                p console.log(userInfo);
+                                p 
+                                p delete userInfo["likes javascript"];
+                                p 
+                                p console.log(userInfo);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Изменение свойства
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p }
+                                p console.log(userInfo);
+                                p 
+                                p userInfo.age = 18;
+                                p 
+                                p console.log(userInfo);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Изменение свойства даже в константе
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p const userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p }
+                                p console.log(userInfo);
+                                p 
+                                p userInfo.age = 18;
+                                p 
+                                p console.log(userInfo);
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Копирование объектов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // При копировании объекта в другую переменную
+                                p // сам объект не дублируется, а копируется только ссылка на него
+                                p 
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p }
+                                p 
+                                p console.log(userInfo);
+                                p 
+                                p let user = userInfo;
+                                p 
+                                p console.log(user);
+                                p 
+                                p user.age = 18;
+                                p 
+                                p console.log(userInfo);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Дублирование объектов (Object.assign)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Синтаксис
+                                p //Object.assign(куда(объект), что(свойство #1), что(свойство #2), ...);
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p }
+                                p 
+                                p let user = Object.assign({}, userInfo);
+                                p 
+                                p user.age = 18;
+                                p 
+                                p console.log(userInfo);
+                                p console.log(user);
+                                p // Еще про Object.assign
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p }
+                                p Object.assign(userInfo, { ['likes javascript']: true, city: "Uzhhorod" });
+                                p console.log(userInfo);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Проверка существования свойства
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p }
+                                p //console.log(userInfo.age);
+                                p 
+                                p if (userInfo.age) { // true или false
+                                p 	console.log(userInfo.age);
+                                p }
+                                p // Опциональная цепочка
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	//address: {
+                                p 	//	city: "Uzhhorod",
+                                p 	//	street: "Freedom",
+                                p 	//}
+                                p }
+                                p //console.log(userInfo.address.street);
+                                p console.log(userInfo?.address?.street);
+                                p                         li.akr__item.akr-item
+                                p                           .akr-item__title.akr-title-js
+                                p                               h4._5 Оператор "in"
+                                p                               i.icon-chevron-down.akr-item__img.akr-item-img-js
+                                p                           .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	//name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	}
+                                p }
+                                p if ("name" in userInfo) {
+                                p 	console.log(userInfo.name);
+                                p }
+                                p 
+                                p //В большинстве случаев сработает сравнение с undefined.
+                                p //либо опциональная цепочка ?.
+                                p //Но есть особый случай, когда свойство существует, 
+                                p //но содержит значение undefined. 
+                                p //В этом случае необходимо использовать "in".
+                                p let userInfo = {
+                                p 	name: undefined,
+                                p 	// ...следующие свойства
+                                p }
+                                p if (userInfo.name) { // false
+                                p 	console.log(userInfo.name);
+                                p }
+                                p if ("name" in userInfo) { //true
+                                p 	console.log(userInfo.name);
+                                p }
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Цикл «for…in»
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Для перебора всех свойств объекта используется цикл for..in.
+                                p // Этот цикл отличается от изученного ранее цикла for(;;).
+                                p 
+                                p for (let key in object) {
+                                p 	// тело цикла выполняется для каждого свойства объекта
+                                p }
+                                p 
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	}
+                                p }
+                                p 
+                                p for (let key in userInfo) {
+                                p 	// ключи
+                                p 	console.log(key); // name, age, address
+                                p 	// значения ключей
+                                p 	console.log(userInfo[key]); // Вася, 30, Object {}
+                                p }
+                                p 
+                                p for (let key in userInfo.address) {
+                                p 	// ключи
+                                p 	console.log(key); // city, street
+                                p 	// значения ключей
+                                p 	console.log(userInfo.address[key]); // Uzhhorod, Freedom
+                                p }
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Методы объекта
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	},
+                                p 	//showInfo: function () {
+                                p 	//	console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}                                p `);
+                                p 	//}
+                                p 	showInfo() {
+                                p 		console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}                                p `);
+                                p 	}
+                                p }
+                                p userInfo.showInfo();
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Использование "this"
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	},
+                                p 	showInfo() {
+                                p 		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.                             p street}`);
+                                p 		console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+                                p 	}
+                                p }
+                                p userInfo.showInfo();
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	},
+                                p 	showInfo() {
+                                p 		//function show() {
+                                p 		//	console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+                                p 		//}
+                                p 
+                                p 		// У стрелочной функции нет своего "this" используются
+                                p 		// значение из внешнего метода userInfo.showInfo()
+                                p 		let show = () => console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}                               p `);
+                                p 		show();
+                                p 	}
+                                p }
+                                p userInfo.showInfo();
+                                p // Преимущество "this"
+                                p let userInfo = {
+                                p 	name: "Вася",
+                                p 	age: 30,
+                                p 	address: {
+                                p 		city: "Uzhhorod",
+                                p 		street: "Freedom",
+                                p 	},
+                                p 	showInfo() {
+                                p 		console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+                                p 		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.                             p street}`);
+                                p 	}
+                                p }
+                                p userInfo.showInfo();
+                                p let user = userInfo;
+                                p userInfo = null;
+                                p user.showInfo();
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Функция-конструктор
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Обычный синтаксис создания объекта{... } позволяет создать
+                                p только один объект. Но зачастую нам нужно создать множество
+                                p однотипных объектов, таких как пользователи, элементы меню и т.д.
+                                p Это можно сделать при помощи функции - конструктора и оператора "new".
+                                p Функции - конструкторы являются обычными функциями.
+                                p Но есть два правила:
+                                p 1. Имя функции - конструктора должно начинаться с большой буквы.
+                                p 2. Функция - конструктор должна вызываться при помощи
+                                p 	оператора "new".
+                                p function UserInfo(name) {
+                                p 
+                                p 	// this = {}; Создается пустой объект (неявно)
+                                p 
+                                p 	this.name = name;
+                                p 	this.age = 30;
+                                p 
+                                p 	// return this; Возвращается объект (неявно)
+                                p }
+                                p 
+                                p console.log(new UserInfo('Вася'));
+                                p console.log(new UserInfo('Лена'));
+                                p Когда мы пишем наш код, используя объекты для представления сущностей реального мира,
+                                p – это называется объектно - ориентированное программирование или сокращённо: «ООП».
+                                p ООП является большой предметной областью и интересной наукой само по себе.
+                                p Как выбрать правильные сущности ? Как организовать взаимодействие между ними ?
+                                p Это – создание архитектуры, и есть хорошие книги по этой теме,
+                                p такие как «Приёмы объектно - ориентированного проектирования.
+                                p Паттерны проектирования» авторов Эрих Гамма, Ричард Хелм, Ральф Джонсон,
+                                p Джон Влиссидес или «Объектно - ориентированный анализ и проектирование с примерами приложений»
+                                p Гради Буча, а также ещё множество других книг.
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 массивы
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Создание массива 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = new Array(); // Используется редко
+                                p let arr = [];
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Получение значений 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arrOne = [
+                                p 	'Ваня', // 0я позиция
+                                p 	'Иштван', // 1я позиция
+                                p 	'Оля', // 2я позиция
+                                p ];
+                                p console.log(arrOne[1]);
+                                p console.log(arrOne[5]); // undefined
+                                p let arrTwo = [
+                                p 	"Коля",
+                                p 	{
+                                p 		type: "JS",
+                                p 		age: 36
+                                p 	},
+                                p 	true,
+                                p 	function () {
+                                p 		console.log('Привет, я Коля');
+                                p 	}
+                                p ];
+                                p 
+                                p console.log(arrTwo);
+                                p console.log(arrTwo[0]);
+                                p console.log(arrTwo[1].type);
+                                p console.log(arrTwo[2]);
+                                p arrTwo[3]();
+                                p 
+                                p // Многомерные массивы
+                                p let matrix = [
+                                p 	[1, 2, 3],
+                                p 	[4, 5, 6],
+                                p 	[7, 8, 9]
+                                p ];
+                                p console.log(matrix);
+                                p console.log(matrix[0][1]);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  Длина массива. Свойство length
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arrOne = ['Ваня', 'Иштван', 'Оля',];
+                                p console.log(arrOne);
+                                p console.log(arrOne.length);
+                                p arrOne.length = 0;
+                                p console.log(arrOne);
+                                p // Таким образом, самый простой способ
+                                p // очистить массив – это arrOne.length = 0;
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  Доступ к массиву
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Напомню что массив является объектом и, следовательно,
+                                p ведёт себя как объект. Например, копируется по ссылке:
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p console.log(arr);
+                                p let arrNew = arr;
+                                p arrNew.length = 2;
+                                p console.log(arr);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  Изменение значений
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p // Меняем существующее
+                                p arr[0] = 'Коля';
+                                p console.log(arr);
+                                p // Добавляем новое
+                                p arr[3] = 'Ваня';
+                                p console.log(arr);
+
+                        h2 МЕТОДЫ МАССИВОВ
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  push - добавляет элемент в конец массива
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p arr.push('Вася');
+                                p console.log(arr);
+                                p arr.push('Дима', 'Катя');
+                                p console.log(arr);
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  shift - удаляет элемент в начале
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p let arr = ['Ваня', 'Иштван', 'Оля',];
+                            p arr.shift();
+                            p console.log(arr);
+
+
+
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  pop  - удаляет последний элемент
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p arr.pop();
+                                p console.log(arr);
+                        
+                        
+                        
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  unshift  - добавляет элемент в начало массива
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p arr.unshift('Вася');
+                                p console.log(arr);
+                                p 
+                                p arr.unshift('Дима', 'Катя');
+                                p console.log(arr);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Удаление/добавление/изменение конкретных элементов 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p delete arr[1];
+                                p console.log(arr);
+                                p console.log(arr[1]);
+                                p console.log(arr.length);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  splice. Позволяет добавлять, удалять и заменять элементы.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Удаляем элемент
+                                p let arrOne = ['Ваня', 'Иштван', 'Оля',];
+                                p // Начиная с первой позиции (Иштван), удаляем один элемент
+                                p arrOne.splice(1, 1);
+                                p console.log(arrOne);
+                                p 
+                                p // Удаляем элемент и возвращаем его в переменную
+                                p let arrTwo = ['Ваня', 'Иштван', 'Оля',];
+                                p let removed = arrTwo.splice(1, 1);
+                                p console.log(removed);
+                                p 
+                                p // Заменяем элементы
+                                p let arrThree = ['Ваня', 'Иштван', 'Оля',];
+                                p // Начиная с нулевой позиции (Ваня), заменяем один элемент
+                                p arrThree.splice(0, 1, 'Коля');
+                                p console.log(arrThree);
+                                p 
+                                p // Добавляем элементы
+                                p let arrFour = ['Ваня', 'Иштван', 'Оля',];
+                                p // Начиная с первой позиции (перед 'Иштван'), добавляем два элемента
+                                p arrFour.splice(1, 0, 'Коля', 'Маша');
+                                p console.log(arrFour);
+                                p 
+                                p // Удаляем элемент
+                                p let arrFive = ['Ваня', 'Иштван', 'Оля',];
+                                p // Начиная с последней позиции (Оля), удаляем один элемент
+                                p arrFive.splice(-1, 1);
+                                p console.log(arrFive);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  slice  Cоздаёт новый массив, в который копирует часть либо весь массив
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Копируем часть массива
+                                p let arrOne = ['Ваня', 'Иштван', 'Оля',];
+                                p 
+                                p // Начиная с 1й позиции 'Иштван',
+                                p // до 2й позиции 'Оля' (не включая)
+                                p let arrTwo = arrOne.slice(1, 2);
+                                p console.log(arrTwo);
+                                p 
+                                p // Начиная с предпоследней позиции 'Иштван',
+                                p // до последней 'Оля' (не включая)
+                                p let arrThree = arrOne.slice(-2, -1);
+                                p console.log(arrThree);
+                                p 
+                                p // Копируем весь массив
+                                p let arrFour = arrOne.slice();
+                                p console.log(arrFour);
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  concat Cоздаёт новый массив, в который копирует данные из других массивов  и дополнительные значения (в конец массива)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arrOne = ['Ваня', 'Иштван', 'Оля',];
+                                p let arrTwo = arrOne.concat('Петя');
+                                p console.log(arrTwo);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Поиск в массиве indexOf/lastIndexOf и includes аналоги строковым методам
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p 1. arr.indexOf(item, from) ищет item, начиная с индекса from,
+                                p 	и возвращает индекс, на котором был найден искомый
+                                p 	элемент, в противном случае - 1.
+                                p 2. arr.lastIndexOf(item, from) – то же самое, но ищет справа налево.
+                                p 3. arr.includes(item, from) – ищет item, начиная с индекса from,
+                                p 	и возвращает true, если поиск успешен.
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p 
+                                p // indexOf
+                                p console.log(arr.indexOf('Иштван'));
+                                p console.log(arr.indexOf('Вася'));
+                                p console.log(arr.indexOf('Иштван', 2));
+                                p 
+                                p // includes
+                                p console.log(arr.includes('Иштван'));
+                                p console.log(arr.includes('Вася'));
+                                p console.log(arr.includes('Иштван', 2));
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 find и findIndex поиск в массиве объектов с пределённым условием
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let result = arr.find(function(item, index, array) {
+                                p   // если true - возвращается текущий элемент и перебор прерывается
+                                p   // если все итерации оказались ложными, возвращается undefined
+                                p });
+                                p let arr = [
+                                p 	{ name: 'Вася', age: 36 },
+                                p 	{ name: 'Коля', age: 18 },
+                                p 	{ name: 'Оля', age: 'Не скажу' },
+                                p ]
+                                p 
+                                p let resultOne = arr.find(function (item, index, array) {
+                                p 	return item.age === 18;
+                                p });
+                                p 
+                                p //let resultOne = arr.find(item => item.age === 18);
+                                p console.log(resultOne);
+                                p 
+                                p //findIndex
+                                p let resultTwo = arr.findIndex(item => item.age === 18);
+                                p console.log(resultTwo);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 filter Метод ищет все элементы, на которых функция-колбэк вернёт true.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let results = arr.filter(function (item, index, array) {
+                                p 	// если true - элемент добавляется к результату, и перебор продолжается
+                                p 	// возвращается пустой массив в случае, если ничего не найдено
+                                p });
+                                p let arr = [
+                                p 	{ name: 'Вася', age: 36 },
+                                p 	{ name: 'Коля', age: 18 },
+                                p 	{ name: 'Оля', age: 'Не скажу' },
+                                p ]
+                                p let result = arr.filter(function (item, index, array) {
+                                p 	return item.age >= 18;
+                                p });
+                                p console.log(result);
+
+                        h2 Сортировка массивов
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 arrOne  -сортировка слов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arrOne = ['Иштван', 'Ваня', 'Оля'];
+                                p console.log(arrOne.sort());
+
+
+
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Сортировка чисел
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arrTwo = [8, 22, 1,];
+                                p console.log(arrTwo.sort());
+                                p 
+                                p // По умолчанию элементы сортируются как строки.
+                                p // Для строк применяется лексикографический порядок,
+                                p // и действительно выходит, что "8" > "22".
+                                p console.log("8" > "22");
+                                p 
+                                p // поэтому для сортировки нужна функция
+                                p let arrTwo = [8, 22, 1,];
+                                p console.log(arrTwo.sort());
+                                p 
+                                p // Функция сортировки
+                                p 
+                                p function compareNumeric(a, b) {
+                                p 	console.log(`Сравниваем ${a} и ${b}`);
+                                p 	if (a > b) return 1;
+                                p 	if (a == b) return 0;
+                                p 	if (a < b) return -1;
+                                p 
+                                p 	//return a - b
+                                p }
+                                p 
+                                p //console.log(arrTwo.sort((a, b) => a - b));
+                                p 
+                                p console.log(arrTwo.sort(compareNumeric));
+
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 reverse меняет порядок элементов в массиве на обратный.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arrOne = ['Ваня', 'Иштван', 'Оля'];
+                                p console.log(arrOne.reverse());
+                        
+                        
+                        h2  Преобразование массивов
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 map.вызывает функцию для каждого элемента массива  и возвращает массив результатов выполнения этой функции.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let result = arr.map(function(item, index, array) {
+                                p   // возвращается новое значение вместо элемента
+                                p });
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p let result = arr.map(function (item, index, array) {
+                                p 	return item[0];
+                                p });
+                                p //let result = arr.map(item => item[0]);
+                                p console.log(arr);
+                                p console.log(result);
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 split преобразовывает строку в  массив по заданному разделителю
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let str = 'Ваня,Иштван,Оля';
+                                p let arr = str.split(',');
+                                p console.log(arr);
+                                p // Можно ограничить кол-во объектов
+                                p // которые попадут в массив
+                                p let arrTwo = str.split(',', 2);
+                                p console.log(arrTwo);
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 join преобразовывает массив в   строку c заданным разделителем
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p let srt = arr.join('.');
+                                p console.log(srt);
+                                p // Получение строки из массива
+                                p let arrTwo = ['Ваня', 'Иштван', 'Оля'];
+                                p console.log(String(arrTwo));
+
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Проверка Array.isArray()
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p массивы не образуют отдельный тип данных.
+                                p Они основаны на объектах.
+                                p let obj = {};
+                                p let arr = [];
+                                p console.log(typeof obj);
+                                p console.log(typeof arr);
+                                p // Как же нам узнать где массив а где нет?
+                                p if (Array.isArray(obj)) {
+                                p 	console.log('Это массив!');
+                                p } else {
+                                p 	console.log('Это не массив!');
+                                p }
+                        h2 Перебор элементов
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5  FOR
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p for (let i = 0; i < arr.length; i++) {
+                                p 	console.log(arr[i]);
+                                p }
+                        
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 FOR...OF
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p for (let arrItem of arr) {
+                                p 	console.log(arrItem);
+                                p }
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 forEach
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p   let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p   arr.forEach(function (item, index, array) {
+                                p   	console.log(`${item} находится на ${index} позиции в ${array}`);
+                                p   });
+                                p   // Стрелочная функция
+                                p   arr.forEach((item, index, array) => {
+                                p   	console.log(`${item} находится на ${index} позиции в ${array}`);
+                                p   });
+                                p let arr = ['Ваня', 'Иштван', 'Оля',];
+                                p arr.forEach(show);
+                                p function show(item) {
+                                p 	console.log(item);
+                                p }
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 reduce/reduceRight
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Синтаксис
+                                p let value = arr.reduce(function(previousValue, item, index, array) {
+                                p   // ...
+                                p }, [initial]);
+                                p К привычным нам аргументам item, index, array
+                                p добавляется previousValue:
+                                p previousValue – результат предыдущего вызова этой функции,
+                                p равен initial при первом вызове (если передан initial),
+                                p item – очередной элемент массива,
+                                p index – его индекс,
+                                p array – сам массив.
+                                p Функция применяется по очереди ко всем элементам
+                                p массива и «переносит» свой результат на следующий вызов.
+                                p let arrOne = [1, 2, 3, 4];
+                                p let reduceValueOne = arrOne.reduce(function (previousValue, item, index, array) {
+                                p 	return item + previousValue;
+                                p }, 0);
+                                p console.log(reduceValueOne);
+                                p Шаг №1
+                                p previousValue = 0
+                                p item = 1
+                                p их сумма = 1
+                                p Шаг №2
+                                p previousValue = 1
+                                p item = 2
+                                p их сумма = 3
+                                p Шаг №3
+                                p previousValue = 3
+                                p item = 3
+                                p их сумма = 6
+                                p Шаг №4
+                                p previousValue = 6
+                                p item = 4
+                                p их сумма = 10
+                                p let arrArrow = [1, 2, 3, 4];
+                                p let reduceValueArrow = arrArrow.reduce((pValue, item) => item + pValue, 0);
+                                p console.log(reduceValueArrow);
+                                p let arrTwo = ['Ваня', 'Иштван', 'Оля',];
+                                p Если не указать начальное значение, то оно будет равно
+                                p первому элементу массива (previousValue=Ваня)
+                                p А работа метода начнется со второго элемента (item=Иштван)
+                                p let reduceValueTwo = arrTwo.reduce(function (previousValue, item, index, array) {
+                                p 	console.log(previousValue);
+                                p 	console.log(item);
+                                p 	return `${item}, ${previousValue}`;
+                                p });
+                                p console.log(`Пользователи: ${reduceValueTwo}`);
+                                p // Метод arr.reduceRight работает аналогично, 
+                                p // но проходит по массиву справа налево.
+
+
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 все подряд
                     i.icon-chevron-down.tabs-item__img.tabs-img-js
                   .tabs__drop.tabs-drop.tabs-drop-js
                     ul.akr__body
@@ -315,7 +2361,34 @@
                                     p 
                                     p console.log(id);
                                     p 
-                                 
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 задержка выполнения функции
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                  p const reset = function reset(){
+                                  p alert("")
+                                  p }
+                                  p }
+                                  p 
+                                  p setTimeout(reset, 1000)                           
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 закрытие таба по клику по документу
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let menu = document.querySelector('.akr-item__title');
+                                p document.addEventListener('click', e => {
+                                p   let target = e.target;
+                                p   let its_menu = target == menu || menu.contains(target);
+                                p   
+                                p   if (!its_menu) {
+                                p    return this.areOptionsVisible = false;
+                                p   }
+                                p })
+                                p }
 
                         li.akr__item.akr-item
                           .akr-item__title.akr-title-js
@@ -344,10 +2417,9 @@
                         
                         li.akr__item.akr-item
                           .akr-item__title.akr-title-js
-                              h4._5  
+                              h4._5 вычисляет и возвращает наибольшее целое число, которое меньше или равно переданному числу (округляет число вниз) 
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                           .akr__drop.akr-drop.akr-drop-js
-                              p вычисляет и возвращает наибольшее целое число, которое меньше или равно переданному числу (округляет число вниз) 
                               p max = Math.floor(max);
                               p slice e,s (копирует с 1 до 3)
                               p arr.slice(1, 3)

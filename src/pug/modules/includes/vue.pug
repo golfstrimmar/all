@@ -1,0 +1,1806 @@
+
+//- алгоритмы
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 алгоритмы
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 подключение materialize 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p import 'materialize-css/dist/js/materialize.min.js';
+                                h5 в packaje.json
+                                p    "materialize-css": "^1.0.0-rc.2",
+                                p    "@mdi/font": "^5.9.55",
+                                h5 в app.vue 
+                                p  <`style lang="sass">
+                                p  @import '~materialize-css/dist/css/materialize.min.css'
+                                p  <`/style>
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 создание layouts 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  strong   1. находим на страницах html находим  общие для нескольких страниц блоки. эти части будут                                   p   оболочками на уже отрендеренных страницах. 
+                                  strong   2. открываем папку layouts на уровне components
+                                  strong   3. в этой папке формируем layouts из тех самых общих блоков по схеме ----
+                                  p   
+                                  p   <`template lang="pug">
+                                  p   .wrapper
+                                  p     section.first
+                                  p       .first__title
+                                  p         h1 Весенние ритмы-2021
+                                  p         ._title-1 г. Мариуполь
+                                  p       header.header
+                                  p         .header__body.container
+                                  p           nav.header__menu.menu
+                                  p             i.icon-x.header__close
+                                  p             ul.menu__list
+                                  p               li.menu__item
+                                  p                 a.menu__link(href='#!') Главная
+                                  p               li.menu__item
+                                  p                 a.menu__link(href='#!') Расписание турнира
+                                  p               li.menu__item
+                                  p                 a.menu__link(href='#!') Предварительная регистрация
+                                  p               li.menu__item
+                                  p                 a.menu__link(href='#!') Предварительные списки участников
+                                  p               li.menu__item
+                                  p                 a.menu__link(href='#!') Контакты
+                                  p           i.icon-align-justify.header__burger
+                                  p     section.contacts
+                                  p       .contacts__wrapper
+                                  p         router-view 
+                                  p   <`/template>
+                                  p   <`script>
+                                  p   
+                                  p   import Navbar from '@/components/Navbar';
+                                  p   import Sidebar from '@/components/Sidebar';
+                                  p   
+                                  p   export default {
+                                  p      data: () => ({
+                                  p        isOpen: true,
+                                  p      }),
+                                  p        components: { Navbar,Sidebar   },
+                                  p          mounted() {     }, 
+                                  p           methods: { 
+                                  p               },  computed:{      }
+                                  p       }
+                                  p   <`/script>
+                                  p     
+                                  p   <`style	lang="sass" scoped>
+                                  p     
+                                  p   <`/style>
+                                  p   
+                                  p   
+                                  strong   4. в папке router делаем файл index.js и в нем прописываем роуты по схеме
+                                  p   {
+                                  p           path: "/Registration",
+                                  p           name: "Registration",
+                                  p           meta: { layout: "reg" },
+                                  p           component: () => import("../views/Registration.vue")
+                                  p   },
+                                  p   
+                                  strong   5. в app.js прописываем все это по схеме 
+                                  p   <`template lang="pug">
+                                  p   #app 
+                                  p     component(:is="layout")
+                                  p       router-view
+                                  p   <`/template>
+                                  p   <`script>
+                                  p   import RegLayout from '@/layouts/RegLayout'
+                                  p   import MainLayout from '@/layouts/MainLayout'
+                                  p   export default {
+                                  p     name: 'App',
+                                  p     data: () => ({  }),
+                                  p       components: {
+                                  p         RegLayout,
+                                  p         MainLayout  
+                                  p         },
+                                  p     //     mounted() {     },  methods: {      }, 
+                                  p      computed:{ 
+                                  p        layout(){
+                                  p          console.log(this.$route.meta)
+                                  p          return (this.$route.meta.layout || 'main')+ '-layout'  
+                                  p        }
+                                  p          }
+                                  p   };
+                                  p   <`/script>
+                                  p   <`style lang="sass">
+                                  p   @import '~materialize-css/dist/css/materialize.min.css'
+                                  p   @import 'assets/index.css'
+                                  p   @import 'assets/app.css'
+                                  p   <`/style>
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 вывод дочернего компонента в родителя 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              strong 1. в родителе делаем вывод дочернего компонента
+                              p Vselect
+                              strong  2.прописываем его импорт
+                              p <`script>
+                              p import Vselect from '@/components/v-select'
+                              p  export default { 
+                              p  components:  {
+                              p          Vselect
+                              p        },
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 props в дочерний компонент 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                h2 в родителе делаем массив даных например карточек.делаем перебор картчек. делаем дочерний компонент 
+                                p .v-catalog
+                                p   VCatalogItem(
+                                p     :product="product"
+                                p      v-for="(product,index) in products"
+                                p     :key="product.index"
+                                p   )
+                                p import VCatalogItem from '@/views/v-catalog-item'
+                                p   components: {
+                                p     VCatalogItem
+                                p   },
+                                p 
+                                p data: () => ({
+                                p products: [
+                                p   {
+                                p       image: "1.jpg",
+                                p       name: "T-shirt 1",
+                                p       price: 2100.234234234,
+                                p       article: "T1",
+                                p       available: true,
+                                p       category: "Мужские"
+                                p   }
+                                p ]
+                                p   }),
+                                p 
+                                h2 в дочке делаем прием пропсой элемента этого массива. дочка- единичная карточка. потому нет перебора. выводим данные в верстку.
+                                p props: {
+                                p      product:{
+                                p               type: Object,
+                                p               default(){
+                                p                 return []
+                                p                 } 
+                                p             },
+                                p         },
+                                p 
+                                p   .card
+                                p     .card-image
+                                p       img(
+                                p          :src="   require( '../assets/images/'  + product.image )")
+                                p       span.card-title {{product.name}}
+                                p     .card-content
+                                p         p {{product.price}}
+                                p         p {{product.article}}
+                                p         p {{product.avialable}}
+                                p         p {{product.category}}
+                                p     .card-action
+                                p       a(href='#') This is a link
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 картинки  рендерить в цикле  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p  img(
+                                    p      :src="   require( '../assets/images/'  + product.image )"
+                                    p      )
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 выпадашка по клику. инверсия переменной по клику и показ или скрытие какого-то другого блока 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong это в верстке
+                                p  p(@click="areOptionsVisible = !areOptionsVisible") select
+                                p  .options(v-if="areOptionsVisible")
+                                strong это в в скрипте
+                                p <`script>
+                                p export default {
+                                p   name: 'v-select',
+                                p   data(){
+                                p     return{
+                                p areOptionsVisible :false
+                                p    }
+                                p  },
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  механизм emit события клика из потомка вродителя. до этого в потомка была пропса , которая завела массив из каких-то опций.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  h2 в потомке делаем метод . например по  клику
+                                  p a(
+                                  p href='#'
+                                  p @click = 'sendDataToParent'
+                                  p ) Добавить в корзину
+                                  h2 этот метод эмитит в родителя событие SendArticle внутри которого есть аргумент this.product.article. его как раз нужно получить по клику и вывести на страницу например или в консоль
+                                  p methods: {
+                                  p sendDataToParent(article){
+                                  p this.$emit('SendArticle', this.product.article)
+                                  p }
+                                  p   },
+                                  h2 в рдителе теперь делаем метод вывода в консоль данных, полученных на потомке и пришедших эмитом
+                                  p methods: {
+                                  p     ShowArticleInConsole(data){
+                                  p       console.log(data)
+                                  p     }
+                                  p   },
+                                  h2 или присваиваем какой-то переменной значение этих данных
+                                  p methods: {
+                                  p     ShowArticleInConsole(data){
+                                  p       this.variable = data
+                                  p     }
+                                  p   },
+                                  h2 теперь связываем в шаблоне метод пришедший из потомка SendArticle с методом , сделанным в родителе ShowArticleInConsole. 
+                                  p  КомпонентПотомок(
+                                  p    @SendArticle="ShowArticleInConsole"
+                                  p    )
+                                  h2 переменную можно выводить в шаблон как обычно {{...}}
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  закрытие чего-то открытого по клику вне блока
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  закрытие чего-то открытого по клику вне блока
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong делаем метод/ здесь .akr-item__title и прописан клик вне этого класса по документу
+                                p hideSelect(){
+                                p let menu = document.querySelector('.akr-item__title');
+                                p document.addEventListener('click', e => {
+                                p   let target = e.target;
+                                p   let its_menu = target == menu || menu.contains(target);
+                                p   
+                                p   if (!its_menu) {
+                                p    return this.areOptionsVisible = false;
+                                p   }
+                                p })
+                                p }
+                                strong делаем хуки
+                                p  mounted(){
+                                p document.addEventListener('click', this.hideSelect.bind(this), true)
+                                p  },
+                                p  beforeDestroy(){
+                                p document.removeEventListener('click', this.hideSelect.bind(this))
+                                p  }
+                                strong больше нигде ничего писать не нужно
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  добавить.убрать класс при изменении переменной
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong если есть true у переменной task.completed то добавляется класс completed
+                                p :class="{completed: task.completed}"
+                                strong если есть areOptionsVisible=true то добавляется класс  akr-item__title--active.например если есть какая-то выпадашка и у заголовка нужно поменять стили 
+                                p :class="[areOptionsVisible ? 'akr-item__title--active' : '']"
+                                strong тернарное условие. можно сделать отображение того или иного класса в зависимости от результатата условия -здесь соревнование идет между первой и второй записью. решает все isActive: true если false--выполняется второй класс----------default выполняется всегда
+                                p <`div :class="[  isActive ? 'active btn'  : 'disabled a', 'default' ]">
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  в инпут заносится например цвет. значение инпута снимается в переменную и пробрасыватся в стили какой-то кнопки например
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                              strong директивой v-model снимаем значение инпута
+                              p li.mb-2
+                              p input(type="text" v-model="fontColor") 
+                              strong  делаем вычисляемое свойство styles()
+                              p computed: {
+                              p  styles(){
+                              p    return{
+                              p    color: this.fontColor,
+                              p    }
+                              p  }
+                              p }
+                              strong  меняем у кнопки стили по данным инпута
+                              p button.btn.btn-primary(
+                              p :style="styles") start
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 $set метод формирует новое поле в элементе массива
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p  mounted() {
+                                p    this.$set(this.cart_item_data, 'quantity', 1)
+                                p  }
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 json-server + вывод всего db.json через store в карточки/npx json-server --watch db.json
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                                  strong позволяет заиметь json файл в корне и обращаться к нему как-буд-то это внешнее api. это удобно если количество элементов бальшое. например интернет магазин
+                                  h2 должна быть зависимость в pacaje.json      "json-server": "^0.16.3",
+                                  h2 должен быть в корне файл с данными в формате json такой db.json
+                                  p {
+                                  p   "products": [
+                                  p     {
+                                  p       "image": "1.jpg",
+                                  p       "name": "T-shirt 1",
+                                  p       "price": 2100.234234234,
+                                  p       "article": "T1",
+                                  p       "available": true,
+                                  p       "category": "Мужские"
+                                  p     },
+                                  p     {
+                                  p       "image": "2.jpg",
+                                  p       "name": "T-shirt 2",
+                                  p       "price": 3150.12312412,
+                                  p       "article": "T2",
+                                  p       "available": true,
+                                  p       "category": "Женские"
+                                  p     }
+                                  p   ]
+                                  p }
+                                  h2 в консоли набрать команду npx json-server --watch db.json
+                                  h2 делаем в store хранилище 
+                                  p  state: {
+                                  p    products: []
+                                  p  },
+                                  h2 берем из хранилища эти продукты
+                                  p getters: {
+                                  p     PRODUCTS(state){
+                                  p       return state.products
+                                  p     }
+                                  p   }
+                                  h2 исполльзуем axios там же на store 
+                                  p import axios from 'axios'
+                                  h2 делаем actions в которую заносим url из консоли и  там же прописывам мутацию SET_PRODUCTS_TO_STATE
+                                  p actions: {
+                                  p     GET_PRODUCTS_FRON_API({commit}){
+                                  p         return axios("http://localhost:3000/products", {
+                                  p           method: "GET"
+                                  p         }).then((products) => {
+                                  p           commit('SET_PRODUCTS_TO_STATE', products)
+                                  p           return products
+                                  p         }).catch((error)  => {
+                                  p        return error
+                                  p      });
+                                  p     }
+                                  p   },
+                                  h2 сама мутация
+                                  p  mutations: {
+                                  p    SET_PRODUCTS_TO_STATE: () => {
+                                  p      state.products = products
+                                  p    }
+                                  p  },
+                                  h2 соответственно на каталоге- где выводятся все карточки нужно вместо products завести 
+                                  p v-for="(product,index) in this.$store.state.products"
+                                  h2 теперь импортируем акции 
+                                  p import {mapActions} from vuex
+                                  h2 и в методах заводим эту акцию GET_PRODUCTS_FRON_API
+                                  p     ...mapActions([
+                                  p 'GET_PRODUCTS_FRON_API'
+                                  p    ]),
+                                  h2 теперь на хук вызываем этот метод
+                                  p   mounted() {
+                                  p    this.GET_PRODUCTS_FRON_API()
+                                  p  }
+                                  h2 дальше импортируем mapGetters
+                                  p import {mapActions,mapGetters} from 'vuex'
+                                  h2 и заводим уже getter по названию
+                                  p   computed: {
+                                  p    ...mapGetters([
+                                  p      'PRODUCTS'
+                                  p    ])
+                                  p  },
+                                  h2 и дальше  в шаблон выводим уже getter
+                                  p v-for="(product,index) in PRODUCTS"
+
+
+//- директивы
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 директивы
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-once
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    strong добавляет один раз и потом как не меняется содержимое все равно будет как с начала завели.
+                                    p  <!-- одиночный элемент -->
+                                    p <span v-once>Это никогда не изменится: {{msg}}</span>
+                                    p 
+                                    p <!-- элемент с потомком -->
+                                    p <div v-once>
+                                    p   <h1>comment</h1>
+                                    p   <p>{{msg}}</p>
+                                    p </div>
+                                    p 
+                                    p <!-- компонент -->
+                                    p <my-component v-once :comment="msg"></my-component>
+                                    p 
+                                    p <!-- директива `v-for` -->
+                                    p <ul>
+                                    p   <li v-for="i in list" v-once>{{i}}</li>
+                                    p </ul>
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-for
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p .container
+                                p   ul
+                                p     li(v-for="(cat,index) in cats" :key="cat.index") {{index+1}}&nbsp; {{cat}}
+                                p hr
+                                p .container
+                                p   ul
+                                p     li( v-for="cat in catsObj" :key="cat"){{cat.id}}&nbsp; {{cat.name}}/{{cat.age}}
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-text
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p h1(v-text="text")
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-html
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong v-html="text"------здесь рендерится html внутри поля text/ если он есть
+                                p h4(v-html="text") 
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-pre
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong  пропускает компиляцию данного элемента и всех его потомков
+                                p h1(v-pre){{title}}{{пропускает компиляцию данного элемента и всех его потомков }}
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-if v-else-if  v-else
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    p <!-- -10 ----показывает блок когда свойство --msgShow === 'primary'---------------------- -->
+                                    p <!--конструкция  v-if v-else-if  v-else  --обеспечивает отсутствие в дом дереве блоков, которые не выбраны   -->
+                                    p <`div class="container mt-4">
+                                    p   <`div class="col-sm-6" v-if="msgShow === 'primary'">
+                                    p     <`div class="alert alert-primary" >
+                                    p       {{msgPrimary}}
+                                    p     <`/div>
+                                    p   <`/div>
+                                    p     <`div class="alert alert-success" role="alert" v-else-if="msgShow === 'success'">
+                                    p   <`div class="col-sm-6" >
+                                    p       {{msgSuccess}}
+                                    p     <`/div>
+                                    p   <`/div>
+                                    p   <`div class="col-sm-6"  v-else>
+                                    p     <`div class="alert alert-danger" role="alert" >
+                                    p       {{msgDanger}}
+                                    p     <`/div>
+                                    p   <`/div>
+                                    p <`/div>
+                                    p 
+                                    p 
+                                    p <`hr>
+                                    p <!-- v-if="status==1"----важно else применять к следующему за if  тегу------- -->
+                                    p <`h2 v-if="status==1">Свойство истина равно 1</h2>
+                                    p <`h2 v-else-if="status==2">Свойство ложь равно 2</h2>
+                                    p <`h2 v-else>Свойство не то не се {{status}}</h2>
+                                    p <`hr>
+                                    p <!-- --v-if="status==1"------- -->
+                                    p <`div v-if="status==1">
+                                    p <`h3>Заголовок правильный</h3>
+                                    p <`p>Текст правильный</p>
+                                    p <`/div>
+                                    p 
+                                    p <`div v-else>
+                                    p <`h3>Заголовок неправильный</h3>
+                                    p <`p>Текст неправильный</p>
+                                    p <`/div>
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 v-show
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                      strong v-show -работает так же но в коде есть все блоки--style display: none;
+                                      p <`div class="container mt-4">
+                                      p   <`div class="col-sm-6" v-show="msgShow === 'primary'">
+                                      p     <` class="alert alert-primary" >
+                                      p       {{msgPrimary}}
+                                      p     <`/div>
+                                      p   <`/div>
+                                      p     <`div class="alert alert-success" role="alert" v-show="msgShow === 'success'">
+                                      p   <` class="col-sm-6" >
+                                      p       {{msgSuccess}}
+                                      p     <`/div>
+                                      p   <`/div>
+                                      p   <`div class="col-sm-6"  v-show="msgShow === 'danger'">
+                                      p     <`div class="alert alert-danger" role="alert" >
+                                      p       {{msgDanger}}
+                                      p     <`/div>
+                                      p   <`/div>
+                                      p <`/div>
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 каталог справочных видео
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                          li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 получение данных с api через axios,обработка vuex, пагинация, сортировка данных, 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                        p https://www.youtube.com/watch?v=zntx4J9jnb0&t=23s
+                          li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 Подключение Vuex, настройка Store 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                        p https://www.youtube.com/watch?v=ujVGz0MQYCc&list=PLkCrmfIT6LBSn5sSboXnU8hDLeqYnUcVy&index=5
+
+                          li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 firebase 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p   https://www.youtube.com/watch?v=CTLonYohENw
+
+
+
+                          li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                          li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                          li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 все подряд
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                                  h5 ======================
+
+                                  p v-model="email"
+
+                                  h5 ======================
+
+                                  p v-for="( pagesBatton, index)  in menuItems"  
+                                  p           :key="index"  
+                                  p           :to = 'pagesBatton.route')
+
+                                  h5 ======================
+
+
+
+                                  p {{pagesBatton.title}}
+                                  h5 ======================
+
+                                  p .input-field.col.s12
+                                  p         input#email.validate(type='email'    v-model="user.email"   autocomplete="off"  )
+                                  p         label(for='email') Email
+                                  h5 ======================
+
+                                  p @click.prevent="signup"
+                                  p @click="drawer=!drawer")
+                                  h5 ======================
+
+                                  p :disabled="processing"
+                                  h5 ======================
+
+                                  p setTimeout(() => this.$router.push("/signIn"), 3000)
+                                  h5 ======================
+
+                                  p router-link( 
+                                  p      to="/" 
+                                  p      tag="span" 
+                                  p      style="cursor: pointer"
+                                  p      )
+                                  h5 ======================
+
+                                  p {
+                                  p title:"Читать",
+                                  p route: "/Books",
+                                  p icon: 'mdi-arrange-send-backward'
+                                  p },
+
+                                  h5 ======================
+
+                                  p import Navbar from './components/navbar';
+                                  p  components: {
+                                  p    Navbar,
+                                  p  },
+
+                                  h5 ======================
+
+                                  p  methods: {
+                                  p    signup() {
+                                  p      const user = {
+                                  p        email: this.email,
+                                  p        password: this.password,
+                                  p      }
+                                  p      this.$store.dispatch("SIGNEUP", user);
+                                  p    },
+                                  p  },
+
+                                  h5 ======================
+
+                                  p computed: {
+                                  p    error() {
+                                  p      return this.$store.getters.getError;
+                                  p    },
+                                  p    processing() {
+                                  p      return this.$store.getters.getProcessing;
+                                  p      this.$router.push("/signIn");
+                                  p    },
+                                  p }
+
+                                  h5 ======================
+                                  p  export default {
+                                  p    state: {
+                                  p      user:{
+                                  p          isAuthenticated: false,
+                                  p          uid: null
+                                  p      }
+                                  p    
+                                  p    },
+                                  p    mutations: {
+                                  p      // на этой мутации перекидываются переменная индикации авторизации в  true . а главное- uid
+                                  p      SET_USER(state, payload) {
+                                  p        state.user.isAuthenticated = true;
+                                  p        state.user.uid = payload;
+                                  p      },
+                                  p    },
+                                  p    actions: {
+                                  p      SIGNEUP({ commit }, payload) {
+                                  p   // для того, чтобы сдлать недоступной кнопку зарегистрирваться p   после ввода очередного пользователя нужно отследить
+                                  p   // начало процесса ввода. для этого сделана мутация p   SET_PROCESSING на general.js которая загоняет в 
+                                  p   // хранилище  переменную processing=true которая вначале p   объявлена false. так же ее нужно перевести на then и error в p   false
+                                  p   // здесь это все комитится
+                                  p    commit("SET_PROCESSING", true),
+                                  p     
+                                  p    
+                                  p    // отправка на firebase email  и пароль
+                                  p      // then обрабатывает после успешной отправки
+                                  p      // catch обрабатывает ошибку
+                                  p      firebase
+                                  p        .auth()
+                                  p        .createUserWithEmailAndPassword(
+                                  p          payload.email,
+                                  p          payload.password
+                                  p        )
+                                  p        .then((user) => {
+                                  p          console.log(user);
+                                  p          commit("SET_USER", user.uid), commit("SET_PROCESSING", p   false);
+                                  p        })
+                                  p        .catch((error) => {
+                                  p          console.log(error);
+                                  p          commit("SET_PROCESSING", false);
+                                  p          commit("SET_ERROR", error.message);
+                                  p        });
+                                  p  },
+                                  p    SIGNEIN({ commit }, payload) {
+                                  p                                   commit("SET_PROCESSING", true),
+                                  p                                     firebase
+                                  p                                       .auth()
+                                  p                                       .signInWithEmailAndPassword(
+                                  p                                         payload.email,
+                                  p                                         payload.password
+                                  p                                       )
+                                  p
+                                  p                                       .then((user) => {
+                                  p                                         console.log(user);
+                                  p                                         commit("SET_USER", user.uid),
+                                  p                                           commit("SET_PROCESSING", false);
+                                  p                                       })
+                                  p
+                                  p                                       .catch((error) => {
+                                  p                                         console.log(error);
+                                  p                                         commit("SET_PROCESSING", false);
+                                  p                                         commit("SET_ERROR", error.message);
+                                  p                                       });
+                                  p                                 },
+                                  p  },
+                                  p  getters: {
+                                  p    isAuthenticated: (state) => state.user.isAuthenticated
+                                  p  },
+                                  p   };
+                                  h5 ======================
+
+
+
+
+
+
+                                  h5 ======================
+                                  h5 ======================
+                                  h5 ======================
+                                  h5 ======================
+                                  h5 ======================
+                                  h5 ======================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0  общие моменты при работе с firebase
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 приложение  todo   https://www.youtube.com/watch?v=c-zZefXUHa4&list=PLLd6Lzq1_u-emTVzsgpLMTxK9W68Sdzxp&index=4.работа с формой. добавление карточек по инпутам
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 начало. есть форма. ниже - поле пустое. в это поле вывоятся данные инпутов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                button.btn.btn--success.btn--success-1(type='button' rel="popup-1").art_inner-article-galery__play.popup-player-init-js открыть  попап
+                                p <`template lang="pug">
+                                p div.wrapper
+                                p   h2(v-once) {{titleHeader}}
+                                p   form(@submit.prevent="checkForm")
+                                p       .input-field
+                                p         input#input_text(
+                                p           type='text' data-length='10' autocomplete="off"
+                                p           v-model= "form.title"
+                                p           )
+                                p         label(for='input_text') заголовок карточки
+                                p       .input-field
+                                p         input#input_text(type='text' data-length='10' autocomplete="off"
+                                p         v-model= "form.text"
+                                p         )
+                                p         label(for='input_text')  текст карточки
+                                p   
+                                p       button.btn.waves-effect.waves-light(type='submitname='action')
+                                p         | Submit
+                                p         i.mdi.mdi-send-outline
+                                p   ul.cards
+                                p     li(v-for="(card,index) in cards" :key="card.index")
+                                p       .card.blue-grey.darken-1
+                                p         .card-content.white-text
+                                p           h3 {{card.title}}
+                                p           p {{card.text}}
+                                p 
+                                p <`/template>
+                                p 
+                                p <`script>
+                                p export default {
+                                p   name: 'App',
+                                p  data: () => ({
+                                p    titleHeader:"Рендерим в верстку содержимое полей инпутов",
+                                p     form: {
+                                p       title: '',
+                                p       text: ''
+                                p     },
+                                p     title: '',
+                                p     text: '',
+                                p     cards:[],
+                                p    }), 
+                                p            methods: { 
+                                p                 checkForm(){
+                                p if (this.form.title===''  && this.form.text==='') {return}
+                                p const card = {
+                                p title : this.form.title,
+                                p text : this.form.text
+                                p }
+                                p 
+                                p this.cards.push(card)
+                                p console.log(card)
+                                p // reset
+                                p this.form.title = '',
+                                p this.form.text = ''
+                                p                 }
+                                p               }
+                                p 
+                                p };
+                                p <`/script>
+                                p <`style lang="sass" >
+                                p .wrapper
+                                p   padding: 1rem 2rem
+                                p   form
+                                p     max-width: 40rem
+                                p     button
+                                p       i
+                                p         margin: 0 0 0 1rem
+                                p `style>
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 продолжение. сделал роуты. навбар и раскидал страницы. есть дом/авторизация/регистрация
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    button.btn.btn--success.btn--success-1(type='button' rel="popup-2").art_inner-article-galery__play.popup-player-init-js-2 открыть  попап
+                                    
+                                    strong  ======app=========
+                                    p <`template lang="pug">
+                                    p #app
+                                    p   Navbar
+                                    p   router-view 
+                                    p <`/template>
+                                    p <`script>
+                                    p import Navbar from '@/components/navbar'
+                                    p export default {
+                                    p   name: 'App',
+                                    p  data: () => ({
+                                    p    }), 
+                                    p     components: {  
+                                    p Navbar
+                                    p       },
+                                    p         mounted() {  
+                                    p          },
+                                    p            methods: { 
+                                    p               },
+                                    p                 computed:{   
+                                    p                  }
+                                    p 
+                                    p };
+                                    p <`/script>
+                                    p 
+                                    p <`style lang="sass">
+                                    p html
+                                    p   padding: 2rem 0 0 0	
+                                    p   margin: 0 0 0 0
+                                    p body
+                                    p   font-family: Avenir, Helvetica, Arial, sans-serif
+                                    p   -webkit-font-smoothing: antialiased
+                                    p   -moz-osx-font-smoothing: grayscale
+                                    p   color: #2c3e50
+                                    p   font-size: 10px
+                                    p #app 
+                                    p   font-size: 1.4rem
+                                    p   padding: 0 2rem	
+                                    p 
+                                    p @import '~materialize-css/dist/css/materialize.min.css'
+                                    p 
+                                    p <`/style>
+
+                                    strong =======navbar============
+                                    p <`template lang="pug">
+                                    p nav.navbar
+                                    p   .nav-wrapper
+                                    p     ul.navbar-menu()
+                                    p         router-link(
+                                    p           v-for="(pagesBatton , index) in pagesBattons" 
+                                    p           :key="index" 
+                                    p           tag="li"
+                                    p           class="navbar-menu__item"
+                                    p           active-class="navbar-menu__item--active"
+                                    p           :to="pagesBatton.route"
+                                    p           :exact="pagesBatton.exect"
+                                    p           )
+                                    p           a.waves-effect.waves-orange.pointer(href='#') {{pagesBatton.title}}
+                                    p <`/template>
+                                    p <`script>
+                                    p export default {
+                                    p    data: () => ({
+                                    p          pagesBattons: [
+                                    p       {
+                                    p         title: "Главная",
+                                    p         route: "/",
+                                    p         exect: true,
+                                    p 
+                                    p       },
+                                    p       {
+                                    p         title: "Авторизация",
+                                    p         route: "/signIn",
+                                    p       },
+                                    p       {
+                                    p         title: "Регистрация",
+                                    p         route: "/SignUp",
+                                    p       },
+                                    p     ],
+                                    p   }),
+                                    p 
+                                    p components: { 
+                                    p  },
+                                    p 
+                                    p mounted() {     },
+                                    p 
+                                    p methods: {      },
+                                    p 
+                                    p computed:{      }
+                                    p 
+                                    p     }
+                                    p <`/script>
+                                    p   
+                                    p <`style	lang="sass" >
+                                    p .navbar-menu__item--active
+                                    p   background: lighten(#ee6e73, 10%)
+                                    p   a
+                                    p     color: #AD1457
+                                    p <`/style>
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 регистрация в firebase 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                    button.btn.btn--success.btn--success-1(type='button' rel="popup-3").art_inner-article-galery__play.popup-player-init-js-3 открыть  попап
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 регистрация пользователя на приложении и передача данных на firebase
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                          
+                                          button.btn.btn--success.btn--success-1(type='button' rel="popup-4").art_inner-article-galery__play.popup-player-init-js-4 открыть  попап
+                                          h3  ==== это на main.js
+                                          p  import Vue from "vue";
+                                          p  import App from "./App.vue";
+                                          p  import router from "./router";
+                                          p  import store from "./store/store";
+                                          p  import firebase from "firebase/app";
+                                          p  import "firebase/auth";
+                                          p  import "firebase/storage";
+                                          p  import "firebase/messaging";
+                                          p  import 'materialize-css/dist/js/materialize.min.js'
+                                          p  
+                                          p  Vue.config.productionTip = false;
+                                          p  
+                                          p  new Vue({
+                                          p    router,
+                                          p    store,
+                                          p    render: (h) => h(App),
+                                          p  created(){
+                                          p      var firebaseConfig = {
+                                          p        apiKey: "AIzaSyDIAFBzSNwWbcmZzfpi2qDAyT9rCWurKsg",
+                                          p        authDomain: "todo-d39aa.firebaseapp.com",
+                                          p        projectId: "todo-d39aa",
+                                          p        storageBucket: "todo-d39aa.appspot.com",
+                                          p        messagingSenderId: "467591186146",
+                                          p        appId: "1:467591186146:web:277372e312c5b4d5f940bb",
+                                          p      };
+                                          p      firebase.initializeApp(firebaseConfig);
+                                          p  }
+                                          p  }).$mount("#app");
+
+                                          h3  ==== это на store.js
+
+                                          p import user from "./user";
+                                          p    modules: {
+                                          p         user
+                                          p     }
+                                          p 
+                                          h3  ==== это на user.js
+                                          p import firebase from "firebase/app";
+                                          p 
+                                          p export default {
+                                          p     state: {
+                                          p         user: null
+                                          p     },
+                                          p     mutations: {},
+                                          p     actions: {
+                                          p         async registerUser({ commit }, { email, password }) {
+                                          p             const user = firebase
+                                          p                 .auth()
+                                          p                 .createUserWithEmailAndPassword(email, password);
+                                          p             console.log(user);
+                                          p         }
+                                          p     },
+                                          p     getters: {
+                                          p         user(state) {
+                                          p             return state.user;
+                                          p         },
+                                          p         checkUser(state) {
+                                          p             return state.user !== null;
+                                          p         }
+                                          p     }
+                                          p };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- добавление объектов по данным из формы
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 добавление объектов по данным из формы
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 общие сведения
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                           
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 например делам какую-то секцию с фильмами  и делаем массив с данными для вывода этих фильмов в верстку.выводим элементы массива в верстку
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p section
+                                p     .task-list
+                                p         .task-item(
+                                p             v-for="task in tasks"
+                                p             :key="task.id"
+                                p             :class="{completed: task.completed}"
+                                p         )
+                                p             p  {{task.id}} 
+                                p             p  {{task.title}}
+                                p             p  {{task.description}}
+                                p             p  {{task.whatwatch}}
+                                p             p  {{task.complited}}
+                                p             p  {{task.editing}}
+                                strong script
+                                p    data (){ 
+                                p return{
+                                p     tasks: [
+                                p         {
+                                p 'id': 1,
+                                p 'title': 'title1',
+                                p 'description': 'description1',
+                                p 'whatwatch': 'film1',
+                                p 'complited': false,
+                                p 'editing': false
+                                p         },
+                                p         {
+                                p 'id': 2,
+                                p 'title': 'title2',
+                                p 'description': 'description2',
+                                p 'whatwatch': 'film2',
+                                p 'complited': false,
+                                p 'editing': false
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 делаем форму ис инпутами и кнопкой.в кнопке метод.
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p  form(@submit.prevent="newTask")
+                                p      .input-field
+                                p                  input.task-input.validate(
+                                p                      type="text"
+                                p                      id="id"
+                                p                      v-model="taskId"
+                                p                      autocomplete="off"
+                                p                  ) 
+                                p                  label( for="id")  новое id
+                                p      button.task-button.waves-effect.waves-light.btn(
+                                p          type="submit"
+                                p          @click="newTask"
+                                p      ) загрузить 
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 делаем метод. по клику на кнопку в массив с элементами пушится новый элемент с данными формы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p  methods: { 
+                                  p     newTask(){
+                                  strong если пустые инпуты- кнопка не сработает
+                                  p if (this.taskTitle==='') {
+                                  p    return
+                                  p }
+                                  p this.tasks.push(
+                                  p    {
+                                  p    id: this.taskId,
+                                  p    title:  this.taskTitle,
+                                  p    description: this.taskDescription
+                                  p    }
+                                  p )
+                                  strong очищаем поля формы
+                                  p this.taskId =''
+                                  p this.taskTitle=''
+                                  p this.taskDescription=''
+                                  p     }
+                                  p      }
+
+//- анимации
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 анимации
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 по типу slide up/down 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong  оборачиваем раскрывающийся блок. он уже должен иметь механизм открытия. например
+                                p transition(name="slide")  
+                                p       .akr__drop.akr-drop.akr-drop-js(
+                                p                 v-show="areOptionsVisible"
+                                p                 )
+                                strong добьавляем css прямо в компонент
+                                p .slide-enter-active {
+                                p    -moz-transition-duration: 0.3s;
+                                p    -webkit-transition-duration: 0.3s;
+                                p    -o-transition-duration: 0.3s;
+                                p    transition-duration: 0.3s;
+                                p    -moz-transition-timing-function: ease-in;
+                                p    -webkit-transition-timing-function: ease-in;
+                                p    -o-transition-timing-function: ease-in;
+                                p    transition-timing-function: ease-in;
+                                p }
+                                p .slide-leave-active {
+                                p    -moz-transition-duration: 0.3s;
+                                p    -webkit-transition-duration: 0.3s;
+                                p    -o-transition-duration: 0.3s;
+                                p    transition-duration: 0.3s;
+                                p    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+                                p    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+                                p    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+                                p    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+                                p }
+                                p .slide-enter-to, .slide-leave {
+                                p    max-height: 100px;
+                                p    overflow: hidden;
+                                p }
+                                p .slide-enter, .slide-leave-to {
+                                p    overflow: hidden;
+                                p    max-height: 0;
+                                p }
+//- vuelidate
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 валидация форм vuelidate/https://www.youtube.com/watch?v=gqV3n2mgx5Y
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 создаем поля , соответствующие назначению инпутов
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p export default {
+                                p   data(){
+                                p     return{
+                                p form:{
+                                p username_1: '',
+                                p surusername_1:  '',
+                                p username_2: '',
+                                p surusername_2:  '',
+                                p club: '',
+                                p coach:  '',
+                                p town: '',
+                                p category: '',
+                                p },
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 связываем переменные из data и верстку директивой v-model.trim/ trim обрезает пробелы слева и справа. для селекта тоже заводим переменную category: '' и связываем ее с версткой
+
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p .flex-row
+                                p   input#username-1.lf--input(
+                                p     v-model.trim= 'form.username-1'
+                                p     type="username" placeholder='Имя партнера*'
+                                strong здесь добавится класс в случае невалидности данных
+                                p :class="($v.form.username_1.$dirty && !$v.form.username_1.required)||($v.form.username_1.$dirty && !$v.form.username_1.minLength)  ? 'is-invalid' : ''"
+                                p )
+                              
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 заводим собственно vuelidate
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong прямо в scripts 
+                                p validations: {
+                                p     form: {
+                                p username_1: {
+                                p simpleValidation(value){
+                                p }
+                                p }
+                                p     }
+                                p   },
+                                strong это подключает библиотеку в компонент
+                                p import { validationMixin } from 'vuelidate'
+                                p import { required, minLength, between } from 'vuelidate/lib/validators'
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 делаем функцию валидации для проверки/ее потом нужно удалить. или совсем не делать
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p simpleValidation(value){
+                                p  console.log(value)
+                                p  return  value.length > 5
+                                p }
+                                p this.$v.form.$touch()
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  прописать событие submit для всей формы. prevent
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong  предотвращает перезагрузку страницы
+                                p form.login-form(@submit.prevent="checkForm")
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  валидация методами из библиотеки
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong теперь собственно заводим функции
+                                p import { email,required, minLength, between } from 'vuelidate/lib/validators'
+                                p 
+                                p export default {
+                                p   data () {
+                                p     return {
+                                p       name: '',
+                                p       age: 0
+                                p     }
+                                p   },
+                                p   validations: {
+                                p     name: {
+                                p       required,
+                                p       minLength: minLength(4)
+                                p     },
+                                p     age: {
+                                p       between: between(20, 30)
+                                p     }
+                                p   }
+                                p }
+                                strong теперь в    dev tools появятся новые поля, соответствующие функциям валидации
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  делаем метод по которому проверяется форма на валидность
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                strong это в верстку
+                                p form.login-form(@submit="checkForm")
+                                strong это в скрипт
+                                p        checkForm(){
+                                strong перекинет на другую страницу если нужно
+                                p          this.$router.push('/Registration')
+                                strong дальше          
+                                p          this.$v.form.$touch()
+                                p          if (!this.$v.form.$error) {
+                                p            console.log("валидация прошла успешно")
+                                p          }else{
+                                p            return
+                                p          }
+                                p
+                                strong формируем объект для бэка
+                                p          const formData ={
+                                p            username_1 : this.form.username_1,
+                                p            surusername_1:  this.form.urusername_1,
+                                p            username_2:  this.form.username_2,
+                                p            surusername_2: this.form.surusername_2,
+                                p            club: this.form.club,
+                                p            coach: this.form.coach,
+                                p            town: this.form.town,
+                                p            category: this.form.category
+                                p          }
+                                p console.log(formData);
+                                p        }
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  делаем два алерта по количеству символов и обязательности
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p v-alert.invalid-fidback(
+                                p     colored-border
+                                p     type="error"
+                                p     elevation="8"
+                                p     dence
+                                p     v-if=" $v.form.username_1.$dirty && !$v.form.username_1.required "
+                                p     ) Ошибка! Это обязательное поле.
+                                p v-alert.invalid-fidback(
+                                p     colored-border
+                                p     type="error"
+                                p     elevation="8"
+                                p     dence
+                                p     v-if=" $v.form.username_1.$dirty && !$v.form.username_1.minLength "
+                                p     ) Ошибка! В имени должно быть больше 3-х символов.
+
+                                strong они отрабатявают по неправильным полям и открывают алерты
+//- firebase
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 firebase  
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+
+
+
+
+
+//- vuex
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 vuex/общие моменты 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 state
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p import Vue from 'vue'
+                                p import Vuex from 'vuex'
+                                p Vue.use(Vuex)
+                                p export default new Vuex.Store({
+                                p     state: {
+                                h2 здесь задается массив с какими-то будующими элементами. это могут быть карточки, посты,таски.
+                                p         options: [
+                                p         ]
+                                p     },
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 actions/mutations
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+                                h3 Акции 
+                                p НАЗВАНИЕ_БОЛЬШИМИ_БУКВАМИ({ commit }, payload) {
+                                p      commit("НАЗВАНИЕ_МУТАЦИИ_БОЛЬШИМИ_БУКВАМИ", payload);
+                                p    },
+                                h3 Мутации 
+                                p НАЗВАНИЕ_МУТАЦИИ_БОЛЬШИМИ_БУКВАМИ(state, payload) => {
+                                p      state.объект-хранилища-маленькими-буквами = payload;
+                                p    },
+                                h2(style="color:red") примеры
+                                h3 здесь определяется мутация для этого хранилища. payload это то что прилетит. в мутации это как аргумент
+                                p     mutations: {
+                                p         newOption(state, payload) {
+                                p             state.options.push(payload);
+                                p         }
+                                p     },
+                                p 
+                                h2 здесь определяется акция для этой мутации 
+                                p     actions: {
+                                p         newOption({ commit }, payload) {
+                                p             commit("newOption", payload);
+                                p         }
+                                p     },
+                                p -----------------------
+                                h3 здесь основная идея в компоненте с формой откуда пойдут данные по событию submit
+                                p checkForm(){
+                                strong здесь делается константа и в нее пойдут непосредственно данныеб снятые с инпутов
+                                p   const newOption =  {
+                                p     username_1 : this.form.username_1,
+                                p     surusername_1:  this.form.surusername_1,
+                                p     }
+                                strong вот так передается эта константа в метод, который будет акцией на store
+                                p     this.$store.dispatch('newOption', newOption)
+                                p           }
+
+                                h3(style="color:red") ====================
+                                h5(style="color:indigo") actions. здесь приходит с db.json массив с данными и определяется мутация SET_PRODUCTS_TO_STATE
+                                p     GET_PRODUCTS_FRON_API({ commit }) {
+                                p       return axios("http://localhost:3000/products", {
+                                p         method: "GET",
+                                p       })
+                                p         .then((products) => {
+                                p           commit("SET_PRODUCTS_TO_STATE", products.data);
+                                p           return products;
+                                p         })
+                                p         .catch((error) => {
+                                p           return error;
+                                p         });
+                                p     },
+                                h5(style="color:indigo") mutations
+                                p    SET_PRODUCTS_TO_STATE: (state, products) => {
+                                p      state.products = products;
+                                p    },
+                                h3(style="color:red") ====================
+
+
+
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 getters
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                h3(style="color:red") getters
+                                
+                                p     getters: {
+                                p         options(state) {
+                                p             return state.options;
+                                p         }
+                                p     }
+                                p });
+                                p -------------------------
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 rendering
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  h3(style="color:red") импортируется 
+                                  p import { mapActions, mapGetters } from "vuex";
+                                  h3(style="color:red") rendering
+                                  p VCatalogItem(
+                                  p     :product="product"
+                                  p      v-for="(product,index) in PRODUCTS"
+                                  p     :key="product.index"
+                                  p     @AddToCart="AddToCart"
+                                  p   )
+                                  h3(style="color:red") заводятся данные из хранилища
+                                  p  computed: {
+                                  p    ...mapGetters(["PRODUCTS"]),
+                                  p  },
+                                  h3(style="color:red") заводится акция
+                                  p  methods: {
+                                  p    ...mapActions([
+                                  p       "ADD_TO_CART"
+                                  p       ]),
+                                  p    AddToCart(data) {
+                                  p      this.ADD_TO_CART(data);
+                                  p    },
+                                  p  },
+
+                                  h3(style="color:red") ====================
+                                  p .categoryData(
+                                  p    v-for="(option,index) in options" :key="option.index"
+                                  p             )
+                                  p      .categoryData__username_1 {{option.username_1}} 
+                                  p      .categoryData__surusername_1 {{option.surusername_1}}
+                                  p <`script>
+                                  p export default {
+                                  p computed: {
+                                  p options() {
+                                  p return this.$store.getters.options
+                                  p }
+                                  p }
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 vuex/как забирать данные из store и выводить в компонент
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 поле state собственно массив с тасками
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p закидываем в хранилище массив с тасками, который вырезаем со страницы с формой . имеет несколько тасков или не имеет их вообще.
+                                  p export default {
+                                  p     state: {
+                                  p         tasks: [
+                                  p             {
+                                  p                 id: 1,
+                                  p                 title: "title1",
+                                  p                 description: "description1",
+                                  p                 complited: false,
+                                  p                 editing: false
+                                  p             },
+                                  p             {
+                                  p                 id: 2,
+                                  p                 title: "title2",
+                                  p                 description: "description2",
+                                  p                 complited: false,
+                                  p                 editing: false
+                                  p             }
+                                  p         ]
+                                  p     },
+                                  p     mutations: {},
+                                  p     actions: {},
+                                  p     getters: {}
+                                  p };
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 делаем первый getter из хранилища тасков
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p    getters: {
+                                p      tasks(state){
+                                p        return state.tasks
+                                p      }
+                                p    }
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 заводим этот getter в нужный компонентю точнее туда где уже выводили и обрабатывали таски. дальше работаем с массивом тасков как-будто он есть на странице
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p computed: {
+                                p     tasks() {
+                                p         return this.$store.getters.tasks
+                                p     }
+
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 общая картина на этот момент
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+
+                                strong это основной компонент в котором форма и вывод тасков в таблицу
+                                p <`template lang="pug">
+                                p div
+                                p     //- .timetable__wrapper
+                                p     section
+                                p         .task-input
+                                p             form(@submit.prevent="newTask")
+                                p                 .input-field
+                                p                             input.task-input.validate(
+                                p                                 type="text"
+                                p                                 id="id"
+                                p                                 v-model="taskId"
+                                p                             ) 
+                                p                             label( for="id")  новое id
+                                p                 .input-field
+                                p                             input.task-input.validate(
+                                p                                 type="text"
+                                p                                 id="title"
+                                p                                 v-model="taskTitle"
+                                p                             ) 
+                                p                             label( for="title")  новый заголовок
+                                p                 .input-field
+                                p                             input.task-input.validate(
+                                p                                 type="text"
+                                p                                 id="description"
+                                p                                 v-model="taskDescription"
+                                p                             ) 
+                                p                             label( for="description")  новое описание
+                                p                 button.task-button.waves-effect.waves-light.btn(
+                                p                     type="submit"
+                                p                     ) загрузить 
+                                p         .task-list
+                                p             .task-item(
+                                p                 v-for="task in tasks"
+                                p                 :key="task.id"
+                                p                 :class="{completed: task.completed}"
+                                p             )
+                                p                 p  {{task.id}} 
+                                p                 p  {{task.title}}
+                                p                 p  {{task.description}}
+                                p                 p  {{task.complited}}
+                                p                 p  {{task.editing}}
+                                p 
+                                p <`/template>
+                                p   
+                                p <`script>
+                                p 
+                                p export default {
+                                p 
+                                p components: {
+                                p },
+                                p     data (){ 
+                                p return{
+                                p taskId:'',
+                                p taskTitle:'',
+                                p taskDescription:'',
+                                p    }
+                                p    },
+                                p 
+                                p computed: {
+                                p     tasks() {
+                                p         return this.$store.getters.tasks
+                                p     }
+                                p },
+                                p 
+                                p // ----------------------------
+                                p   methods: { 
+                                p      newTask(){
+                                     p 
+                                p if (this.taskTitle==='') {
+                                p     return
+                                p }
+                                p 
+                                p this.tasks.push(
+                                p     {
+                                p     id: this.taskId,
+                                p     title:  this.taskTitle,
+                                p     description: this.taskDescription
+                                p     }
+                                p )
+                                p this.taskId =''
+                                p this.taskTitle=''
+                                p this.taskDescription=''
+                                p      }
+                                p       }
+                                p 
+                                p // ------------------------------
+                                p    }
+                                p <`/script>
+                                p   
+                                p <`style	lang="sass" scoped>
+                                p .task-list
+                                p     
+                                p .task-item
+                                p     border: .1rem solid #f5f5f5
+                                p     min-width: 10rem
+                                p     margin: 0 2rem  0  0
+                                p     padding: 1rem
+                                p     display: flex	
+                                p     justify-content: space-between
+                                p     p   
+                                p         font-size: 1rem
+                                p         font-family: Poppins, sans-serif
+                                p .task-button
+                                p     margin: 1rem
+                                p .input-field
+                                p     border: .2rem solid blue
+                                p     width: 10rem
+                                p     
+                                p .task-input
+                                p     label
+                                p         font-size: 1rem
+                                p         font-family: Poppins, sans-serif
+                                p         padding: 0 1rem	
+                                p <`/style>
+
+                                strong это файл store.js из папки store
+                                p import Vue from 'vue'
+                                p import Vuex from 'vuex'
+                                p Vue.use(Vuex)
+                                p 
+                                p export default new Vuex.Store({
+                                p     state: {
+                                p         tasks: [
+                                p             {
+                                p                 id: 1,
+                                p                 title: "title1",
+                                p                 description: "description1",
+                                p                 complited: false,
+                                p                 editing: false
+                                p             },
+                                p             {
+                                p                 id: 2,
+                                p                 title: "title2",
+                                p                 description: "description2",
+                                p                 complited: false,
+                                p                 editing: false
+                                p             }
+                                p         ]
+                                p     },
+                                p     mutations: {},
+                                p     actions: {},
+                                p     getters: {
+                                p       tasks(state){
+                                p         return state.tasks
+                                p       }
+                                p     }
+                                p 
+                                p 
+                                p })
+                                p 
+
+                       
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0  vuex/как из компонента изменять данные в хранилище
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 делается в компоненте с формой констатнта с данными из формы
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p const task = {
+                                  p     id: this.taskId,
+                                  p     title:  this.taskTitle,
+                                  p     description: this.taskDescription
+                                  p }
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 здесь идет отправка нового таска а именно этой константы в акцию в store/ а через акцию в мутацию хранилища, которая изменит данные в хранилище
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p this.$store.dispatch('newTask', task)
+
+
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5 теперь в хранилище прописывается эта акция и мутация хранилища. после этого все работает
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                  p    mutations: {
+                                  p        newTask (state,payload){
+                                  p            state.tasks.push(payload)
+                                  p        }
+                                  p    },
+                                  p    actions: {
+                                  p        newTask({commit}, payload){
+                                  p            commit('newTask', payload)
+                                  p        }
+                                  p    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

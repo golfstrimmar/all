@@ -1,5 +1,5 @@
 import $ from 'jquery';
-// import Plyr from "plyr";
+import Plyr from "plyr";
  
 // ==============================================
 
@@ -11,7 +11,7 @@ import './js/common'
 // import './js/start-button'
 // import "./js/jquery.nicescroll.min";
 // import "./js/header";
-// import './js/modal'
+import './js/modal'
 // import './js/contacts'
 // import "./js/polzunki";
 import "./js/tabs";
@@ -38,7 +38,8 @@ import './css/fonts.css'
 
 
 
-// import './css/plyr.css';
+import './css/plyr.css';
+import './js/plyr.js';
 
 
 

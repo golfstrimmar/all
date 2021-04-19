@@ -1,16 +1,23 @@
-
-
-
-
-//- include includes/slider-cards
-
-
-
+include includes/popup
 
 section#notes.notes
       .notes__body
           .title
-            h2._0 JQUERY
+            h2._0 vue
+          .notes-item__block.block
+            section#tabs.tabs
+              include includes/vue
+section#notes.notes
+      .notes__body
+          .title
+            h2._0 JQUERY functions  --- https://jquery-docs.ru/
+          .notes-item__block.block
+            section#tabs.tabs
+              include includes/jquery-functions
+section#notes.notes
+      .notes__body
+          .title
+            h2._0 JQUERY scripts 
           .notes-item__block.block
             section#tabs.tabs
               include includes/scripts
@@ -63,7 +70,15 @@ section#notes.notes
           .notes-item__block.block
             section#tabs.tabs
               include includes/deploy
+
               
 
 
 
+.popup
+                                    .popup__overlay
+                                      .popup__inner
+                                        i.icon-x.popup__close.close-js
+                                        video#player(playsinline='' controls='' )
+                                            source(src='./../img/video-1.mp4' type='video/mp4')
+                                    i.icon-x.popup__close.popup__close

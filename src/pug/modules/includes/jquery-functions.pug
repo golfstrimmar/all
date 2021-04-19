@@ -1,0 +1,43 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 functions
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              h4._5  setTimeout
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p  function explode(){
+                                p    alert("Boom!");
+                                p  }
+                                p  setTimeout(explode, 2000);
+                                p  
+                                p  var explode = function(){
+                                p    alert("Boom!");
+                                p  };
+                                p  setTimeout(explode, 2000);
+                                p  
+                                p  setTimeout(function(){
+                                p    alert("Boom!");
+                                p  }, 2000);
+
+                                p function greet(greeting){
+                                p   console.log(greeting);
+                                p }
+                                p 
+                                p function getRandom(arr){
+                                p   return arr[Math.floor(Math.random()*arr.length)];
+                                p }
+                                p 
+                                p var greetings = ["Hello", "Bonjour", "Guten Tag"],
+                                p     randomGreeting = getRandom(greetings);
+                                p 
+                                p setTimeout(function(){
+                                p   greet(randomGreeting);
+                                p }, 1000);
+                                p
+
+                                p var timer = setTimeout(myFunction, 3000);
+                                p clearTimeout(timer);
