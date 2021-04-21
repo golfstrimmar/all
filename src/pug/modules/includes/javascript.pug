@@ -2041,6 +2041,400 @@
                                 p // но проходит по массиву справа налево.
 
 
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 функции
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Имя функции и её предназначение 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p  Как правило, в имени используются опеределенные префиксы,
+                                    p  обозначающие действие, после которых следует объект действия.
+                                    p  Например, функции, начинающиеся с
+                                    p  "show..." обычно что-то показывают,
+                                    p  "get..." – возвращают значение,
+                                    p  "calc..." – что-то вычисляют,
+                                    p  "create..." – что-то создают,
+                                    p  "check..." – что-то проверяют и возвращают логическое
+                                    p  значение, и т.д.
+                                    p  Примеры:
+                                    p  showMessage - показать сообщение
+                                    p  getOptions - получить параметры
+                                    p  calcSum - посчитать сумму
+                                    p  и т.д.
+                                    p  
+                                    p  // Функция вывода сообщения
+                                    p  function showMessage() {
+                                    p  	console.log('Сообщение');
+                                    p  }
+                                    p  Функция должна делать только то,
+                                    p  что явно подразумевается её названием.
+                                    p  И это должно быть одним действием.
+                                    p  Два независимых действия обычно подразумевают две функции,
+                                    p  даже если предполагается, что они будут вызываться вместе (в этом случае мы
+                                    p  можем создать третью функцию, которая будет их вызывать).
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Запуск функции
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p showMessage();
+                                p // Функция вывода сообщения
+                                p function showMessage() {
+                                p 	console.log('Сообщение!');
+                                p }
+                                p function getSumm() {
+                                p 	let numOne, numTwo;
+                                p 
+                                p 	function getNumOne() {
+                                p 		numOne = 1;
+                                p 	}
+                                p 	function getNumTwo() {
+                                p 		numTwo = 2;
+                                p 	}
+                                p 	getNumOne();
+                                p 	getNumTwo();
+                                p 
+                                p 	let numSumm = numOne + numTwo;
+                                p 	console.log(numSumm);
+                                p }
+                                p getNumOne();
+                                p getSumm();
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Вложенность и видимость функций
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p if (2 > 1) {
+                                p 	function getSumm() {
+                                p 		let numOne, numTwo;
+                                p 
+                                p 		function getNumOne() {
+                                p 			numOne = 1;
+                                p 		}
+                                p 		function getNumTwo() {
+                                p 			numTwo = 2;
+                                p 		}
+                                p 		getNumOne();
+                                p 		getNumTwo();
+                                p 
+                                p 		let numSumm = numOne + numTwo;
+                                p 		console.log(numSumm);
+                                p 	}
+                                p }
+                                p getSumm();
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Локальные и внешние переменные
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p function showMessage() {
+                                p 	// Локальная переменная
+                                p 	let message = "Сообщение";
+                                p 	console.log(message);
+                                p }
+                                p 
+                                p console.log(message);
+                                p // Внешняя переменная
+                                p let message;
+                                p function showMessage() {
+                                p 	// Используется внешняя переменная
+                                p 	message = "Сообщение";
+                                p }
+                                p console.log(message);
+                                p showMessage();
+                                p // Внешняя переменная
+                                p let message = "Сообщение №1";
+                                p function showMessage() {
+                                p 	// Локальная переменная
+                                p 	let message = "Сообщение №2";
+                                p 	console.log(message);
+                                p }
+                                p console.log(message);
+                                p showMessage();
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Глобальные переменные
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let globalVar = "Я глобальная переменная";
+                                p function getSumm() {
+                                p 	let numOne, numTwo;
+                                p 	function getNumOne() {
+                                p 		numOne = 1;
+                                p 		console.log(globalVar);
+                                p 	}
+                                p 	function getNumTwo() {
+                                p 		numTwo = 2;
+                                p 	}
+                                p 	getNumOne();
+                                p 	getNumTwo();
+                                p 
+                                p 	let numSumm = numOne + numTwo;
+                                p 	console.log(globalVar);
+                                p }
+                                p console.log(globalVar);
+                                p getSumm();
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Параметры (аргументы)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p function calcSumm(numOne = 1, numTwo = 2) {
+                                p 	console.log(`Переменная numOne:${numOne}`);
+                                p 	console.log(`Переменная numTwo:${numTwo}`);
+                                p 	let numSumm = numOne + numTwo;
+                                p 	console.log(`Сумма:${numSumm}`);
+                                p }
+                                p calcSumm(5, 5);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Функции-колбэки
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p function calcSumm(numOne, numTwo, more, less) {
+                                p 	let numSumm = numOne + numTwo;
+                                p 
+                                p 	if (numSumm > 3) {
+                                p 		more();
+                                p 	} else {
+                                p 		less();
+                                p 	}
+                                p }
+                                p function showMoreMessage() {
+                                p 	console.log('Больше чем 3');
+                                p }
+                                p function showLessMessage() {
+                                p 	console.log('Меньше чем 3');
+                                p }
+                                p calcSumm(1, 1, showMoreMessage, showLessMessage);
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Возврат результата
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                    p function calcSumm(numOne, numTwo) {
+                                    p 	let numSumm = numOne + numTwo;
+                                    p 	// Возврат
+                                    p 	return numSumm;
+                                    p 	// Дальше код не выполняется
+                                    p }
+                                    p let funcRezult = calcSumm(1, 2);
+                                    p console.log(`Сумма: ${funcRezult}`);
+                                    p function calcSumm(numOne, numTwo) {
+                                    p 	let numSumm = numOne + numTwo;
+                                    p 	if (numSumm >= 3) {
+                                    p 		// Возврат
+                                    p 		return numSumm;
+                                    p 	} else {
+                                    p 		return 'Сумма меньше 3';
+                                    p 	}
+                                    p 	// Дальше код не выполняется
+                                    p }
+                                    p let funcRezult = calcSumm(1, 2);
+                                    p 
+                                    p console.log(funcRezult);
+                                    p function calcSumm(numOne, numTwo) {
+                                    p 	let numSumm = numOne + numTwo;
+                                    p 	return
+                                    p 	numSumm;
+                                    p 	// Дальше код не выполняется
+                                    p }
+                                    p let funcRezult = calcSumm(1, 2);
+                                    p console.log(funcRezult);
+                                    p function calcSumm(numOne, numTwo) {
+                                    p 	let numSumm = numOne + numTwo;
+                                    p 	if (numSumm >= 3) {
+                                    p 		// Возврат
+                                    p 		return;
+                                    p 		// Дальше код не выполняется
+                                    p 	}
+                                    p }
+                                    p calcSumm(5, 5)
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Рекурсия
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p function getSumm(numOne, numTwo) {
+                                p 	let numSumm = calcSumm(numOne, numTwo);
+                                p 	console.log(numSumm);
+                                p }
+                                p function calcSumm(numOne, numTwo) {
+                                p 	return numOne + numTwo;
+                                p }
+                                p getSumm(5, 5);
+                                p function calcSumm(numOne, numTwo) {
+                                p 	let result = 1;
+                                p 	// умножаем result на numOne numTwo раз в цикле
+                                p 	for (let i = 0; i < numTwo; i++) {
+                                p 		result *= numOne;
+                                p 	}
+                                p 	return result;
+                                p }
+                                p console.log(calcSumm(2, 3));
+                                p function calcSumm(numOne, numTwo) {
+                                p 	if (numTwo === 1) {
+                                p 		return numOne;
+                                p 	} else {
+                                p 		return numOne * calcSumm(numOne, numTwo - 1);
+                                p 	}
+                                p }
+                                p console.log(calcSumm(2, 3));
+                                p let showMessage = function () {
+                                p 	console.log('Привет!');
+                                p };
+                                p showMessage();
+                                p function getSumm() {
+                                p 	let summ = 1 + 2;
+                                p 	console.log(summ);
+                                p };
+                                p let someVar = getSumm;
+                                p someVar();
+                                p getSumm();
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Объявление функции (Function Declaration)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p function getSumm() {
+                                p 	let summ = 1 + 2;
+                                p 	console.log(summ);
+                                p };
+                                p getSumm();
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Функциональное выражение (Function Expression)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p let showMessage = function () {
+                                p 	console.log('Привет!');
+                                p };
+                                p showMessage();
+                                p if (2 > 1) {
+                                p 	function getSumm() {
+                                p 		let summ = 1 + 2;
+                                p 		console.log(summ);
+                                p 	};
+                                p }
+                                p getSumm();
+                                p let getSumm;
+                                p if (2 > 1) {
+                                p 	getSumm = function () {
+                                p 		let summ = 1 + 2;
+                                p 		console.log(summ);
+                                p 	};
+                                p }
+                                p getSumm();
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Функции стрелки(arrow functions)
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Функциональное выражение (Function Expression)
+                                p let имя переменной = function (параметр, ...параметр) {
+                                p 	return выражение;
+                                p };
+                                p // Cтрелочная функция (arrow function)
+                                p let имя переменной = (параметр, ...параметр) => выражение
+                                p // Однострочная стрелочная функция
+                                p let getMessage = (text, name) => text + ', ' + name + '!';
+                                p console.log(getMessage('Привет', 'Вася'));
+                                p // Многострочная стрелочная функция
+                                p let getMessage = (text, name) => {
+                                p 	let message = text + ', ' + name + '!';
+                                p 	return message;
+                                p };
+                                p console.log(getMessage('Привет', 'Вася'));
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Планирование setTimeout и setInterval
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p Что бы реализовать планирование существуют два метода:
+                                p 1.	setTimeout позволяет вызвать функцию один раз
+                                p 	через определённый интервал времени
+                                p 2.	setInterval позволяет вызывать функцию регулярно,
+                                p 	повторяя вызов через определённый интервал времени.
+                                p setTimeout(функция или код, задержка, параметр, ...параметр);
+                                p setInterval(функция или код, задержка, параметр, ...параметр);
+                                p function showMessage(text, name) {
+                                p 	console.log(`${text}, ${name}!`);
+                                p 	setTimeout(showMessage, 500, text, name);
+                                p }
+                                p //setInterval(showMessage, 500, 'Привет', 'Вася');
+                                p setTimeout(showMessage, 500, 'Привет', 'Вася');
+                                p let result = 0;
+                                p function showNumber(num) {
+                                p 	result += num;
+                                p 	console.log(result);
+                                p 	if (result === 5) {
+                                p 		clearInterval(timeId);
+                                p 	}
+                                p }
+                                p let timeId = setInterval(showNumber, 1000, 1);
+                                p setTimeout(function () {
+                                p 	console.log('Привет!');
+                                p }, 1000);
+                                p 
+                                p setTimeout(() => {
+                                p 	console.log('Привет!');
+                                p }, 1000);
+                                p function showMessageOne() {
+                                p 	console.log("А я первый!");
+                                p }
+                                p function showMessageTwo() {
+                                p 	console.log("А я второй(");
+                                p }
+                                p setTimeout(showMessageTwo, 0);
+                                p showMessageOne();
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              h4._5 Применение функций
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                p // Функция соединения строк
+                                p function createMassage(text, name) {
+                                p 	return `${text}, ${name}!`;
+                                p }
+                                p // Функция вывода в консоль
+                                p function showMassage(message) {
+                                p 	console.log(message);
+                                p }
+                                p // Объединяющая функция, вызывает обе функции
+                                p function initMessage(text, name) {
+                                p 	showMassage(createMassage(text, name));
+                                p }
+                                p 
+                                p initMessage('Привет', 'Фрилансер');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
