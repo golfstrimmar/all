@@ -177,14 +177,14 @@
                                     span._2 скрываем дефолтный селект
                                     p _this.hide();
                                     span._2 делаем искуственный класс вместо селекта
-                                    p _this.wrap('<`div class="select"><`/div>');
+                                    p _this.wrap('<``div class="select"><``/div>');
                                     span._2 делаем искуственный класс эмулятор селекта. в него помещаем и картинку из опции 
-                                    p   $("<`div>", {
+                                    p   $("<``div>", {
                                     p     class: "new-select",
                                     p     text: _this.children("option:selected").text(),
                                     p   })
                                     p     .prepend(
-                                    p       $("<`img>", {
+                                    p       $("<``img>", {
                                     p         class: "new-select__img",
                                     p         src: _this.children("option:selected").val(),
                                     p       })
@@ -193,21 +193,21 @@
                                     
                                     span._2 туда же выпадашку
                                     p  const selectHead = _this.next(".new-select");
-                                    p  $("<`div>", {
+                                    p  $("<``div>", {
                                     p    class: "new-select__list",
                                     p  }).insertAfter(selectHead);
                                     span._2 перебираем массив из опций  и формируем пункты псевдоселекта уже с картками
                                     p  const selectList = selectHead.next(".new-select__list");
-                                    p  for (let i = 0; i < selectOptionLength; i++) {
-                                    p    $("<`div>", {
+                                    p  for (let i = 0; i <` selectOptionLength; i++) {
+                                    p    $("<``div>", {
                                     p      class: "new-select__item",
-                                    p      html: $("<`span>", {
+                                    p      html: $("<``span>", {
                                     p        text: selectOption.eq(i).text(),
                                     p      }),
                                     p    })
                                     p      .attr("data-value", selectOption.eq(i).text())
                                     p      .prepend(
-                                    p        $("<`img>", {
+                                    p        $("<``img>", {
                                     p          class: "new-select__img",
                                     p          src: selectOption.eq(i).val(),
                                     p        })
@@ -290,7 +290,7 @@
                                   span._2 Храним её в data
                                   p   var init = $(".slider-js-1").data("init-slider");
                                   span._2 Если окно меньше 1000
-                                  p   if(window.innerWidth < 1000){
+                                  p   if(window.innerWidth <` 1000){
                                   p       if (init != 1) {
                                   p         $(".slider-js-1")
                                   p           .slick({
@@ -342,7 +342,7 @@
                                 p     var scroll = $(window).scrollTop();
                                 p     var id = $(el).attr("id");
                                 p
-                                p     if (scroll > top && scroll < bottom) {
+                                p     if (scroll > top && scroll <` bottom) {
                                 p       $("a").removeClass("menu__link-active");
                                 p       $('a[href="#' + id + '"').addClass("menu__link-active");
                                 p     }
@@ -355,7 +355,7 @@
                             .akr__drop.akr-drop.akr-drop-js
                                 p $(document).ready(function (e) {
                                 p function copytext(el) {
-                                p var $tmp = $("<`textarea`>");
+                                p var $tmp = $("<``textarea`>");
                                 p $("body").append($tmp);
                                 p $tmp.val($(el).text()).select();
                                 p document.execCommand("copy");
@@ -378,7 +378,7 @@
                                 p 
                                 p   var path = document.getElementsByClassName("path");
                                 p   var i;
-                                p   for (i = 0; i < path.length; i++) {
+                                p   for (i = 0; i <` path.length; i++) {
                                 p     path[i].addEventListener("click", function (e) {
                                 span._2       // hint.innerText = this.dataset.description;
                                 p 
@@ -387,7 +387,7 @@
                                 p 
                                 span._2       /* Условие для координат всплывающего блока. 
                                 span._2     Через (e.pageX + Любое_Число) можно настраивать положение блока */
-                                p       if (e.pageX + hint.offsetWidth < document.body.offsetWidth) {
+                                p       if (e.pageX + hint.offsetWidth <` document.body.offsetWidth) {
                                 span._2         /* e.pageX == расстояние от мышки до левого края страницы, в пикселях
                                 span._2       hint.offsetWidth == ширина всплывающей подсказки
                                 span._2      Если их сумма оказывается больше ширины body - сработает else */
@@ -437,12 +437,12 @@
                                   p     $(this)
                                   p       .find(".akr-title-js")
                                   p       .on("click", function () {
-                                  p         if (array.length <= 3) {
+                                  p         if (array.length <`= 3) {
                                   p           btn.css("opacity", "0");
                                   p         }
                                   span._2 перебираем массив карточек и скрываем все после 3-x 
                                   p         $.each(array, function (index) {
-                                  p           if (2 < index) {
+                                  p           if (2 <` index) {
                                   p             $(this).addClass("_hide").slideUp();
                                   p           }
                                   p         });
@@ -476,7 +476,7 @@
                                 p   const div = document.querySelectorAll(".carryover");
                                 p   div.forEach(function (enter) {
                                 p     var s = enter.textContent;
-                                p     s = s.replace(/([A-Я])/g, "<`br/>" + "$1").trim();
+                                p     s = s.replace(/([A-Я])/g, "<``br/>" + "$1").trim();
                                 p     return (enter.innerHTML = s);
                                 p   });
                                 p });
@@ -495,24 +495,24 @@
                                   p     duration = 200; // длительность анимации
                                   p 
                                   p   _this.hide();
-                                  p   _this.wrap('<div class="select"></div>');
-                                  p   $("<`div>", {
+                                  p   _this.wrap('<`div class="select"><`/div>');
+                                  p   $("<``div>", {
                                   p     class: "new-select",
                                   p     text: _this.children("option:disabled").text(),
                                   p   }).insertAfter(_this);
                                   p 
                                   p   const selectHead = _this.next(".new-select");
                                   p 
-                                  p   $("<`div>", {
+                                  p   $("<``div>", {
                                   p     class: "new-select__list",
                                   p   }).insertAfter(selectHead);
                                   p 
                                   p   const selectList = selectHead.next(".new-select__list");
                                   span._2 вот зесь берется ссылка из атриута опции 
-                                  p   for (let i = 0; i < selectOptionLength; i++) {
-                                  p     $("<`div>", {
+                                  p   for (let i = 0; i <` selectOptionLength; i++) {
+                                  p     $("<``div>", {
                                   p       class: "new-select__item",
-                                  p       html: $("<`span>", {
+                                  p       html: $("<``span>", {
                                   p         text: selectOption.eq(i).text(),
                                   p       }),
                                   p     })

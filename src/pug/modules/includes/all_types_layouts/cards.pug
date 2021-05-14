@@ -1,0 +1,365 @@
+//- cards
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 cards
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-1.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                                
+                                p .boxses
+                                p   .boxses__item.boxses-item
+                                p     .boxses-item__img
+                                p       img(src="assets/img/svg/svg-1.svg",alt="img")
+                                p     .boxses-item__title Фиксированная стоимость
+                                p     .boxses-item__text  После <`span>БЕСПЛАТНОЙ<`/span> оценки проекта мы фиксируем расходы                         p на реализацию.
+                                p   .boxses__item.boxses-item
+                                p     .boxses-item__img
+                                p       img(src="assets/img/svg/svg-2.svg",alt="img")
+                                p     .boxses-item__title Стройматериалы
+                                p     .boxses-item__text  По оптовым прайсам <`span>Сами<`/span> подберем, закупим и доставим.
+                                p   .boxses__item.boxses-item
+                                p     .boxses-item__img
+                                p       img(src="assets/img/svg/svg-3.svg",alt="img")
+                                p     .boxses-item__title Фиксированная стоимость
+                                p     .boxses-item__text  После <`span>БЕСПЛАТНОЙ<`/span> оценки проекта мы фиксируем расходы на реализацию.
+
+                                h2._1 sass
+                                p  .boxses
+                                p    +alic
+                                p  .boxses__item
+                                p    width: 100%
+                                p    margin: 30px 0  
+                                p  .boxses-item
+                                p    +grid(0)
+                                p    +columns(20% 80%)
+                                p    grid-template-areas: "area1 area2" "area1 area3"
+                                p    border-left :3px solid $active
+                                p    background-color: rgba(11, 10, 10, 0.7)
+                                p    min-height: 95px
+                                p  
+                                p  .boxses-item__img
+                                p    grid-area: area1
+                                p    position: relative
+                                p    img
+                                p      position: absolute
+                                p      top: 50%
+                                p      left: 50%
+                                p      transform: translate(-50%,-50%)
+                                p  
+                                p    
+                                p  .boxses-item__title
+                                p    grid-area: area2
+                                p    font-size: 18px
+                                p    font-weight: 600
+                                p    line-height: normal
+                                p    letter-spacing: normal
+                                p    color: $white
+                                p  .boxses-item__text
+                                p    font-size: 14px
+                                p    font-weight: normal
+                                p    line-height: 1.49
+                                p    color: $white
+                                p    grid-area:area3
+                                p    span
+                                p      text-transform: uppercase
+                                p      color: $active
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-3.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p section#forward_leasing_cards.forward_leasing_cards
+                              p       .forward_leasing_cards__title.forward_leasing__title
+                              p         h2  Возможности подписки
+                              p       .forward_leasing_cards__body
+                              p         .forward_leasing_cards__item.forward_leasing_cards-item
+                              p           .forward_leasing_cards-item__img
+                              p             img(src="assets/img/svg/_18.svg",alt="img")
+                              p           .forward_leasing_cards-item__content
+                              p             .forward_leasing_cards-item__title Обменять на новый за 3 200 ₽
+                              p             .forward_leasing_cards-item__description Не дожидаясь окончания договора и не оплачивая                               p остаточную стоимость  смартфона
+                              p         .forward_leasing_cards__item.forward_leasing_cards-item
+                              p           .forward_leasing_cards-item__img
+                              p             img(src="assets/img/svg/cercle-arrows.svg",alt="img")
+                              p           .forward_leasing_cards-item__content
+                              p             .forward_leasing_cards-item__title Обменять на новый бесплатно
+                              p             .forward_leasing_cards-item__description Не оплачивая остаточную стоимость смартфона
+                              p         .forward_leasing_cards__item.forward_leasing_cards-item
+                              p           .forward_leasing_cards-item__img
+                              p             img(src="assets/img/svg/check.svg",alt="img")
+                              p           .forward_leasing_cards-item__content
+                              p             .forward_leasing_cards-item__title Оставить себе — выкупить
+                              p             .forward_leasing_cards-item__description Внести остаточную стоимость разом или                              p продолжать следовать графику ежемесячных платежей до полного погашения остатка
+                              h2._1 sass
+                              p .forward_leasing_cards
+                              p   padding: 8rem 0 0 0
+                              p   @media (min-width: 752px) and (max-width: 1199px)
+                              p     padding: 7rem 0 0 0
+                              p   @media (max-width: 751px)		
+                              p     padding: 4.6rem 0 0 0
+                              p     text-align: left
+                              p   &__title
+                              p     padding:  0 0 4rem 0
+                              p     @media (min-width: 752px) and (max-width: 1199px)
+                              p       padding:  0 0 2.5rem 0
+                              p     @media (max-width: 751px)
+                              p       padding:  0 0 11px 0
+                              p       text-align: left
+                              p   &__body
+                              p     // display: grid
+                              p     // grid-template-columns:  repeat(3, 1fr)
+                              p     // column-gap: 2rem
+                              p     +grid(2rem)
+                              p     +columns(repeat(3, 1fr))
+                              p     @media (min-width: 0px) and (max-width: 1199px)
+                              p       grid-template-columns: 1fr
+                              p   &__item
+                              p     
+                              p 
+                              p     @media (max-width: 751px)		
+                              p       +jucb	
+                              p 
+                              p   
+                              p   
+                              p .forward_leasing_cards-item
+                              p   +jucb	
+                              p   padding: 1rem 0 0 0
+                              p   @media (min-width: 752px) and (max-width: 1199px)
+                              p     padding: 1rem 0 2.8rem 0
+                              p   @media (max-width: 751px)		
+                              p     padding: 10px 0 15px 0
+                              p   &__img
+                              p     flex: 0 1 35%
+                              p     img
+                              p       width: 9rem
+                              p       margin: 0 auto
+                              p       display: block
+                              p       @media (max-width: 751px)		
+                              p         width: 50px
+                              p         height: 28px
+                              p     @media (min-width: 752px) and (max-width: 1199px)
+                              p       flex: 0 1 13%
+                              p     @media (max-width: 751px)		
+                              p       flex: 0 1 10%
+                              p       padding: 0 0 10px 0
+                              p       width: 50px
+                              p       height: 28px
+                              p   &__content
+                              p     flex: 0 1 64%
+                              p     padding: 0 4.5rem 0 .2rem
+                              p     @media (min-width: 752px) and (max-width: 1199px)
+                              p       flex: 0 1 85.3%
+                              p     @media (max-width: 751px)		
+                              p       flex: 0 1 auto
+                              p       padding: 0 0 0 0
+                              p     @media (max-width: 751px)
+                              p       flex: 1 1 60%		
+                              p       padding: 0 0 0 15px
+                              p   &__title
+                              p     font-weight: 700
+                              p     font-size: 1.8rem
+                              p     line-height: 2.1rem
+                              p     @media (max-width: 751px)		
+                              p       font-size: 1.5rem
+                              p   &__description
+                              p     color: #000000
+                              p     line-height: 2rem
+                              p     padding: 1rem 0 0 0
+                              p     @media (min-width: 752px) and (max-width: 1199px)
+                              p       font-size: 1.4rem
+                              p       padding: .5rem 0 0 0
+                              p     @media (max-width: 751px)		
+                              p       font-size: 1.2rem
+                              p       padding: 10px 5px 0 0
+                              p       line-height: 1.4rem
+                              p       text-align: left
+                              p 
+                              p   &:last-child
+                              p     .forward_leasing_cards-item__content
+                              p       padding: 0 0 0 .2rem
+                              p       @media (max-width: 751px)
+                              p         padding: 0 0 0 15px
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-7.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+
+                            p section#cards.cards
+                            p   .cards__wrapper
+                            p     .container
+                            p       .cards__title
+                            p         h2 Kodėl verta siūti mokyklinę uniformą su mumis?
+                            p       .cards__body
+                            p         .cards__item.cards-item
+                            p           .card 
+                            p               //- svg(height="60" width="60").card__img.card__img--normal
+                            p               //-   use(xlink:href="assets/img/sprite.svg#needle")
+                            p               img(src="assets/img/svg/Needle.svg",alt="img").card__img.card__img--normal
+                            p               img(src="assets/img/svg/needle-white.svg",alt="img").card__img.card__img--hover
+                            p               h5.card__title  Atsparūs yrimui ir lengvai prižiūrimi audiniai
+                            p         .cards__item.cards-item
+                            p           .card 
+                            p               
+                            p               img(src="assets/img/svg/kimono.svg",alt="img").card__img.card__img--normal
+                            p               img(src="assets/img/svg/shert.svg",alt="img").card__img.card__img--normal
+                            p 
+                            p               img(src="assets/img/svg/kimono-white.svg",alt="img").card__img.card__img--hover
+                            p               img(src="assets/img/svg/shert-white.svg",alt="img").card__img.card__img--hover
+                            p               h5.card__title  Platus asortimentas ir modernūs modeliai
+                            p         .cards__item.cards-item
+                            p           .card
+                            p               img(src="assets/img/svg/school.svg",alt="img").card__img.card__img--normal
+                            p               img(src="assets/img/svg/school-white.svg",alt="img").card__img.card__img--hover
+                            p               h5.card__title  Emblemų su mokyklos logotipu gaminimas
+                            p         .cards__item.cards-item
+                            p           .card 
+                            p               img.card__img(src="assets/img/svg/swing.svg" alt="img").card__img.card__img--normal
+                            p               img.card__img(src="assets/img/svg/swing-white.svg" alt="img").card__img.card__img--hover
+                            p               h5.card__title  Didelis dydžių diapazonas
+
+                            h2._1 sass
+                            p  .cards__wrapper
+                            p    margin: 10rem 0 0 0
+                            p  
+                            p    
+                            p  .cards__body
+                            p    display: grid
+                            p    grid-template-columns: repeat(4, 1fr)
+                            p    @media (min-width: 768px) and (max-width: 1199px) 
+                            p      grid-template-columns: repeat(2, 1fr)
+                            p      width: 80%
+                            p      margin: 0 auto
+                            p    @media (max-width: 767px) 
+                            p      grid-template-columns:  1fr
+                            p  .cards-item
+                            p    transition: all 0.3s ease-in-out
+                            p    @media (max-width: 767px) 
+                            p      width: 80%
+                            p      margin: 0 auto
+                            p    &:hover
+                            p      cursor: pointer
+                            p      +bg($active)
+                            p      .card__title
+                            p        color: white
+                            p      .card__img--normal
+                            p        display: none
+                            p      .card__img--hover
+                            p        display: inline-block 
+                            p    &:last-child
+                            p      .card
+                            p        border-right: 1px solid #3E3E3E
+                            p    
+                            p    &:nth-child(2)
+                            p      @media (min-width: 768px) and (max-width: 1199px) 
+                            p        border-right: 1px solid #3E3E3E
+                            p      @media (max-width: 767px)
+                            p        border-right: none
+                            p  
+                            p  
+                            p  
+                            p  .card__img--normal
+                            p        display: inline-block 
+                            p  .card__img--hover
+                            p        display: none
+                            p  .cards-item__svg
+                            p      width: 6rem!important
+                            p      height: 6rem!important
+                            p  .cards
+                            p    .card 
+                            p      min-height: 35.5rem
+                            p      border-top: 1px solid transparent
+                            p      border-bottom: 1px solid  #3E3E3E
+                            p      border-left: 1px solid #3E3E3E
+                            p      // border-right: 1px solid #3E3E3E
+                            p      padding: 9rem 2rem  0rem	3.7rem
+                            p      position: relative
+                            p      * 
+                            p        text-align: center
+                            p      @media (max-width: 1199px)
+                            p        min-height: 30rem
+                            p      @media (max-width: 767px) 
+                            p        min-height: 25rem
+                            p        border-left: 1px solid #3E3E3E
+                            p        border-right: 1px solid #3E3E3E
+                            p    .card__img
+                            p      
+                            p      @media (max-width: 1199px)
+                            p        width: 5rem
+                            p        height: 5rem
+                            p    .card__title
+                            p      text-align: left
+                            p      font-size: 2rem
+                            p      line-height: 2.4rem
+                            p      padding: 8.4rem 0 0 0
+                            p      +absolute(80%,15.6rem,auto,3.7rem,auto,0%,0%)
+                            p      bottom: 4.8rem
+                            p      @media (max-width: 1199px) 
+                            p        font-size: 1.5rem
+                            p      
+                            p  .cards__title
+                            p    text-align: center
+                            p    padding: 0 0 2.8rem 0
+                            p    h2
+                            p      font-weight: 500
+                            p      font-size: 3rem
+                            p      line-height: 3.7rem
+                            p      @media (max-width: 1199px)
+                            p        font-size: 2.5rem 
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              h2._1 sass

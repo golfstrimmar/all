@@ -1,0 +1,135 @@
+//- разное
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0  tabs 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-12.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                              p section#a-tabs.a-tabs
+                              p    .container
+                              p      .a-tabs__title
+                              p        h3 Veiklos sritys
+                              p      .a-tabs__content
+                              p              .tabs
+                              p                  nav.tabs__items
+                              p                    a(href="#tab-1" data="active").tabs__item Vyriški drabužiai HERMANN
+                              p                    a(href="#tab-2").tabs__item Uniformos
+                              p                    a(href="#tab-3").tabs__item Koncertinė apranga
+                              p                    a(href="#tab-4").tabs__item Individualūs užsakymai
+                              p                  ul.tabs__body
+                              p                    li.tabs__block#tab-1  
+                              p                      p.akr-drop__info Jau virš 20 metų mūsų siuvėjų rankomis pasiūti vyriški                               pdrabužiai puošia stipriąją lytį. Klasikiniai kostiumai, švarkai pagaminti                               ppagal šiuolaikinės mados tendencijas, sudaro didelę dalį mūsų produkcijos.                              pVyrai mėgsta jaustis patogiai ir gerai atrodyti. Pastaruoju metu vis dažniau                              ppirkėjų žvilgsniai krypsta į mūsų siūlomus sportiško stiliaus drabužius,                            psuderintus su klasika, kurie dvelkia nuosaikumu ir šiuolaikiškumu. Tam                              pbūdinga – papildomos kišenės, įvairūs dekoratyviniai apdirbimai: alkūniniai                             plopai, skeltukai, kišenių įdurai, dirželiai. Šios detalės padeda įgyvendinti                            pmūsų pirkėjų lūkesčius.
+                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
+                              p                    li.tabs__block#tab-2 
+                              p                      p.akr-drop__info sta į mūsų siūlomus sportiško stiliaus drabužius, suderintus                               psu klasika, kurie dvelkia nuosaikumu ir šiuolaikiškumu. Tam būdinga –                               ppapildomos kišenės, įvairūs dekoratyviniai apdirbimai: alkūniniai lopai,                              pskeltukai, kišenių įdurai, dirželiai. Šios detalės padeda įgyvendinti mūsų                              ppirkėjų lūkesčius.
+                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
+                              p                    li.tabs__block#tab-3
+                              p                      p.akr-drop__info Jau virš 20 metų mūsų siuvėjų rankomis pasiūti vyriški                               pdrabužiai puošia stipriąją lytį. Klasikiniai kostiumai, švarkai pagaminti                               ppagal šiuolaikinės mados ten
+                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
+                              p                    li.tabs__block#tab-4
+                              p                      p.akr-drop__info Jau virš 20 metų mūsų siuvėjų rankomis pasiūti vyriški                               pdrabužiai puošia stipriąją lytį. Klasikiniai kostiumai, švarkai pagaminti                               ppagal šiuolaikinės mados tendencijas, sudaro didelę dalį mūsų produkcijos.                              pVyrai mėgsta jaustis patogiai ir gerai atrodyti. Pastaruoju metu vis dažniau                              ppirkėjų žvilgsniai krypsta į mūsų siūlomus sportiško stiliaus drabužius,                            psuderintus su klasika, kurie dvelkia nuosaikumu ir šiuolaikiškumu. Tam                              pbūdinga – papildomos kišenės, įvairūs dekoratyviniai apdirbimai: alkūniniai                             plopai, skeltukai, kišenių įdurai, dirželiai. Šios detalės padeda įgyvendinti                            pmūsų pirkėjų lūkesčius.
+                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
+
+                              h2._1 sass
+
+                              p  .a-tabs
+                              p    margin: 7.4rem 0 0 0
+                              p    @media (max-width: 767px) 
+                              p      margin: 3.4rem 0 0 0
+                              p    
+                              p    &__title
+                              p        h3
+                              p              font-weight: bold
+                              p              font-size: 30px
+                              p              line-height: 37px
+                              p              color: #000000
+                              p              text-align: center
+                              p    &__content
+                              p      margin: 5rem 12.3rem 0 0 
+                              p      @media (max-width: 767px) 
+                              p        margin: 3rem 0 0 0
+                              p               
+                              p    .tabs
+                              p  
+                              p      &__items
+                              p        +jucb	
+                              p        border-bottom: 1px solid #000000
+                              p        margin: 1rem 0 0 0
+                              p        padding: 0 0 3rem 0
+                              p        @media (max-width: 1199px) 
+                              p          flex-direction: column
+                              p        
+                              p      &__item
+                              p        font-weight: 400
+                              p        font-size: 2rem
+                              p        line-height: 2.4rem
+                              p        color: #000000
+                              p        display: inline-block
+                              p        transition: all 0.2s ease-in-out
+                              p        &:hover
+                              p          cursor: pointer
+                              p          color: $active
+                              p        @media (max-width: 767px) 
+                              p          font-size: 1.5rem
+                              p        
+                              p      &__item[data="active"]
+                              p        font-weight: 600
+                              p      &__body
+                              p        min-height: 27rem
+                              p        padding: 1rem 0 0 0
+                              p        @media (max-width: 767px)
+                              p          padding: .8rem 0 0 0
+                              p      &__block
+                              p        transition: all 0.2s ease-in-out
+                              p        p
+                              p      &__tags
+                              p        +jucs
+                              p        margin: 2rem 0 3.2rem 0
+                              p        @media (max-width: 767px)
+                              p          margin: 1.5rem 0 2.8rem 0
+                              p      &__tag
+                              p        font-weight: 500
+                              p        @media (max-width: 767px) 
+                              p          font-size: 1.5rem
+                              p        
+                              p      .akr-drop__info
+                              p        @media (max-width: 767px) 
+                              p          font-size: 1.5rem
+      
+                              h2._1 js
+                              p import $ from "jquery";
+                              p 
+                              p 
+                              p $(document).ready(function (e) {
+                              p   $(".tabs__block").slideUp(1);
+                              p 
+                              p   $(".tabs__item").each(function () {
+                              p    if ($(this).attr("data") == "active") {
+                              p      let targetLink = $(this).attr("href");
+                              p      $(targetLink).slideDown(1);
+                              p    }
+                              p   });
+                              p 
+                              p   $(".tabs__item").on("click", function () {
+                              p     event.preventDefault();
+                              p     let targetLink = $(this).attr("href");
+                              p     $(".tabs__item").attr("data","none");
+                              p     $(".tabs__block").slideUp(1);
+                              p 
+                              p     $(this).attr("data", "active");
+                              p     $(targetLink).slideDown(200);
+                              p   });
+                              p });
+
+
+
+
+
+
+
+

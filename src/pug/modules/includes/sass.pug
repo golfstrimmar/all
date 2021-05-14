@@ -63,6 +63,21 @@
 
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
+                              h4._5 установка иконки в псевдокласс
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            .akr__drop.akr-drop.akr-drop-js
+                                p position: relative
+                                p &:after
+                                p      content: url('/assets/img/svg/location.svg')
+                                p      position: absolute
+                                p      width: 2rem
+                                p      height: 2.7rem
+                                p      top: 50% 
+                                p      left: 0
+                                p      z-index: 2
+                                p      transform: translate(0%,-50%)
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
                               h4._5 materialicons
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
@@ -198,9 +213,9 @@
                                     span._2 http://htmlbook.ru/samhtml/tekst/spetssimvoly
                                     p ^ 
                                     p |
-                                    p `&nbsp;   пробел
-                                    p `&rarr; `&#8594; → стрелка вправо
-                                    p `&copy;
+                                    p "&nbsp; "  пробел
+                                    p "&rarr; &#8594;" → стрелка вправо
+                                    p "&copy;"
                                     p ₽
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
@@ -226,12 +241,12 @@
                               h4._5 display
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
-                                    p  /* < display-outside> values */
+                                    p  /* <` display-outside> values */
                                     p  display: block
                                     p  display: inline
                                     p  display: run-in
                                     p  
-                                    p  /* < display-inside> values */
+                                    p  /* <` display-inside> values */
                                     p  display: flow
                                     p  display: flow-root
                                     p  display: table
@@ -239,12 +254,12 @@
                                     p  display: grid
                                     p  display: ruby
                                     p  
-                                    p  /* < display-outside> plus < display-inside> values */
+                                    p  /* <` display-outside> plus <` display-inside> values */
                                     p  display: block flow
                                     p  display: inline table
                                     p  display: flex run-in
                                     p  
-                                    p  /* < display-listitem> values */
+                                    p  /* <` display-listitem> values */
                                     p  display: list-item
                                     p  display: list-item block
                                     p  display: list-item inline
@@ -254,7 +269,7 @@
                                     p  display: list-item block flow-root
                                     p  display: flow list-item block
                                     p  
-                                    p  /* < display-internal> values */
+                                    p  /* <` display-internal> values */
                                     p  display: table-row-group
                                     p  display: table-header-group
                                     p  display: table-footer-group
@@ -268,11 +283,11 @@
                                     p  display: ruby-base-container
                                     p  display: ruby-text-container
                                     p  
-                                    p  /* < display-box> values */
+                                    p  /* <` display-box> values */
                                     p  display: contents
                                     p  display: none;
                                     p  
-                                    p  /* < display-legacy> values */
+                                    p  /* <` display-legacy> values */
                                     p  display: inline-block
                                     p  display: inline-table
                                     p  display: inline-flex
@@ -409,7 +424,7 @@
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
                                     p Знак :: позволяет выбрать вещи, которых нет в HTML.
-                                    p p::first-line соответствует первой линии абзаца <`p>
+                                    p p::first-line соответствует первой линии абзаца <``p>
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5 обращение к родителю. только scss

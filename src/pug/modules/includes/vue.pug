@@ -16,9 +16,9 @@
                                 p    "materialize-css": "^1.0.0-rc.2",
                                 p    "@mdi/font": "^5.9.55",
                                 h5 в app.vue 
-                                p  <`style lang="sass">
+                                p  <``style lang="sass">
                                 p  @import '~materialize-css/dist/css/materialize.min.css'
-                                p  <`/style>
+                                p  <``/style>
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5 создание layouts 
@@ -28,7 +28,7 @@
                                   strong   2. открываем папку layouts на уровне components
                                   strong   3. в этой папке формируем layouts из тех самых общих блоков по схеме ----
                                   p   
-                                  p   <`template lang="pug">
+                                  p   <``template lang="pug">
                                   p   .wrapper
                                   p     section.first
                                   p       .first__title
@@ -53,8 +53,8 @@
                                   p     section.contacts
                                   p       .contacts__wrapper
                                   p         router-view 
-                                  p   <`/template>
-                                  p   <`script>
+                                  p   <``/template>
+                                  p   <``script>
                                   p   
                                   p   import Navbar from '@/components/Navbar';
                                   p   import Sidebar from '@/components/Sidebar';
@@ -68,11 +68,11 @@
                                   p           methods: { 
                                   p               },  computed:{      }
                                   p       }
-                                  p   <`/script>
+                                  p   <``/script>
                                   p     
-                                  p   <`style	lang="sass" scoped>
+                                  p   <``style	lang="sass" scoped>
                                   p     
-                                  p   <`/style>
+                                  p   <``/style>
                                   p   
                                   p   
                                   strong   4. в папке router делаем файл index.js и в нем прописываем роуты по схеме
@@ -84,12 +84,12 @@
                                   p   },
                                   p   
                                   strong   5. в app.js прописываем все это по схеме 
-                                  p   <`template lang="pug">
+                                  p   <``template lang="pug">
                                   p   #app 
                                   p     component(:is="layout")
                                   p       router-view
-                                  p   <`/template>
-                                  p   <`script>
+                                  p   <``/template>
+                                  p   <``script>
                                   p   import RegLayout from '@/layouts/RegLayout'
                                   p   import MainLayout from '@/layouts/MainLayout'
                                   p   export default {
@@ -107,12 +107,12 @@
                                   p        }
                                   p          }
                                   p   };
-                                  p   <`/script>
-                                  p   <`style lang="sass">
+                                  p   <``/script>
+                                  p   <``style lang="sass">
                                   p   @import '~materialize-css/dist/css/materialize.min.css'
                                   p   @import 'assets/index.css'
                                   p   @import 'assets/app.css'
-                                  p   <`/style>
+                                  p   <``/style>
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5 вывод дочернего компонента в родителя 
@@ -121,7 +121,7 @@
                               strong 1. в родителе делаем вывод дочернего компонента
                               p Vselect
                               strong  2.прописываем его импорт
-                              p <`script>
+                              p <``script>
                               p import Vselect from '@/components/v-select'
                               p  export default { 
                               p  components:  {
@@ -196,7 +196,7 @@
                                 p  p(@click="areOptionsVisible = !areOptionsVisible") select
                                 p  .options(v-if="areOptionsVisible")
                                 strong это в в скрипте
-                                p <`script>
+                                p <``script>
                                 p export default {
                                 p   name: 'v-select',
                                 p   data(){
@@ -277,7 +277,7 @@
                                 strong если есть areOptionsVisible=true то добавляется класс  akr-item__title--active.например если есть какая-то выпадашка и у заголовка нужно поменять стили 
                                 p :class="[areOptionsVisible ? 'akr-item__title--active' : '']"
                                 strong тернарное условие. можно сделать отображение того или иного класса в зависимости от результатата условия -здесь соревнование идет между первой и второй записью. решает все isActive: true если false--выполняется второй класс----------default выполняется всегда
-                                p <`div :class="[  isActive ? 'active btn'  : 'disabled a', 'default' ]">
+                                p <``div :class="[  isActive ? 'active btn'  : 'disabled a', 'default' ]">
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5  в инпут заносится например цвет. значение инпута снимается в переменную и пробрасыватся в стили какой-то кнопки например
@@ -404,22 +404,22 @@
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
                                     strong добавляет один раз и потом как не меняется содержимое все равно будет как с начала завели.
-                                    p  <!-- одиночный элемент -->
-                                    p <span v-once>Это никогда не изменится: {{msg}}</span>
+                                    p  <`!-- одиночный элемент -->
+                                    p <`span v-once>Это никогда не изменится: {{msg}}<`/span>
                                     p 
-                                    p <!-- элемент с потомком -->
-                                    p <div v-once>
-                                    p   <h1>comment</h1>
-                                    p   <p>{{msg}}</p>
-                                    p </div>
+                                    p <`!-- элемент с потомком -->
+                                    p <`div v-once>
+                                    p   <`h1>comment<`/h1>
+                                    p   <`p>{{msg}}<`/p>
+                                    p <`/div>
                                     p 
-                                    p <!-- компонент -->
-                                    p <my-component v-once :comment="msg"></my-component>
+                                    p <`!-- компонент -->
+                                    p <`my-component v-once :comment="msg"><`/my-component>
                                     p 
-                                    p <!-- директива `v-for` -->
-                                    p <ul>
-                                    p   <li v-for="i in list" v-once>{{i}}</li>
-                                    p </ul>
+                                    p <`!-- директива `v-for` -->
+                                    p <`ul>
+                                    p   <`li v-for="i in list" v-once>{{i}}<`/li>
+                                    p <`/ul>
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5 v-for
@@ -458,66 +458,66 @@
                               h4._5 v-if v-else-if  v-else
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
-                                    p <!-- -10 ----показывает блок когда свойство --msgShow === 'primary'---------------------- -->
-                                    p <!--конструкция  v-if v-else-if  v-else  --обеспечивает отсутствие в дом дереве блоков, которые не выбраны   -->
-                                    p <`div class="container mt-4">
-                                    p   <`div class="col-sm-6" v-if="msgShow === 'primary'">
-                                    p     <`div class="alert alert-primary" >
+                                    p <`!-- -10 ----показывает блок когда свойство --msgShow === 'primary'---------------------- -->
+                                    p <`!--конструкция  v-if v-else-if  v-else  --обеспечивает отсутствие в дом дереве блоков, которые не выбраны   -->
+                                    p <``div class="container mt-4">
+                                    p   <``div class="col-sm-6" v-if="msgShow === 'primary'">
+                                    p     <``div class="alert alert-primary" >
                                     p       {{msgPrimary}}
-                                    p     <`/div>
-                                    p   <`/div>
-                                    p     <`div class="alert alert-success" role="alert" v-else-if="msgShow === 'success'">
-                                    p   <`div class="col-sm-6" >
+                                    p     <``/div>
+                                    p   <``/div>
+                                    p     <``div class="alert alert-success" role="alert" v-else-if="msgShow === 'success'">
+                                    p   <``div class="col-sm-6" >
                                     p       {{msgSuccess}}
-                                    p     <`/div>
-                                    p   <`/div>
-                                    p   <`div class="col-sm-6"  v-else>
-                                    p     <`div class="alert alert-danger" role="alert" >
+                                    p     <``/div>
+                                    p   <``/div>
+                                    p   <``div class="col-sm-6"  v-else>
+                                    p     <``div class="alert alert-danger" role="alert" >
                                     p       {{msgDanger}}
-                                    p     <`/div>
-                                    p   <`/div>
-                                    p <`/div>
+                                    p     <``/div>
+                                    p   <``/div>
+                                    p <``/div>
                                     p 
                                     p 
-                                    p <`hr>
-                                    p <!-- v-if="status==1"----важно else применять к следующему за if  тегу------- -->
-                                    p <`h2 v-if="status==1">Свойство истина равно 1</h2>
-                                    p <`h2 v-else-if="status==2">Свойство ложь равно 2</h2>
-                                    p <`h2 v-else>Свойство не то не се {{status}}</h2>
-                                    p <`hr>
-                                    p <!-- --v-if="status==1"------- -->
-                                    p <`div v-if="status==1">
-                                    p <`h3>Заголовок правильный</h3>
-                                    p <`p>Текст правильный</p>
-                                    p <`/div>
+                                    p <``hr>
+                                    p <`!-- v-if="status==1"----важно else применять к следующему за if  тегу------- -->
+                                    p <``h2 v-if="status==1">Свойство истина равно 1<`/h2>
+                                    p <``h2 v-else-if="status==2">Свойство ложь равно 2<`/h2>
+                                    p <``h2 v-else>Свойство не то не се {{status}}<`/h2>
+                                    p <``hr>
+                                    p <`!-- --v-if="status==1"------- -->
+                                    p <``div v-if="status==1">
+                                    p <``h3>Заголовок правильный<`/h3>
+                                    p <``p>Текст правильный<`/p>
+                                    p <``/div>
                                     p 
-                                    p <`div v-else>
-                                    p <`h3>Заголовок неправильный</h3>
-                                    p <`p>Текст неправильный</p>
-                                    p <`/div>
+                                    p <``div v-else>
+                                    p <``h3>Заголовок неправильный<`/h3>
+                                    p <``p>Текст неправильный<`/p>
+                                    p <``/div>
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5 v-show
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
                                       strong v-show -работает так же но в коде есть все блоки--style display: none;
-                                      p <`div class="container mt-4">
-                                      p   <`div class="col-sm-6" v-show="msgShow === 'primary'">
-                                      p     <` class="alert alert-primary" >
+                                      p <``div class="container mt-4">
+                                      p   <``div class="col-sm-6" v-show="msgShow === 'primary'">
+                                      p     <`` class="alert alert-primary" >
                                       p       {{msgPrimary}}
-                                      p     <`/div>
-                                      p   <`/div>
-                                      p     <`div class="alert alert-success" role="alert" v-show="msgShow === 'success'">
-                                      p   <` class="col-sm-6" >
+                                      p     <``/div>
+                                      p   <``/div>
+                                      p     <``div class="alert alert-success" role="alert" v-show="msgShow === 'success'">
+                                      p   <`` class="col-sm-6" >
                                       p       {{msgSuccess}}
-                                      p     <`/div>
-                                      p   <`/div>
-                                      p   <`div class="col-sm-6"  v-show="msgShow === 'danger'">
-                                      p     <`div class="alert alert-danger" role="alert" >
+                                      p     <``/div>
+                                      p   <``/div>
+                                      p   <``div class="col-sm-6"  v-show="msgShow === 'danger'">
+                                      p     <``div class="alert alert-danger" role="alert" >
                                       p       {{msgDanger}}
-                                      p     <`/div>
-                                      p   <`/div>
-                                      p <`/div>
+                                      p     <``/div>
+                                      p   <``/div>
+                                      p <``/div>
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
                               h4._5 
@@ -789,7 +789,7 @@
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
                                 button.btn.btn--success.btn--success-1(type='button' rel="popup-1").art_inner-article-galery__play.popup-player-init-js открыть  попап
-                                p <`template lang="pug">
+                                p <``template lang="pug">
                                 p div.wrapper
                                 p   h2(v-once) {{titleHeader}}
                                 p   form(@submit.prevent="checkForm")
@@ -815,9 +815,9 @@
                                 p           h3 {{card.title}}
                                 p           p {{card.text}}
                                 p 
-                                p <`/template>
+                                p <``/template>
                                 p 
-                                p <`script>
+                                p <``script>
                                 p export default {
                                 p   name: 'App',
                                 p  data: () => ({
@@ -847,8 +847,8 @@
                                 p               }
                                 p 
                                 p };
-                                p <`/script>
-                                p <`style lang="sass" >
+                                p <``/script>
+                                p <``style lang="sass" >
                                 p .wrapper
                                 p   padding: 1rem 2rem
                                 p   form
@@ -866,12 +866,12 @@
                                     button.btn.btn--success.btn--success-1(type='button' rel="popup-2").art_inner-article-galery__play.popup-player-init-js-2 открыть  попап
                                     
                                     strong  ======app=========
-                                    p <`template lang="pug">
+                                    p <``template lang="pug">
                                     p #app
                                     p   Navbar
                                     p   router-view 
-                                    p <`/template>
-                                    p <`script>
+                                    p <``/template>
+                                    p <``script>
                                     p import Navbar from '@/components/navbar'
                                     p export default {
                                     p   name: 'App',
@@ -888,9 +888,9 @@
                                     p                  }
                                     p 
                                     p };
-                                    p <`/script>
+                                    p <``/script>
                                     p 
-                                    p <`style lang="sass">
+                                    p <``style lang="sass">
                                     p html
                                     p   padding: 2rem 0 0 0	
                                     p   margin: 0 0 0 0
@@ -906,10 +906,10 @@
                                     p 
                                     p @import '~materialize-css/dist/css/materialize.min.css'
                                     p 
-                                    p <`/style>
+                                    p <``/style>
 
                                     strong =======navbar============
-                                    p <`template lang="pug">
+                                    p <``template lang="pug">
                                     p nav.navbar
                                     p   .nav-wrapper
                                     p     ul.navbar-menu()
@@ -923,8 +923,8 @@
                                     p           :exact="pagesBatton.exect"
                                     p           )
                                     p           a.waves-effect.waves-orange.pointer(href='#') {{pagesBatton.title}}
-                                    p <`/template>
-                                    p <`script>
+                                    p <``/template>
+                                    p <``script>
                                     p export default {
                                     p    data: () => ({
                                     p          pagesBattons: [
@@ -955,14 +955,14 @@
                                     p computed:{      }
                                     p 
                                     p     }
-                                    p <`/script>
+                                    p <``/script>
                                     p   
-                                    p <`style	lang="sass" >
+                                    p <``style	lang="sass" >
                                     p .navbar-menu__item--active
                                     p   background: lighten(#ee6e73, 10%)
                                     p   a
                                     p     color: #AD1457
-                                    p <`/style>
+                                    p <``/style>
 
                         li.akr__item.akr-item
                             .akr-item__title.akr-title-js
@@ -1508,7 +1508,7 @@
                                   p             )
                                   p      .categoryData__username_1 {{option.username_1}} 
                                   p      .categoryData__surusername_1 {{option.surusername_1}}
-                                  p <`script>
+                                  p <``script>
                                   p export default {
                                   p computed: {
                                   p options() {
@@ -1582,7 +1582,7 @@
                             .akr__drop.akr-drop.akr-drop-js
 
                                 strong это основной компонент в котором форма и вывод тасков в таблицу
-                                p <`template lang="pug">
+                                p <``template lang="pug">
                                 p div
                                 p     //- .timetable__wrapper
                                 p     section
@@ -1624,9 +1624,9 @@
                                 p                 p  {{task.complited}}
                                 p                 p  {{task.editing}}
                                 p 
-                                p <`/template>
+                                p <``/template>
                                 p   
-                                p <`script>
+                                p <``script>
                                 p 
                                 p export default {
                                 p 
@@ -1669,9 +1669,9 @@
                                 p 
                                 p // ------------------------------
                                 p    }
-                                p <`/script>
+                                p <``/script>
                                 p   
-                                p <`style	lang="sass" scoped>
+                                p <``style	lang="sass" scoped>
                                 p .task-list
                                 p     
                                 p .task-item
@@ -1695,7 +1695,7 @@
                                 p         font-size: 1rem
                                 p         font-family: Poppins, sans-serif
                                 p         padding: 0 1rem	
-                                p <`/style>
+                                p <``/style>
 
                                 strong это файл store.js из папки store
                                 p import Vue from 'vue'

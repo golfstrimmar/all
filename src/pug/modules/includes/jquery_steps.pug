@@ -71,12 +71,12 @@
                               h4._5 делаем искуственный класс эмулятор селекта. в него помещаем и картинку из опции 
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
-                                    p   $("<`div>", {
+                                    p   $("<``div>", {
                                     p     class: "new-select",
                                     p     text: _this.children("option:selected").text(),
                                     p   })
                                     p     .prepend(
-                                    p       $("<`img>", {
+                                    p       $("<``img>", {
                                     p         class: "new-select__img",
                                     p         src: _this.children("option:selected").val(),
                                     p       })
@@ -87,9 +87,9 @@
                               h4._5  создание какого-то div и помещаем его в конец другого div
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
                             .akr__drop.akr-drop.akr-drop-js
-                                    p    $("<`div>", {
+                                    p    $("<``div>", {
                                     p      class: "new-select__item",
-                                    p      html: $("<`span>", {
+                                    p      html: $("<``span>", {
                                     p        text: selectOption.eq(i).text(),
                                     p      }),
                                     p    }).appendTo(selectList);
@@ -100,16 +100,16 @@
                             .akr__drop.akr-drop.akr-drop-js
                                     span._2 формируеет массив из опций селекта например
                                     p var ddd = $(this).find("option")
-                                    p  for (let i = 0; i < ddd.length ; i++) {
-                                    p    $("<`div>", {
+                                    p  for (let i = 0; i <` ddd.length ; i++) {
+                                    p    $("<``div>", {
                                     p      class: "new-select__item",
-                                    p      html: $("<`span>", {
+                                    p      html: $("<``span>", {
                                     p        text: selectOption.eq(i).text(),
                                     p      }),
                                     p    })
                                     p      .attr("data-value", selectOption.eq(i).text())
                                     p      .prepend(
-                                    p        $("<`img>", {
+                                    p        $("<``img>", {
                                     p          class: "new-select__img",
                                     p          src: selectOption.eq(i).val(),
                                     p        })

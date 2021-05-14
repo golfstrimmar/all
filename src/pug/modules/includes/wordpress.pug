@@ -1,0 +1,1103 @@
+//- общие 
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 общие
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          h2(style="color: blue") подсмотреть можно на uniformos или на split
+                          h2 1. делаем пустой сайт на openserver
+                          h2 2. закидываем туда wp и делаем бд. 
+                          p на phpmyadmin:  
+                          p Пользователь: root
+                          p Пароль: пусто
+                          p 
+                          p Имя базы данных:     uniformos
+                          p Имя пользователя:    root
+                          p Пароль : пусто
+                          p 
+                          p Название сайта: 	uniformos
+                          p Имя пользователя: 	yushinbox
+                          p Пароль: 	nl52x1^g%q7rUGiDfn
+                          p Ваш e-mail:   yushinbox@gmail.com
+                          h2 3. https://underscores.me
+                          p здесь миша рассказывает о натяжке на wp https://www.youtube.com/watch?v=C1vnS8dkmd8&list=PLyKl7JlkPve6wRFRgVgImBWZ3xMQnYUQa&index=6
+                          h2 4. после загрузки темы underscores 
+                          p создать страницу главная .
+                          p потом изменить настройки чтения на статическую страницу.
+                          p поменять страницу главная на главную
+                          p в корне ДОЛЖЕН лежать файл style.css он пустой, но с комментами 
+                          p /*!
+                          p Theme Name: Transitive
+                          p */
+                          h2 4.
+                          p делаем папку assets в корне и туда забрасываем верстку. потом будем к ней обращаться
+                          p подключаем скрипты, стили на functions.php
+                          h2 5.
+                          p дальше нужно использовать шаблоны страниц. если их не создавать, 
+                          p то будет использован для страницы шаблон по умолчанию ---page.php
+                          p по иерархии index.php используется когда не используются другие шаблоны 
+                          p page.php в него можно положить верстку если одна страница и прописать связь с header и footer/ 
+                          p ниже есть описание по page.php
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 создание шаблонов страниц
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p создается новый файл например template-contacts.php.  его  поместить в папку templates.
+                          p только нужно переназначить снова шаблон на странице настроек страниц
+                          p туда заносится нужная верстка. 
+                          p !!!!главное в нем должен быть коментарий 
+                          p <`?php
+                          p /*
+                          p Template Name: Contacts
+                          p */
+                          p ?>
+                          p теперь при создании новой страницы появится виджет выбора шаблона. 
+                          p так создаются разные шаблоны для разных страниц
+
+h2  header
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 header
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p <``body <`?php body_class(); ?>> эта штука может подвести. вывести body нулевой ширины
+                            p <`?php language_attributes();?>   --менять язык сайта  <``html <`?php language_attributes();?>>
+                            p <`? bloginfo('charset'); ?>       --менять кодировку сайта   <``meta charset="<`? bloginfo('charset'); ?>">
+                            p <`?php wp_head(); ?>              --для связи с файлом index.php   вставлять перед  <`/head>
+                            p <`?php the_custom_logo();?>       --для вывода логотипа из админки.
+                            p                                    этим нужно заменить всю ссылку для логотипа. например такую  
+                            p                                    <``a href="#">
+                            p                                      <``img src="<`?php loft_images("icons/logo.gif");?>" alt="logo">
+                            p                                    <``/a>
+
+h2 МЕНЮ
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 МЕНЮ
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p при верстке меню нужно учитывать, что wp оборачивает меню в контейнер сам. даже если не указать обертку. 
+                            p поэтому меню всегда должно иметь свою обертку и потом уже внутри делать ul с классом меню.
+                            p для вывода меню.при этом чтобы вывелись классы меню их нужно специально прописать в поле админки
+                            p а именно нажать на плашку страницы и раскроются настройки. выбрать классы меню и добавить класс пункта menu 
+                            p --самы простой способ вывода
+                            p <`?php wp_nav_menu([
+                            p         'theme_location' => 'menu_main_header',
+                            p 	'container'       => null, 
+                            p 	'menu_class'      => 'header-page__ul', 
+                            p ])?>
+                            p <`?php wp_nav_menu([
+                            p         'theme_location' => 'menu-header',
+                            p 	'menu'            => 'menu-header', 
+                            p 	'container'       => 'nav', 
+                            p 	'container_class' => 'header__menu', 
+                            p 	// 'container_id'    => '',
+                            p 	'menu_class'      => 'menu__body', 
+                            p 	'menu_id'         => '',
+                            p 	'echo'            => true,
+                            p   'items_wrap'      => '<``ul class="menu__body">
+                            p                %3$s
+                            p                   <``/ul>',
+                            p 	'depth'           => 0,
+                            p 	// 'walker'          => '',
+                            p ])?>
+                            p все аргументы на сайте cama https://wp-kama.ru/function/wp_nav_menu
+                            p wp_nav_menu( [
+                            p 	'theme_location'  => '',
+                            p 	'menu'            => '', 
+                            p 	'container'       => 'div', 
+                            p 	'container_class' => '', 
+                            p 	'container_id'    => '',
+                            p 	'menu_class'      => 'menu', 
+                            p 	'menu_id'         => '',
+                            p 	'echo'            => true,
+                            p 	'fallback_cb'     => 'wp_page_menu',
+                            p 	'before'          => '',
+                            p 	'after'           => '',
+                            p 	'link_before'     => '',
+                            p 	'link_after'      => '',
+                            p 	'items_wrap'      => '<``ul id="%1$s" class="%2$s">%3$s<``/ul>',
+                            p 	'depth'           => 0,
+                            p 	'walker'          => '',
+                            p ] );
+
+h2 functions.php
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 подключение скриптов и стилей
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            h5 --!!!--если создал папку assets и туда сбросил всю статику
+                            p function uniformos_scripts() {
+                            p 	wp_enqueue_style( 'uniformos-style',  get_template_directory_uri(). '/assets/css/app.css' );
+                            p 	wp_style_add_data( 'uniformos-style', 'rtl', 'replace' );
+                            p 	wp_enqueue_script( 'uniformos-navigation', get_template_directory_uri() . '/assets/js/app.js', array(), _S_VERSION, true );
+                            p 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+                            p 		wp_enqueue_script( 'comment-reply' );
+                            p 	}
+                            p }
+                            p add_action( 'wp_enqueue_scripts', 'uniformos_scripts' );
+                            h5 еще варианты когда jquery и остальные скрипты и стили проводятся отдельно
+                            p function transitive_scripts() {
+                            p wp_enqueue_style( 'transitive-style',  get_template_directory_uri(). '/assets/css/main.css', false , time());
+                            p wp_enqueue_script( 'transitive-jguery', get_template_directory_uri() . '/assets/js/jquery.min.js','transitive-jguery', null,true );
+                            p wp_enqueue_script( 'transitive-scrollex', get_template_directory_uri() . '/assets/js/jquery.scrollex.min.js','transitive-jguery', null,true );
+                            p wp_enqueue_script( 'transitive-scrolly', get_template_directory_uri() . '/assets/js/jquery.scrolly.min.js','transitive-jguery', null,true );
+                            p wp_enqueue_script( 'transitive-skel', get_template_directory_uri() . '/assets/js/skel.min.js','transitive-jguery', null,true );
+                            p wp_enqueue_script( 'transitive-util', get_template_directory_uri() . '/assets/js/util.js', 'transitive-jguery',null,true );
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 удаление ненужного стиля
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p remove_action( 'wp_head', 'wp_generator' );
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 sidebar
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p 	register_sidebar(
+                          p 		array(
+                          p 			'name'          => esc_html__( 'sidebar-header', 'jkpark' ),
+                          p 			'id'            => 'sidebar-header',
+                          p 			'description'   => esc_html__( 'מבאגעו חהוס גטהזוע', 'jkpark' ),
+                          p 			// 'before_widget' => '<`section id="%1$s" class="widget %2$s">',
+                          p 			// 'after_widget'  => '<`/section>',
+                          p 			// 'before_title'  => '<`h2 class="widget-title">',
+                          p 			// 'after_title'   => '<`/h2>',
+                          p 		)
+                          p 	);
+                          p גגמה סאיעבאנא
+                          p <`?php if ( is_active_sidebar( 'sidebar-header' ) ) : ?>
+                          p 	          <`div id="sidebar-header">
+                          p 		        <?php dynamic_sidebar( 'sidebar-header' ); ?>
+                          p 	          <`/div>
+                          p           <`?php endif; ?>
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 показать-скрыть админпанель
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p add_filter('show_admin_bar', '__return_false');
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 dashicons  -иконки самого wordpress
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p https://developer.wordpress.org/resource/dashicons/#menu-alt
+                  .tabs-item__title.tabs-title-js
+                    h3._0 удаление скрипта отвечающего за поддержку видео youtube если не нужен
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p function my_deregister_scripts(){
+                          p wp_deregister_script( 'wp-embed' );
+                          p }
+                          p add_action( 'wp_footer', 'my_deregister_scripts' );
+h2 другое
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод логотипа. названия сайта.миниатюр запсей
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p // подписываемся на момент формирования контента
+                          p add_action( 'after_setup_theme', 'loft_setup' );
+                          p function loft_setup(){
+                          p     // выводит логотип
+                          p add_theme_support('custom-logo');
+                          p     // выводит название сайта
+                          p add_theme_support('title-tag');
+                          p     //  выводит миниатюру записи
+                          p add_theme_support('post-thumbnails');
+                          p }
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод меню++++  1.14 https://www.youtube.com/watch?v=TaXBKfgFYoc
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p register_nav_menus(
+                          p 			array(
+                          p 				'menu-header' => esc_html__( 'menu-header', 'loft-header' ),
+                          p 			)
+                          p 		);
+                          p |--этот фильтр обязательно добавлять в functions.php чтобы появились классы меню
+                          p add_filter( 'nav_menu_css_class', 'add_my_class_to_nav_menu', 10, 2 );
+                          p function add_my_class_to_nav_menu( $classes ){
+                          p 	/* $classes содержит
+                          p 	Array(
+                          p 		[1] => menu-item
+                          p 		[2] => menu-item-type-post_type
+                          p 		[3] => menu-item-object-page
+                          p 		[4] => menu-item-284
+                          p 	)
+                          p 	*/
+                          p 	$classes[] = 'menu__link';
+                          p 
+                          p 	return $classes;
+                          p }
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 картинки
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p <`?php echo get_template_directory_uri()?>/assets/img/
+                          p <``img src="<`?php echo get_template_directory_uri()?>/assets/img/logo/logo.svg" alt="logo" >
+                          p еще можно сделать функцию в functions.php и заменить ею все пути к картинкам.
+                          p но это неудобно потому как все картинки сразу не поменять!! это делается так
+                          p function loft_images($name){
+                          p 	 echo get_template_directory_uri() . '/assets/img/' . $name; 
+                          p }
+                          p и прописывать путь к картинке <``img src="<`?php loft_images("bg-head.gif");?>" alt="bg-head">
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 sidebar
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p register_sidebar(
+                          p array(
+                          p 'name'          => esc_html__( 'sidebar-header', 'jkpark' ),
+                          p 'id'            => 'sidebar-header',
+                          p 'description'   => esc_html__( 'Добавьте здесь виджеты', 'jkpark' ),
+                          p // 'before_widget' => '<``section id="%1$s" class="widget %2$s">',
+                          p // 'after_widget'  => '<``/section>',
+                          p // 'before_title'  => '<``h2 class="widget-title">',
+                          p // 'after_title'   => '<``/h2>',
+                          p )
+                          p );
+                          p   вывод сайтбара
+                          p <`?php if ( is_active_sidebar( 'sidebar-header' ) ) : ?>
+                          p          <` div id="sidebar-header">
+                          p        <`?php dynamic_sidebar( 'sidebar-header' ); ?>
+                          p        <` /div>
+                          p          <`?php endif; ?>
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 здесь проверка- если страница главная, то нет ссылки. если не главная то есть ссылка на главную
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p картинка сделана полями carbon fields
+                          p <`?php if ( is_front_page())  :	?>
+                          p <``img class="logo__img " src="<`?php echo wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' )); ?>">			
+                          p <`?php
+                          p else:
+                          p ?>
+                          p <``a href="<`?php echo get_home_url() ?>">
+                          p 		<``img class="logo__img " src="<`?php echo wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' )); ?>">
+                          p <``/a>
+                          p <`?php
+                          p endif;
+                          p ?>                        
+
+
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод записей и страниц по id
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+
+
+
+
+
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод записей и страниц по id
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p создаём страницу где заголовок номер телефона и в шаблоне ее дергаем по id
+                            p <`?php
+                            p $my_id = 44;
+                            p $post_id_44 = get_post($my_id); 
+                            p $post_title = $post_id_44->post_title;
+                            p echo $post_title;
+                            p ?>
+                            p а вот так выйдет содержимое поста 27 
+                            p <`?php
+                            p $post = get_post( 27 );
+                            p $text = $post->post_content; 
+                            p echo apply_filters('the_content', $text); 
+                            p ?>
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 регистрация кастомных полей: 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p https://www.youtube.com/watch?v=eNURjX3L7oM
+                          p https://www.youtube.com/watch?v=O9j-R-GwCt4
+                          p https://wp-kama.ru/function/register_post_type
+                          p https://developer.wordpress.org/resource/dashicons/#menu-alt2  
+                          p 
+                          p 
+                          p 
+                          p function my_custom_init(){
+                          p 	register_post_type('boards', array(
+                          p 		'labels'             => array(
+                          p 			'name'               => 'Борды', // Основное название типа записи
+                          p 			'singular_name'      => 'Борды слайдера', // отдельное название записи типа Book
+                          p 			'add_new'            => 'Добавить новый борд',
+                          p 			// 'add_new_item'       => 'Добавить новую книгу',
+                          p 			// 'edit_item'          => 'Редактировать книгу',
+                          p 			// 'new_item'           => 'Новая книга',
+                          p 			// 'view_item'          => 'Посмотреть книгу',
+                          p 			// 'search_items'       => 'Найти книгу',
+                          p 			// 'not_found'          =>  'Книг не найдено',
+                          p 			// 'not_found_in_trash' => 'В корзине книг не найдено',
+                          p 			// 'parent_item_colon'  => '',
+                          p 			// 'menu_name'          => 'Книги'
+                          p 
+                          p 		  ),
+                          p 		'public'             => true,
+                          p 		'menu_position'      => 5,
+                          p 		'menu_icon'          =>'dashicons-palmtree',      -----тут меняется иконка на панели возле названия https://developer.wordpress.org/resource/dashicons
+                          p 		'supports'           => array('title','editor','thumbnail','excerpt','comments','post-format')
+                          p 	) );
+                          p }
+                          p add_action('init', 'my_custom_init');
+                          p 
+                          p //--- можно задать размер превью картинки----
+                          p if (function_exists( 'add_image_size' )){
+                          p add_image_size('board-slider',225,490,true);
+                          p }
+
+
+
+
+
+
+
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод кастомного типа полей в верстку
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p https://www.youtube.com/watch?v=r84jByqP-B8
+                            p https://wp-kama.ru/function/get_posts
+                            p https://wp-kama.ru/search?searchid=1771092&text=getpost&l10n=ru&q=getpost  ---get_post
+                            p <`?php the_field('board_img'); ?> ---это поля acf
+                            p <`?php the_field('price') ?>       ---это поля acf
+                            p <`?php the_title(); ?>  --это выведет заголовок поста. это не поле acf
+                            p <`?php unset($post_id); $post_id = get_the_ID(); $post = get_post($post_id); $text=$post->post_content; 
+                            p echo apply_filters('the_content', $text);?>
+                            p --здесь: 
+                            p ---unset($post_id);--сброс переменной $post_id
+                            p ---$post_id = get_the_ID();--получаем id поста и записываем в переменную
+                            p ---$post = get_post($post_id);--- получаем весь пост по  полученному ранее id
+                            p ---$text=$post->post_content;	---- из поста вынимаем контент и записываем в переменную.
+                            p ---- echo apply_filters('the_content', $text); ---распечатаваем через фильтр контент поста
+                            p ----так можно выводить текст записи например.
+                            p //-  =-=-=-=-=-=-=-=-=-=-=-=-=--=-=--==здесь js класс для slick-=-=--= все что ниже и есть слайдер
+                            p <`?php
+                            p global $post;
+                            p $args = array(
+                            p    'post_type'=>'boards',
+                            p    'publish' => true
+                            p   );
+                            p $slider_boards = get_posts($args);
+                            p foreach($slider_boards as $post){
+                            p ?>
+                            p 
+                            p <`?php
+                            p $type = get_post_meta(get_the_ID(), 'board_type', true);  ------здесь имя из acf
+                            p $price = get_post_meta(get_the_ID(), 'price', true);      -----здесь имя из acf
+                            p ?>
+                            p           <``div class="slider-shop__slide slider-shop-slide">
+                            p                 <``div class="slider-shop-slide__body">
+                            p                   <``div class="slider-shop-slide__main ibg bg">
+                            p <``img src="<`?php the_field('board_img'); ?>"   ---здесь выводится поле acf.
+                            p  в случае вывода изображения ПРИ СОЗДАНИИ ПОЛЯ ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ ОВЗВРАЩАЕМЫЙ ФОРМАТ -ССЫЛКА НА ИЗОБРАЖЕНИЕ
+                            p 
+                            p <``img src="<`?php echo get_the_post_thumbnail_url(get_the_ID(), 'board-slider');?>" alt="">  ---здесь выводится картинка
+                            p  записи.
+                            p САМО ПОЯВЛЕНИЕ КАРТИНКИ НУЖНОО ПРОПИСЫВАТЬ В FUNCTIONF.PHP/ ПРИ РЕГИСТРАЦИИ КАСТОМНЫХ ПОЛЕЙ.
+                            p  А ИМЕННО 'supports'           => array('title','editor','thumbnail','excerpt','comments','post-format').... это не поле acf
+                            p 
+                            p <``/div>
+                            p                   <``div class="slider-shop-slide__small slider-shop-tiny">
+                            p                     <``div class="slider-shop-tiny__body">
+                            p                       <``div class="slider-shop-tiny__title">
+                            p <`?php the_field('type') ?>
+                            p <`?=$type?> ---можно и так
+                            p <``/div>
+                            p                       <``div class="slider-shop-tiny__text slider-shop-tiny__text_one"><`?php the_title(); ?><``/div>
+                            p                       <``div class="slider-shop-tiny__text slider-shop-tiny__text_two">
+                            p <`?php the_field('price') ?>								
+                            p 
+                            p <`?=$price?> --можно и так
+                            p                         <``/div>
+                            p                       <``div class="slider-shop-tiny__button"><``a href="#"><``span>Buy<``/span><``/a><``/div>
+                            p                     <``/div>
+                            p                   <``/div>
+                            p                 <``/div>
+                            p               <``/div>
+                            p 	<`!-- // include(get_template_directory().'/content_boardsSlider.php'); -->
+                            p <`?php	
+                            p }
+                            p wp_reset_postdata();
+                            p ?>
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 повторяющиеся части кода
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p 6.40      https://www.youtube.com/watch?v=z92F_sZYDV4&list=PLyKl7JlkPve6wRFRgVgImBWZ3xMQnYUQa&index=3 
+                          p если есть несколько разновидностей одного и того же включения(например header) и на разных страницах используется разные header
+                          p то соджается еще один файл например header-generic.php и тогда уже нужно прописывать в шаблонах с таким header только так:
+                          p get_header('generic'); 
+                          p ! важно --- не header-generic   а generic. слово header опускается
+                          p кроме header.php и footer.php можно создавать еще файлы и в них заносить повторяющиеся части кода
+                          p напрример создается файл    nav.php
+                          p <``?php  get_template_part('nav') ?`>   ----это заносится или не заносится в файл нового шаблона в зависимости от дизайна
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 шаблон для записей
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p должен содержать такой коментарий
+                          p <`?php
+                          p /**
+                          p *Template Post Type: post, page, product
+                          p */
+                          p ?>
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вставка шорткода
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p <`?php echo do_shortcode( '[ваш_шорткод]' ); ?>
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 создание своего виджета
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p https://www.youtube.com/watch?v=0WIn_pVyN0c&list=PLY4rE9dstrJyvr3-ssA_ai5xnvSOI5tr6&index=5
+                          p создаем папку widgets
+                          p в нее вкладываем файлы виджетов например widget-sidebar-header.php и файл инициализации widgets.php
+                          p прописываем все это в functions.php   
+                          p /**
+                          p  * Widgets Settings
+                          p  */
+                          p require get_template_directory() . '/widgets/widget-sidebar-header.php';
+                          p require get_template_directory() . '/widgets/widgets.php';
+                          p в vidget-sidebar-header заносим код
+                          p <``?php
+                          p // --------------------------------------
+                          p /**
+                          p  * Adds Slide_Widget widget.
+                          p  */
+                          p class Slide_Widget extends WP_Widget {
+                          p 	/**
+                          p 	 * Register widget with WordPress.
+                          p 	 */
+                          p 	function __construct() {
+                          p 		parent::__construct(
+                          p 			'Slide_widget', // Base ID-------------менять
+                          p 			esc_html__( 'Slide_widget', 'text_domain' ), // Name-------------менять
+                          p 			array( 'description' => esc_html__( 'Выезжающий сайтбар с этим виджетом в шапке сайта', 'text_domain' ), ) // Args
+                          p 		);
+                          p 	}
+                          p 	/**
+                          p 	 * Front-end display of widget.
+                          p 	 *
+                          p 	 * @see WP_Widget::widget()
+                          p 	 *
+                          p 	 * @param array $args     Widget arguments.
+                          p 	 * @param array $instance Saved values from database.
+                          p 	 */
+                          p 	public function widget( $args, $instance ) {
+                          p 		echo $args['before_widget'];
+                          p 		if ( ! empty( $instance['title'] ) ) {
+                          p 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+                          p 		}
+                          p 		echo esc_html__( 'Hello, World!', 'text_domain' );
+                          p 		echo $args['after_widget'];
+                          p 	}
+                          p 	/**
+                          p 	 * Back-end widget form.
+                          p 	 *
+                          p 	 * @see WP_Widget::form()
+                          p 	 *
+                          p 	 * @param array $instance Previously saved values from database.
+                          p 	 */
+                          p 	public function form( $instance ) {
+                          p 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
+                          p 		?>
+                          p 		<``p>
+                          p 		<``label for="<`?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><`?php esc_attr_e( 'Title:', 'text_domain' ); ?><`/label> 
+                          p 		<``input class="widefat" id="<`?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<`?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"                          p value="<`?php echo esc_attr( $title ); ?>">
+                          p 		<``/p>
+                          p 		<`?php 
+                          p 	}
+                          p 
+                          p 	/**
+                          p 	 * Sanitize widget form values as they are saved.
+                          p 	 *
+                          p 	 * @see WP_Widget::update()
+                          p 	 *
+                          p 	 * @param array $new_instance Values just sent to be saved.
+                          p 	 * @param array $old_instance Previously saved values from database.
+                          p 	 *
+                          p 	 * @return array Updated safe values to be saved.
+                          p 	 */
+                          p 	public function update( $new_instance, $old_instance ) {
+                          p 		$instance = array();
+                          p 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+                          p 
+                          p 		return $instance;
+                          p 	}
+                          p 
+                          p } // class Foo_Widget
+                          p 
+                          p // ----------------------------------------------------------------------
+                          p 
+                          p  в файл widgets заносим код
+                          p <`?php
+                          p // register Foo_Widget widget
+                          p function register_foo_widget() {
+                          p     register_widget( 'Slide_Widget' );
+                          p }
+                          p add_action( 'widgets_init', 'register_foo_widget' );
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 форма с перенаправлением на страницу спасибо после успешной отправки
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p этот код нужно вставлять в functions.php
+                            p он делает переход на страницу спасибо после успешной отправки формы. 
+                            p то есть когда заполнены все обязательные поля
+                            p https://www.youtube.com/watch?v=6Yxjc1o4iy8
+                            p // -----------форма с перенаправлением на страницу спасибо после успешной отправки-----
+                            p этот код нужно вставлять в functions.php-----------
+                            p add_action('wp_footer', function(){
+                            p ?`>	
+                            p <``script>
+                            p // Ищем блок с формой, имеющий класс wpcf7 (его имеют все div с формой)
+                            p var wpcf7Elm = document.querySelector( '.wpcf7' );
+                            p // Мониторим событие wpcf7submit у выбранного блока
+                            p wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ) {
+                            p location.assign('http://j-uno/благодарности/')
+                            p }, false );
+                            p <``/script>
+                            p <``?php
+                            p });
+                            p ?`>
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 contact form 7 ---пример формы для попап окна
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p <``section class="popup-link">
+                            p    <``div  class="cont-column__form">
+                            p                         
+                            p                         <``div class="cont-column__in">
+                            p                           [text* text-942 id:username placeholder "Введите имя"]
+                            p                           <``img src="http://j-uno/wp-content/themes/j-uno/assets/img/link/link-pers.png" alt="img">
+                            p                         <``/div>
+                            p                         <``div class="cont-column__in">
+                            p                             [text* text-773 id:phone placeholder "Ваш  телефон"]
+                            p                             <``img src="http://j-uno/wp-content/themes/j-uno/assets/img/link/link-pers.png" alt="img">
+                            p                         <``/div>
+                            p                                               
+                            p                        <``div class="cont-column__button">
+                            p                            [submit "Отправить"]
+                            p                          
+                            p                         <``/div>
+                            p     <``/div>             
+                            p                       <``div class="cont-column__confidence">Нажимая кнопку вы соглашаетесь на 
+                            p                             <``a href="#"> <`span> обработку персональных данных <``/span> <``/a>                                           
+                            p                       <``/div>
+                            p  <``/section>
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 просто вставка видео на сайт без ничего
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p <``iframe width="560" height="315" src="https://www.youtube.com/embed/3jT_q7dt-cM" frameborder="0" allowfullscreen>
+                          p <``/iframe>
+
+
+
+h2 woocommerce
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 общие 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p https://www.youtube.com/watch?v=1SBQpXrMAOY&list=PLzFj4L-LMRzt5BsX_ho5rt5hCc5ynnReu&index=2
+                            p код второго урока можно использовать как стартовую тему. только нужно поменять название в строке                            p поиска на название темы.
+                            p 
+                            p папка  template-parts
+                            p части кода отвечающие за внешний вид сайта. 
+                            p например вывод карточки товара
+                            p вывод  контента записи
+                            p 
+                            p папка templates
+                            p хранит шаблоны страниц
+                            p 
+                            p папка includes 
+                            p хранит весь функционал
+                            p в нее нужно перенести все из папки inc , которая в undescoder
+                            p 
+                            p папка assets
+                            p фронт с верстки  css fonts и т.д
+                            p 
+                            p папка woocommerce
+                            p в ней includes которая отвечает за отношения с woocommerce-- что-то отключить
+                            p 
+                            p carbon fields кладется в папку includes 
+                            p рядом директоря для подключения carbon fields ---  custom-fields-options
+
+
+h2 ACF
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 начало  
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          a._7(href="http://acf.wp-book.ru/category/documentation/") ссылка на сайт 
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 повторитель
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          p ------------------повторитель	
+                          p <`?php if( have_rows('slide_carousel') ): ?>
+                          p 	<`?php while( have_rows('slide_carousel') ): the_row(); 
+                          p 		// переменные
+                          p 		$link = get_sub_field('site_link');
+                          p 		$img = get_sub_field('site_img');
+                          p 		$number = get_sub_field('site_number');
+                          p 		?>
+                          p 					 <`a href="<?php echo $link; ?>" >
+                          p 					     <`img class="cloudcarousel" src="<?php echo $img; ?>" alt="CSS Templates <?php echo $number; ?>" title="Website Templates <?php echo $number; ?>" />
+                          p 					<`/a>
+                          p 	<?php endwhile; ?>
+                          p <?php endif; ?>
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод полей вкладки 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p    <`?php if( have_rows('hero') ): 
+                            p    
+                            p   while( have_rows('hero') ): the_row(); 
+                            p    
+                            p   // переменные
+                            p   $image = get_sub_field('image');
+                            p   $link = get_sub_field('link');
+                            p    
+                            p   ?>
+                            p   <`div id="hero">
+                            p   <`img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'];    ?>" />
+                            p   <`div class="content">
+                            p   <?php the_sub_field('caption'); ?>
+                            p   <`a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?>  <`/a>
+                            p   <`/div>
+                            p   <`/div>
+                            p   <`style type="text/css">
+                            p   #hero {
+                            p   background: <?php the_sub_field('color'); ?>;
+                            p    }
+                            p   <`/style>
+                            p   <?php endwhile; ?>
+                            p    
+                            p    <?php endif; ?>
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод полей со страницы опций , если они сделаны вкладкой  
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p <`?php if( have_rows('first_town', 'options') ): 
+                            p             while( have_rows('first_town', 'options') ): the_row(); 
+                            p             $platforms = get_field('first_town', 'options');
+                            p 		        $link = get_sub_field('work_time_1-5', 'options');?>
+                            p       
+                            p       <`p>
+                            p <?php echo $link  ?>
+                            p         <`/p>  
+                            p 
+                            p     <?php endwhile; ?>
+                            p     <?php endif; ?>
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод поля со страницы опций  
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p  <?php the_field('first_address', 'options')  ; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2 carbon-fields
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 начало
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          a._7(href="https://docs.carbonfields.net/learn/fields/map.html#config-methods") ссылка на сайт carbonfields
+                        li.akr__item.akr-item
+                            p https://www.youtube.com/watch?v=6gnidmOeQo4&list=PLV2Ofep-dtIzgYWgu9M9vlXNjoNn5REXF
+                            p https://wp-kama.ru/plugin/carbon-fields
+                            p делаем директорию includes 
+                            p в нее просто кладем плагин carbon-fields
+                            p в ней создаем еще директорию custom-fields-options
+                            p в ней два файла theme-optons.php
+                            p                 metabox.php
+                            
+
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 регистрируем в functions.php
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            p function crb_load() {
+                            p 	load_template( get_template_directory() . '/includes/carbon-fields/vendor/autoload.php' );
+                            p 	\Carbon_Fields\Carbon_Fields::boot();
+                            p }
+                            p add_action( 'carbon_fields_register_fields', 'electronic_register_custom_fields' );
+                            p function electronic_register_custom_fields() {
+                            p 	require get_template_directory() . '/includes/custom-fields-options/metabox.php';
+                            p 	require get_template_directory() . '/includes/custom-fields-options/theme-optons.php';
+                            p }
+                           
+                           
+                           
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 параметры отображения контейнера(где отображать как показать)
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          h5._1 Типы постов	
+                          p Для одного типа записи:
+                          p ->show_on_post_type('post')
+                          p Для нескольких типов записей:
+                          p ->show_on_post_type(array('page', 'my_custom_post_type', 'post'))
+                          p для записей и страниц
+                          p ->show_on_post_type(array('post', 'page'))
+                           
+                        li.akr__item.akr-item
+                          h5._1 Страницы и подстраницы
+                          p Отображение группы полей для отдельных страниц определяется путём (slug) или ID страницы
+                          p // Общий вид
+                          p ->show_on_page( $page_path|$page_id )
+                          p // ID любой страницы
+                          p ->show_on_page(17)
+                          p // Путь (slug) родительской страницы
+                          p ->show_on_page('parent-page')
+                          p // Путь (slug родительской + slug её самой) подстраницы
+                          p ->show_on_page('parent-page/sub-page')
+                          p Отображение группы полей для всех дочерних страниц определяет slug родительской страницы
+                          p ->show_on_page_children('parent-page')
+                           
+                           
+                        li.akr__item.akr-item
+                            h5._1 Шаблоны страниц
+                            p Отображение группы полей на страницах, использующих определенный шаблон
+                            p $template_path - это путь к файлу шаблона (или файлам)
+                            p // Общий вид
+                            p ->show_on_template($template_path)
+                            p // Один шаблон в корне папки с темой
+                            p ->show_on_template('about_us.php')
+                            p // Один шаблон в произвольной папке относительно папки с темой
+                            p ->show_on_template('templates/contact.php')
+                            p // Несколько шаблонов
+                            p ->show_on_template( array('about_us.php', 'templates/contact.php') )
+                            p Так же можно скрыть контейнер на страницах, использующих определенный шаблон(ы). 
+                            p Используется метод hide_on_template точно также, как и show_on_template.
+                            p ->hide_on_template($template_path)
+                           
+                        li.akr__item.akr-item
+                            h5._1 Форматы постов
+                            p Отображение группы полей в зависимости от формата поста (aside, chat, gallery, link, image, quote, status, video, audio).
+                            p // Общий вид
+                            p ->show_on_post_format($post_format)
+                            p // Отображение контейнера в постах формата "Видео"
+                            p ->show_on_post_format('video')
+                            p // Отображение контейнера в постах формата "Видео" или "Аудио"
+                            p ->show_on_post_format( array( 'image', 'video' ) )
+                           
+                        li.akr__item.akr-item
+                            h5._1 Вложенность
+                            p Отображать группу полей в иерархических постах в зависимости от глубины вложенности:
+                            p $level - это уровень вложенности, начиная от 1 и увеличивающийся при переходе вглубь иерархического дерева. На примере страниц:
+                            p // Общий вид
+                            p ->show_on_level($level)
+                            p // Отобразить контейнер на родительских страницах (parent-pages)
+                            p ->show_on_level(1)
+                            p // Отобразить контейнер на странице, вложенной в родительскую страницу (parent-pages/sub-page)
+                            p ->show_on_level(2)
+                            p // Отобразить контейнер на странице, вложенной в другую страницу, которая вложена в родительскую страницу (parent-pages/sub-page/sub-sub-page)
+                            p ->show_on_level(3)
+                        li.akr__item.akr-item
+                            h5._1 Рубрики и произвольные таксономии
+                            p Группу полей можно отобразить в отдельной рубрике, указав её slug:
+                            p // Общий вид
+                            p ->show_on_category( $category_slug )
+                            p // Частный случай
+                            p ->show_on_category('news')
+                            p или для произвольного элемента таксономии:
+                            p // Общий вид
+                            p ->show_on_taxonomy_term( $term_slug, $taxonomy )
+                            p // аналог примера выше
+                            p ->show_on_taxonomy_term('news', 'category')
+                            p // Произвольный терм (таксономия fruits с термом apple)
+                            p ->show_on_taxonomy_term('apple', 'fruits')
+                        li.akr__item.akr-item
+                            h5._1 Позиционирование контейнера---  указывает место где на страницу админки расположить контейнер
+                            p ->set_context('normal')   advanced или side
+                            p ->set_priority('high')       core, default или low
+                        
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 виды полей
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          a._7(href="https://docs.carbonfields.net/learn/fields/map.html#config-methods") ссылка на сайт carbonfields
+
+
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 вывод содержимого полей в шаблоне
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                            
+                            p <`?  echo carbon_get_the_post_meta('my_text-1'); ?>      ---- сразу выводит текст из поля
+                            p <`? echo get_post_meta($post->ID,'_my_text-1', true); ?>  -- то же самое но нативной функцией
+
+                            p $slides = carbon_get_post_meta(get_the_ID(), 'crb_places', 'complex');
+                            p if ( $slides ) {
+                            p 	foreach ($slides as $slide) {
+                            p 		echo '`<p>' . $slide['title'] . '<`/p>';
+                            p 		echo '<`img src=" '. $slide['photo'] . '">';
+                            p 	}
+                            p }
+                            p 
+                            p Если шаблон отображения метаполей используется в цикле, то вместо carbon_get_post_meta() можно                            p использовать carbon_get_the_post_meta(), чтобы не указывать ID поста:
+                            p echo carbon_get_the_post_meta('crb_author_description');
+                            p $slides = carbon_get_the_post_meta('crb_places', 'complex');
+                            p 
+                            p 
+                            p После сохранения произвольных полей Carbon Fields вызывает хук carbon_after_save_post_meta,
+                            p  благодаря которому можно совершить какие-то действия:
+                            p add_action('carbon_after_save_post_meta', 'crb_after_save_event');
+                            p function crb_after_save_event( $post_id ) {
+                            p 	if ( get_post_type($post_id) == 'post' ) {
+                            p 		// Делаем свои дела
+                            p 	}
+                            p }
+
+                            p -----------------theme-optons.php----------------------------------------------------------
+                            p <`?php
+                            p if ( ! defined( 'ABSPATH' ) ) {
+                            p 	exit; // Exit if accessed directly
+                            p }
+                            p 
+                            p use Carbon_Fields\Container;
+                            p use Carbon_Fields\Field;
+                            p 
+                            p Container::make( 'theme_options', 'Настройки темы' )
+                            p 	->set_icon( 'dashicons-carrot' )
+                            p 	->add_tab( 'Шапка', array(
+                            p 		Field::make( 'select', 'est_header_logic', 'Будет использоваться логотип?' )
+                            p 			->add_options(array(
+                            p 				'yes' => 'Да, буду использовать логотип',
+                            p 				'no' => 'Нет, буду использовать текст',
+                            p 			)),
+                            p 		Field::make( 'image', 'est_header_logo', 'Логотип' )
+                            p 			->set_conditional_logic(array(
+                            p 				'relation' => 'AND',
+                            p 				array(
+                            p 					'field' => 'est_header_logic',
+                            p 					'value' => 'yes',
+                            p 					'compare' => '=',
+                            p 				)
+                            p 			)),
+                            p 		Field::make( 'text', 'est_header_site_name', 'Название сайта' )
+                            p 
+                            p 			->set_default_value('Сайт')
+                            p 				->set_conditional_logic(array(
+                            p 					'relation' => 'AND',
+                            p 					array(
+                            p 						'field' => 'est_header_logic',
+                            p 						'value' => 'no',
+                            p 						'compare' => '=',
+                            p 					)
+                            p 				)),
+                            p 		Field::make( 'text', 'est_header_site_desc', 'Описание сайта' )
+                            p 			->set_conditional_logic(array(
+                            p 				'relation' => 'AND',
+                            p 				array(
+                            p 					'field' => 'est_header_logic',
+                            p 					'value' => 'no',
+                            p 					'compare' => '=',
+                            p 				)
+                            p 			))
+                            p 			->set_default_value(get_bloginfo('description')),
+                            p 	) )
+                            p 	->add_tab( 'Подвал', array(
+                            p 		Field::make( 'text', 'crb_email', 'Notification Email' ),
+                            p 		Field::make( 'text', 'crb_phone', 'Phone Number' )->set_default_value('Сайт'),
+                            p 	) );
+                            p 
+                            p 
+                            p --------------------------metabox.php--------------------------------------
+                            p <`?php
+                            p if ( ! defined( 'ABSPATH' ) ) {
+                            p 	exit; // Exit if accessed directly
+                            p }
+                            p use Carbon_Fields\Container;
+                            p use Carbon_Fields\Field;
+                            p 
+                            p Container::make( 'post_meta', 'Custom Data' )
+                            p          ->show_on_post_type('page')
+                            p          ->show_on_template( 'templates/main-page.php' )
+                            p          ->add_fields( array(
+                            p 	         Field::make( 'image', 'crb_photo' ),
+                            p          ) );
+                            p 
+                            p -------------------в верстке------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

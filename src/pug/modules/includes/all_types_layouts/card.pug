@@ -1,0 +1,62 @@
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 карточка объекта/товара 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                              img(src="assets/img/i-11.png",alt="img")  
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                          .akr__drop.akr-drop.akr-drop-js
+                            p .card-object
+                            p   .card-object__img(style="background-image: url('assets/img/png/categories-cards/img-1.png')")
+                            p   .card-object__title Lorem ipsum 
+                            p   button(type="button").btn--light.card-object__button  Užsakyti
+                            h2._1 sass
+                            p      .card-object
+                            p        width: 26rem
+                            p        height: 45.5rem
+                            p        background: rgba(139,139,139, .1)
+                            p        border-radius: 5px
+                            p        padding: 3rem
+                            p        +fdc
+                            p        @media (max-width: 767px) 
+                            p          width: 20rem
+                            p          height: 33.5rem
+                            p        
+                            p        &__img
+                            p            background-repeat: no-repeat
+                            p            background-size: cover
+                            p            background-position: center
+                            p            width: 20rem
+                            p            height: 30rem
+                            p            @media (max-width: 767px) 
+                            p              width: 100%
+                            p        &__title
+                            p          // display: inline-block
+                            p          width: auto
+                            p          height: auto
+                            p          margin: 1.5rem 0
+                            p        &__button
+                            p          width: 100%
+                            p          height: 4rem
+                            p          border: .1rem solid #000000
+                            p          border-radius: .5rem
+                            p          +bg(transparent)
+                            p          @extend %_15-18
+                            p          &:hover
+                            p            +bg(lighten($active,10%))
+                            p            +border(.1rem, lighten($active,30%))
+                            p            color: $active
+                            p          &:focus
+                            p            +bg(darken($active,10%))
+                            p            +border(.1rem, darken($active,30%))
+                            p            color: $active
+
+
+
+
+
+
+
