@@ -1,365 +1,578 @@
 //- cards
 .tabs-item
-                  .tabs-item__title.tabs-title-js
-                    h3._0 cards
-                    i.icon-chevron-down.tabs-item__img.tabs-img-js
-                  .tabs__drop.tabs-drop.tabs-drop-js
-                    ul.akr__body
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-1.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                                
-                                p .boxses
-                                p   .boxses__item.boxses-item
-                                p     .boxses-item__img
-                                p       img(src="assets/img/svg/svg-1.svg",alt="img")
-                                p     .boxses-item__title Фиксированная стоимость
-                                p     .boxses-item__text  После <`span>БЕСПЛАТНОЙ<`/span> оценки проекта мы фиксируем расходы                         p на реализацию.
-                                p   .boxses__item.boxses-item
-                                p     .boxses-item__img
-                                p       img(src="assets/img/svg/svg-2.svg",alt="img")
-                                p     .boxses-item__title Стройматериалы
-                                p     .boxses-item__text  По оптовым прайсам <`span>Сами<`/span> подберем, закупим и доставим.
-                                p   .boxses__item.boxses-item
-                                p     .boxses-item__img
-                                p       img(src="assets/img/svg/svg-3.svg",alt="img")
-                                p     .boxses-item__title Фиксированная стоимость
-                                p     .boxses-item__text  После <`span>БЕСПЛАТНОЙ<`/span> оценки проекта мы фиксируем расходы на реализацию.
-
-                                h2._1 sass
-                                p  .boxses
-                                p    +alic
-                                p  .boxses__item
-                                p    width: 100%
-                                p    margin: 30px 0  
-                                p  .boxses-item
-                                p    +grid(0)
-                                p    +columns(20% 80%)
-                                p    grid-template-areas: "area1 area2" "area1 area3"
-                                p    border-left :3px solid $active
-                                p    background-color: rgba(11, 10, 10, 0.7)
-                                p    min-height: 95px
-                                p  
-                                p  .boxses-item__img
-                                p    grid-area: area1
-                                p    position: relative
-                                p    img
-                                p      position: absolute
-                                p      top: 50%
-                                p      left: 50%
-                                p      transform: translate(-50%,-50%)
-                                p  
-                                p    
-                                p  .boxses-item__title
-                                p    grid-area: area2
-                                p    font-size: 18px
-                                p    font-weight: 600
-                                p    line-height: normal
-                                p    letter-spacing: normal
-                                p    color: $white
-                                p  .boxses-item__text
-                                p    font-size: 14px
-                                p    font-weight: normal
-                                p    line-height: 1.49
-                                p    color: $white
-                                p    grid-area:area3
-                                p    span
-                                p      text-transform: uppercase
-                                p      color: $active
-
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-3.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              p section#forward_leasing_cards.forward_leasing_cards
-                              p       .forward_leasing_cards__title.forward_leasing__title
-                              p         h2  Возможности подписки
-                              p       .forward_leasing_cards__body
-                              p         .forward_leasing_cards__item.forward_leasing_cards-item
-                              p           .forward_leasing_cards-item__img
-                              p             img(src="assets/img/svg/_18.svg",alt="img")
-                              p           .forward_leasing_cards-item__content
-                              p             .forward_leasing_cards-item__title Обменять на новый за 3 200 ₽
-                              p             .forward_leasing_cards-item__description Не дожидаясь окончания договора и не оплачивая                               p остаточную стоимость  смартфона
-                              p         .forward_leasing_cards__item.forward_leasing_cards-item
-                              p           .forward_leasing_cards-item__img
-                              p             img(src="assets/img/svg/cercle-arrows.svg",alt="img")
-                              p           .forward_leasing_cards-item__content
-                              p             .forward_leasing_cards-item__title Обменять на новый бесплатно
-                              p             .forward_leasing_cards-item__description Не оплачивая остаточную стоимость смартфона
-                              p         .forward_leasing_cards__item.forward_leasing_cards-item
-                              p           .forward_leasing_cards-item__img
-                              p             img(src="assets/img/svg/check.svg",alt="img")
-                              p           .forward_leasing_cards-item__content
-                              p             .forward_leasing_cards-item__title Оставить себе — выкупить
-                              p             .forward_leasing_cards-item__description Внести остаточную стоимость разом или                              p продолжать следовать графику ежемесячных платежей до полного погашения остатка
-                              h2._1 sass
-                              p .forward_leasing_cards
-                              p   padding: 8rem 0 0 0
-                              p   @media (min-width: 752px) and (max-width: 1199px)
-                              p     padding: 7rem 0 0 0
-                              p   @media (max-width: 751px)		
-                              p     padding: 4.6rem 0 0 0
-                              p     text-align: left
-                              p   &__title
-                              p     padding:  0 0 4rem 0
-                              p     @media (min-width: 752px) and (max-width: 1199px)
-                              p       padding:  0 0 2.5rem 0
-                              p     @media (max-width: 751px)
-                              p       padding:  0 0 11px 0
-                              p       text-align: left
-                              p   &__body
-                              p     // display: grid
-                              p     // grid-template-columns:  repeat(3, 1fr)
-                              p     // column-gap: 2rem
-                              p     +grid(2rem)
-                              p     +columns(repeat(3, 1fr))
-                              p     @media (min-width: 0px) and (max-width: 1199px)
-                              p       grid-template-columns: 1fr
-                              p   &__item
-                              p     
-                              p 
-                              p     @media (max-width: 751px)		
-                              p       +jucb	
-                              p 
-                              p   
-                              p   
-                              p .forward_leasing_cards-item
-                              p   +jucb	
-                              p   padding: 1rem 0 0 0
-                              p   @media (min-width: 752px) and (max-width: 1199px)
-                              p     padding: 1rem 0 2.8rem 0
-                              p   @media (max-width: 751px)		
-                              p     padding: 10px 0 15px 0
-                              p   &__img
-                              p     flex: 0 1 35%
-                              p     img
-                              p       width: 9rem
-                              p       margin: 0 auto
-                              p       display: block
-                              p       @media (max-width: 751px)		
-                              p         width: 50px
-                              p         height: 28px
-                              p     @media (min-width: 752px) and (max-width: 1199px)
-                              p       flex: 0 1 13%
-                              p     @media (max-width: 751px)		
-                              p       flex: 0 1 10%
-                              p       padding: 0 0 10px 0
-                              p       width: 50px
-                              p       height: 28px
-                              p   &__content
-                              p     flex: 0 1 64%
-                              p     padding: 0 4.5rem 0 .2rem
-                              p     @media (min-width: 752px) and (max-width: 1199px)
-                              p       flex: 0 1 85.3%
-                              p     @media (max-width: 751px)		
-                              p       flex: 0 1 auto
-                              p       padding: 0 0 0 0
-                              p     @media (max-width: 751px)
-                              p       flex: 1 1 60%		
-                              p       padding: 0 0 0 15px
-                              p   &__title
-                              p     font-weight: 700
-                              p     font-size: 1.8rem
-                              p     line-height: 2.1rem
-                              p     @media (max-width: 751px)		
-                              p       font-size: 1.5rem
-                              p   &__description
-                              p     color: #000000
-                              p     line-height: 2rem
-                              p     padding: 1rem 0 0 0
-                              p     @media (min-width: 752px) and (max-width: 1199px)
-                              p       font-size: 1.4rem
-                              p       padding: .5rem 0 0 0
-                              p     @media (max-width: 751px)		
-                              p       font-size: 1.2rem
-                              p       padding: 10px 5px 0 0
-                              p       line-height: 1.4rem
-                              p       text-align: left
-                              p 
-                              p   &:last-child
-                              p     .forward_leasing_cards-item__content
-                              p       padding: 0 0 0 .2rem
-                              p       @media (max-width: 751px)
-                              p         padding: 0 0 0 15px
-
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-7.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-
-                            p section#cards.cards
-                            p   .cards__wrapper
-                            p     .container
-                            p       .cards__title
-                            p         h2 Kodėl verta siūti mokyklinę uniformą su mumis?
-                            p       .cards__body
-                            p         .cards__item.cards-item
-                            p           .card 
-                            p               //- svg(height="60" width="60").card__img.card__img--normal
-                            p               //-   use(xlink:href="assets/img/sprite.svg#needle")
-                            p               img(src="assets/img/svg/Needle.svg",alt="img").card__img.card__img--normal
-                            p               img(src="assets/img/svg/needle-white.svg",alt="img").card__img.card__img--hover
-                            p               h5.card__title  Atsparūs yrimui ir lengvai prižiūrimi audiniai
-                            p         .cards__item.cards-item
-                            p           .card 
-                            p               
-                            p               img(src="assets/img/svg/kimono.svg",alt="img").card__img.card__img--normal
-                            p               img(src="assets/img/svg/shert.svg",alt="img").card__img.card__img--normal
-                            p 
-                            p               img(src="assets/img/svg/kimono-white.svg",alt="img").card__img.card__img--hover
-                            p               img(src="assets/img/svg/shert-white.svg",alt="img").card__img.card__img--hover
-                            p               h5.card__title  Platus asortimentas ir modernūs modeliai
-                            p         .cards__item.cards-item
-                            p           .card
-                            p               img(src="assets/img/svg/school.svg",alt="img").card__img.card__img--normal
-                            p               img(src="assets/img/svg/school-white.svg",alt="img").card__img.card__img--hover
-                            p               h5.card__title  Emblemų su mokyklos logotipu gaminimas
-                            p         .cards__item.cards-item
-                            p           .card 
-                            p               img.card__img(src="assets/img/svg/swing.svg" alt="img").card__img.card__img--normal
-                            p               img.card__img(src="assets/img/svg/swing-white.svg" alt="img").card__img.card__img--hover
-                            p               h5.card__title  Didelis dydžių diapazonas
-
-                            h2._1 sass
-                            p  .cards__wrapper
-                            p    margin: 10rem 0 0 0
-                            p  
-                            p    
-                            p  .cards__body
-                            p    display: grid
-                            p    grid-template-columns: repeat(4, 1fr)
-                            p    @media (min-width: 768px) and (max-width: 1199px) 
-                            p      grid-template-columns: repeat(2, 1fr)
-                            p      width: 80%
-                            p      margin: 0 auto
-                            p    @media (max-width: 767px) 
-                            p      grid-template-columns:  1fr
-                            p  .cards-item
-                            p    transition: all 0.3s ease-in-out
-                            p    @media (max-width: 767px) 
-                            p      width: 80%
-                            p      margin: 0 auto
-                            p    &:hover
-                            p      cursor: pointer
-                            p      +bg($active)
-                            p      .card__title
-                            p        color: white
-                            p      .card__img--normal
-                            p        display: none
-                            p      .card__img--hover
-                            p        display: inline-block 
-                            p    &:last-child
-                            p      .card
-                            p        border-right: 1px solid #3E3E3E
-                            p    
-                            p    &:nth-child(2)
-                            p      @media (min-width: 768px) and (max-width: 1199px) 
-                            p        border-right: 1px solid #3E3E3E
-                            p      @media (max-width: 767px)
-                            p        border-right: none
-                            p  
-                            p  
-                            p  
-                            p  .card__img--normal
-                            p        display: inline-block 
-                            p  .card__img--hover
-                            p        display: none
-                            p  .cards-item__svg
-                            p      width: 6rem!important
-                            p      height: 6rem!important
-                            p  .cards
-                            p    .card 
-                            p      min-height: 35.5rem
-                            p      border-top: 1px solid transparent
-                            p      border-bottom: 1px solid  #3E3E3E
-                            p      border-left: 1px solid #3E3E3E
-                            p      // border-right: 1px solid #3E3E3E
-                            p      padding: 9rem 2rem  0rem	3.7rem
-                            p      position: relative
-                            p      * 
-                            p        text-align: center
-                            p      @media (max-width: 1199px)
-                            p        min-height: 30rem
-                            p      @media (max-width: 767px) 
-                            p        min-height: 25rem
-                            p        border-left: 1px solid #3E3E3E
-                            p        border-right: 1px solid #3E3E3E
-                            p    .card__img
-                            p      
-                            p      @media (max-width: 1199px)
-                            p        width: 5rem
-                            p        height: 5rem
-                            p    .card__title
-                            p      text-align: left
-                            p      font-size: 2rem
-                            p      line-height: 2.4rem
-                            p      padding: 8.4rem 0 0 0
-                            p      +absolute(80%,15.6rem,auto,3.7rem,auto,0%,0%)
-                            p      bottom: 4.8rem
-                            p      @media (max-width: 1199px) 
-                            p        font-size: 1.5rem
-                            p      
-                            p  .cards__title
-                            p    text-align: center
-                            p    padding: 0 0 2.8rem 0
-                            p    h2
-                            p      font-weight: 500
-                            p      font-size: 3rem
-                            p      line-height: 3.7rem
-                            p      @media (max-width: 1199px)
-                            p        font-size: 2.5rem 
+  .tabs-item__title.tabs-title-js
+    h3._0 cards
+    i.icon-chevron-down.tabs-item__img.tabs-img-js
+  .tabs__drop.tabs-drop.tabs-drop-js
+    ul.akr__body
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-1.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+              p section#today.container  
+              p   .boxses
+              p     .boxses__item.boxses-item
+              p       .boxses-item__img
+              p         img(src="./assets/img/clock.svg",alt="img")
+              p       .boxses-item__title Фиксированная стоимость
+              p       .boxses-item__text  
+                       
+              p     .boxses__item.boxses-item
+              p       .boxses-item__img
+              p         img(src="assets/img/clock.svg",alt="img")
+              p       .boxses-item__title Стройматериалы
+              p       .boxses-item__text  
+                     
+              p     .boxses__item.boxses-item
+              p       .boxses-item__img
+              p         img(src="assets/img/clock.svg",alt="img")
+              p       .boxses-item__title Фиксированная стоимость
+              p       .boxses-item__text  
+                      
+              p  .boxses
+              p    +alic
+              p  .boxses__item
+              p    width: 100%
+              p    margin: 30px 0
+              p  .boxses-item
+              p    +grid(0)
+              p    +columns(20% 80%)
+              p    grid-template-areas: "area1 area2" "area1 area3"
+              p    border-left: 3px solid $active
+              p    background-color: rgba(11, 10, 10, 0.7)
+              p    min-height: 95px
+              p  .boxses-item__img
+              p    grid-area: area1
+              p    position: relative
+              p    img
+              p      position: absolute
+              p      top: 50%
+              p      left: 50%
+              p      transform: translate(-50%,-50%)
+              p  .boxses-item__title
+              p    grid-area: area2
+              p    font-size: 18px
+              p    font-weight: 600
+              p    line-height: normal
+              p    letter-spacing: normal
+              p    color: white
+              p  .boxses-item__text
+              p    font-size: 14px
+              p    font-weight: normal
+              p    line-height: 1.49
+              p    color: white
+              p    grid-area: area3
+              p    span
+              p      text-transform: uppercase
+              p        color: $active
 
 
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              h2._1 sass
+
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-3.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+                p section#forward_leasing_cards.forward_leasing_cards
+                p     .forward_leasing_cards__title.forward_leasing__title
+                p       h2  Возможности подписки
+                p     .forward_leasing_cards__body
+                p       .forward_leasing_cards__item.forward_leasing_cards-item
+                p         .forward_leasing_cards-item__img
+                p           img(src="assets/img/clock.svg",alt="img")
+                p         .forward_leasing_cards-item__content
+                p           .forward_leasing_cards-item__title Обменять на новый за 3 200 ₽
+                p           .forward_leasing_cards-item__description 
+                p       .forward_leasing_cards__item.forward_leasing_cards-item
+                p         .forward_leasing_cards-item__img
+                p           img(src="assets/img/clock.svg",alt="img")
+                p         .forward_leasing_cards-item__content
+                p           .forward_leasing_cards-item__title 
+                p           .forward_leasing_cards-item__description 
+                p       .forward_leasing_cards__item.forward_leasing_cards-item
+                p         .forward_leasing_cards-item__img
+                p           img(src="assets/img/clock.svg",alt="img")
+                p         .forward_leasing_cards-item__content
+                p           .forward_leasing_cards-item__title 
+                p           .forward_leasing_cards-item__description
+                p  .forward_leasing_cards
+                p    padding: 8rem 0 0 0
+                p    @media (min-width: 752px) and (max-width: 1199px)
+                p      padding: 7rem 0 0 0
+                p    @media (max-width: 751px)
+                p      padding: 4.6rem 0 0 0
+                p      text-align: left
+                p    &__title
+                p      padding: 0 0 4rem 0
+                p      @media (min-width: 752px) and (max-width: 1199px)
+                p        padding: 0 0 2.5rem 0
+                p      @media (max-width: 751px)
+                p        padding: 0 0 11px 0
+                p        text-align: left
+                p    &__body
+                p      +grid(20px)
+                p      +columns(repeat(3, 1fr))
+                p      @media (min-width: 0px) and (max-width: 1199px)
+                p        grid-template-columns: 1fr
+                p    &__item
+                p  
+                p      @media (max-width: 751px)
+                p        +jucb
+                p  
+                p  .forward_leasing_cards-item
+                p    +jucb
+                p    padding: 1rem 0 0 0
+                p    @media (min-width: 752px) and (max-width: 1199px)
+                p      padding: 10px 0 28px 0
+                p    @media (max-width: 751px)
+                p      padding: 10px 0 15px 0
+                p    &__img
+                p      flex: 0 1 35%
+                p      img
+                p        width: 50px
+                p        margin: 0 auto
+                p        display: block
+                p        @media (max-width: 751px)
+                p          width: 20px
+                p      @media (min-width: 752px) and (max-width: 1199px)
+                p        flex: 0 1 13%
+                p      @media (max-width: 751px)
+                p        flex: 0 1 10%
+                p        padding: 0 0 10px 0
+                p        width: 50px
+                p        height: 28px
+                p    &__content
+                p      flex: 0 1 64%
+                p      padding: 0 45px 0 2px
+                p      @media (min-width: 752px) and (max-width: 1199px)
+                p        flex: 0 1 85.3%
+                p      @media (max-width: 751px)
+                p        flex: 0 1 auto
+                p        padding: 0 0 0 0
+                p      @media (max-width: 751px)
+                p        flex: 1 1 60%
+                p        padding: 0 0 0 15px
+                p    &__title
+                p      font-weight: 700
+                p      font-size: 18px
+                p      line-height: 20px
+                p      @media (max-width: 751px)
+                p        font-size: 15px
+                p    &__description
+                p      color: #000000
+                p      line-height: 20px
+                p      padding: 10px 0 0 0
+                p      @media (min-width: 752px) and (max-width: 1199px)
+                p        font-size: 14px
+                p        padding: 5px 0 0 0
+                p      @media (max-width: 751px)
+                p        font-size: 12px
+                p        padding: 10px 5px 0 0
+                p        text-align: left
+                p  
+                p    &:last-child
+                p      .forward_leasing_cards-item__content
+                p        padding: 0 0 0 2px
+                p        @media (max-width: 751px)
+                p          padding: 0 0 0 15px
+                p  
+                p        li.akr__item.akr-item
+                p          .akr-item__title.akr-title-js
+                p              img(src="assets/img/i-7.png",alt="img") 
+                p              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                p              button.copy#buttonSave.btn.btn--success copy code
+                p              div.fadeOut
+
+
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-7.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+              p    section#cards.cards
+              p      .cards__wrapper
+              p        .container
+              p          .cards__title
+              p            h2 
+              p          .cards__body
+              p            .cards__item.cards-item
+              p              .card
+              p                img(src="assets/img/clock.svg",alt="img").card__img.card__img--normal
+              p                img(src="assets/img/school.svg",alt="img").card__img.card__img--hover
+              p                h5.card__title  
+              p            .cards__item.cards-item
+              p              .card
+              p                img(src="assets/img/clock.svg",alt="img").card__img.card__img--normal
+              p                img(src="assets/img/clock.svg",alt="img").card__img.card__img--normal
+              p    
+              p                img(src="assets/img/school.svg",alt="img").card__img.card__img--hover
+              p                img(src="assets/img/school.svg",alt="img").card__img.card__img--hover
+              p                h5.card__title  
+              p            .cards__item.cards-item
+              p              .card
+              p                img(src="assets/img/clock.svg",alt="img").card__img.card__img--normal
+              p                img(src="assets/img/school.svg",alt="img").card__img.card__img--hover
+              p                h5.card__title  
+              p            .cards__item.cards-item
+              p              .card
+              p                img.card__img(src="assets/img/clock.svg" alt="img").card__img.card__img--normal
+              p                img.card__img(src="assets/img/school.svg" alt="img").card__img.card__img--hover
+              p                h5.card__title  
+
+              p .cards__wrapper
+              p   margin: 100px 0 0 0
+              p .cards__body
+              p   display: grid
+              p   grid-template-columns: repeat(4, 1fr)
+              p   @media (min-width: 768px) and (max-width: 1199px)
+              p     grid-template-columns: repeat(2, 1fr)
+              p     width: 80%
+              p     margin: 0 auto
+              p   @media (max-width: 767px)
+              p     grid-template-columns: 1fr
+              p .cards-item
+              p   transition: all 0.3s ease-in-out
+              p   @media (max-width: 767px)
+              p     width: 80%
+              p     margin: 0 auto
+              p   &:hover
+              p     cursor: pointer
+              p     +bg($active)
+              p     .card__title
+              p       color: white
+              p     .card__img--normal
+              p       display: none
+              p     .card__img--hover
+              p       display: inline-block
+              p   &:last-child
+              p     .card
+              p       border-right: 1px solid #3E3E3E
+              p   &:nth-child(2)
+              p     @media (min-width: 768px) and (max-width: 1199px)
+              p       border-right: 1px solid #3E3E3E
+              p     @media (max-width: 767px)
+              p       border-right: none
+              p .card__img--normal
+              p   display: inline-block
+              p .card__img--hover
+              p   display: none
+              p .cards-item__svg
+              p   width: 6rem!important
+              p   height: 6rem!important
+              p .cards
+              p   .card
+              p     min-height: 350px
+              p     border-top: 1px solid transparent
+              p     border-bottom: 1px solid #3E3E3E
+              p     border-left: 1px solid #3E3E3E
+              p     padding: 90px 20px 0rem 37px
+              p     position: relative
+              p     *
+              p       text-align: center
+              p     @media (max-width: 1199px)
+              p       min-height: 300px
+              p     @media (max-width: 767px)
+              p       min-height: 25px
+              p       border-left: 1px solid #3E3E3E
+              p       border-right: 1px solid #3E3E3E
+              p   .card__img
+              p     @media (max-width: 1199px)
+              p       width: 50px
+              p       height: 50px
+              p   .card__title
+              p     text-align: left
+              p     font-size: 20px
+              p     padding: 84px 0 0 0
+              p     +absolute(80%,156px,auto,37px,auto,0%,0%)
+              p     bottom: 48px
+              p     @media (max-width: 1199px)
+              p       font-size: 15px
+              p .cards__title
+              p   text-align: center
+              p   padding: 0 0 2px 0
+              p   h2
+              p     font-weight: 500
+              p     font-size: 30px
+              p     line-height: 37px
+              p     @media (max-width: 1199px)
+              p       font-size: 25px
+
+
+
+
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-18.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+
+              p section#sugest.sugest
+              p     .container
+              p       .sugest__title._star-title
+              p         h2 Спецпредложения
+              p         a.sugest__more(href="#!") Получить больше
+              p       .sugest__body
+              p         .sugest__item.card-object.card-object--sugest
+              p           a.cover-link--sugest(href='#!' tabindex='0')
+              p             .card-object__img.card-object__img--sugest(style="background-image: url('assets/img/star/i-1.png')")
+              p             .card-object__title.card-object__title--sugest Ансамбль"Цыганские звёзды"Романа Коржова
+              p             .card-object__properties.card-object__properties--sugest
+              p               .card-object__property.card-object__property--sugest
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p               .card-object__property.card-object__property--sugest
+              p                 span от
+              p                 span._sugest-number 1200
+              p                 span ₴
+              p             .card-object__text.card-object__text--sugest  С 2.02 по 30.04
+              p         .sugest__item.card-object.card-object--sugest
+              p           a.cover-link--sugest(href='#!' tabindex='0')
+              p             .card-object__img.card-object__img--sugest(style="background-image: url('assets/img/star/i-1.png')")
+              p             .card-object__title.card-object__title--sugest Ансамбль"Цыганские звёзды"Романа Коржова
+              p             .card-object__properties.card-object__properties--sugest
+              p               .card-object__property.card-object__property--sugest
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p               .card-object__property.card-object__property--sugest
+              p                 span от
+              p                 span._sugest-number 1200
+              p                 span ₴
+              p             .card-object__text.card-object__text--sugest  С 2.02 по 30.04
+              p         .sugest__item.card-object.card-object--sugest
+              p           a.cover-link--sugest(href='#!' tabindex='0')
+              p             .card-object__img.card-object__img--sugest(style="background-image: url('assets/img/star/i-1.png')")
+              p             .card-object__title.card-object__title--sugest Ансамбль"Цыганские звёзды"Романа Коржова
+              p             .card-object__properties.card-object__properties--sugest
+              p               .card-object__property.card-object__property--sugest
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p               .card-object__property.card-object__property--sugest
+              p                 span от
+              p                 span._sugest-number 1200
+              p                 span ₴
+              p             .card-object__text.card-object__text--sugest  С 2.02 по 30.04
+              p         .sugest__item.card-object.card-object--sugest
+              p           a.cover-link--sugest(href='#!' tabindex='0')
+              p             .card-object__img.card-object__img--sugest(style="background-image: url('assets/img/star/i-1.png')")
+              p             .card-object__title.card-object__title--sugest Ансамбль"Цыганские звёзды"Романа Коржова
+              p             .card-object__properties.card-object__properties--sugest
+              p               .card-object__property.card-object__property--sugest
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p                 img(src='assets/img/star/star.png' alt='img')
+              p               .card-object__property.card-object__property--sugest
+              p                 span от
+              p                 span._sugest-number 1200
+              p                 span ₴
+              p             .card-object__text.card-object__text--sugest  С 2.02 по 30.04
+
+
+              p .sugest
+              p   margin: 156px auto 0 auto
+              p 
+              p .card-object--sugest
+              p   padding: 0 0 11px
+              p   border-radius: 8px
+              p   box-shadow: 0 18px 52.9px 0 rgba(0, 0, 0, .4)!important
+              p .cover-link--sugest
+              p   +pro
+              p .card-object__img--sugest
+              p   width: 100%
+              p   padding: 0 0 87% 0
+              p   background-repeat: no-repeat
+              p   background-size: cover
+              p   background-position: center
+              p 
+              p .card-object__title--sugest
+              p   font-size: 15px
+              p   font-weight: 800
+              p   line-height: 1.53
+              p   color: white
+              p   margin: -86px auto 50px
+              p   padding: 0 17px 0 17px
+              p .card-object__text--sugest
+              p   font-size: 15px
+              p   font-weight: bold
+              p   line-height: 1.6
+              p   color: #07081a
+              p   padding: 0 17px 0 17px
+              p .card-object__properties--sugest
+              p   +jucb	
+              p   padding: 0 17px 0 17px
+              p .card-object__property--sugest
+              p   span
+              p     margin: 0 auto 0 5px
+              p .sugest__more
+              p   font-size: 18px
+              p   font-weight: bold
+              p   line-height: 1.28
+              p   color: #e73951
+              p   border-bottom: 2px solid #e73951
+              p   display: inline-block
+              p 
+              p .sugest__body
+              p   margin: 60px auto 0 auto
+              p   +grid(30px)
+              p   +columns( repeat(4, auto))
+              p 
+              p ._sugest-number
+              p   background-image: linear-gradient(to top, #fd9943, #ff3d59), linear-gradient(to bottom, #fecb02, #fecb02)
+              p   font-size: 24px
+              p   font-weight: 800
+              p   line-height: 1.04
+              p   color: #fecb02
+              p   -webkit-background-clip: text
+              p   background-clip: text
+              p   -webkit-text-fill-color: transparent
+
+
+
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-19.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+              p section#how.how
+              p     .container
+              p       .how__title
+              p         span  Как 
+              p         h2  мы работаем
+              p       .how__body
+              p         .how__item.how-item
+              p           .how-item__title Выберите артистов из списка и добавьте в запрос
+              p           .how-item__description 1
+              p           img.how-item__img(src="assets/img/star/i-3.png",alt="img")
+              p         .how__item.how-item
+              p           .how-item__title Выберите артистов из списка и добавьте в запрос
+              p           .how-item__description 1
+              p           img.how-item__img(src="assets/img/star/i-3.png",alt="img")
+              p         .how__item.how-item
+              p           .how-item__title Выберите артистов из списка и добавьте в запрос
+              p           .how-item__description 1
+              p           img.how-item__img(src="assets/img/star/i-3.png",alt="img")
+              p         .how__item.how-item
+              p           .how-item__title Выберите артистов из списка и добавьте в запрос
+              p           .how-item__description 1
+              p           img.how-item__img(src="assets/img/star/i-3.png",alt="img")
+              p         .how__item.how-item
+              p           .how-item__title Выберите артистов из списка и добавьте в запрос
+              p           .how-item__description 1
+              p           img.how-item__img(src="assets/img/star/i-3.png",alt="img")
+              p         .how__item.how-item
+              p           .how-item__title Выберите артистов из списка и добавьте в запрос
+              p           .how-item__description 1
+              p           img.how-item__img(src="assets/img/star/i-3.png",alt="img")
+
+
+              p  // =-----------------
+              p  .how
+              p    margin: 50px auto 0 auto
+              p  .how__title
+              p    span   
+              p        font-size: 44px
+              p        line-height: 1.2
+              p    span   
+              p        font-weight: 500
+              p        color: #272d4e
+              p    h2 
+              p        font-weight: 900
+              p        font-size: 44px
+              p        line-height: 1.2
+              p        color: #272d4e
+              p  .how__body
+              p    +jucb
+              p    margin: 100px auto 0 auto	
+              p    position: relative
+              p    &:after
+              p        content: "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+              p        color: #dbdfe2
+              p        position: absolute
+              p        width: 100%
+              p        height: 1px
+              p        top: 47%
+              p        right: -82px
+              p        z-index: 2
+              p  .how__item
+              p  
+              p    &:nth-child(2n)
+              p      margin: 87px auto 0 auto
+              p  
+              p      .how-item__img
+              p        order: -2
+              p      .how-item__description
+              p        order: -1
+              p        margin: -17px auto 17px auto
+              p  
+              p        
+              p  .how-item
+              p    max-width: 180px
+              p    +fdc
+              p    +alic 
+              p    text-align: center
+              p  .how-item__title 
+              p    font-size: 12px
+              p    font-weight: 600
+              p    line-height: 1.5
+              p    color: rgba(7, 8, 26, 0.8)
+              p  .how-item__description 
+              p    font-size: 15px
+              p    font-weight: bold
+              p    line-height: 0.4
+              p    color: #f6fafd
+              p    width: 32px
+              p    height: 32px
+              p    border-radius: 50%
+              p    +bg(#7535f3)
+              p    +center
+              p    margin: 20px auto 0
+              p  .how-item__img
+              p    margin: 0 auto -20px auto
+              p    position: relative
+              p    z-index: 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

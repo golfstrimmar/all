@@ -1,0 +1,204 @@
+.tabs-item
+  .tabs-item__title.tabs-title-js
+    h3._0 popups
+    i.icon-chevron-down.tabs-item__img.tabs-img-js
+  .tabs__drop.tabs-drop.tabs-drop-js
+    ul.akr__body
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-15.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+              p  .art_inner-article__galery-title.art_title-2  Видео о компании
+              p  .art_inner-article__galery.art_inner-article-galery
+              p    .art_inner-article-galery__img
+              p      a.art_inner-article-galery__play.popup-init-js(href='#!' rel='slide-1-popup')
+              p    .art_inner-article-galery__img
+              p      a.art_inner-article-galery__play.popup-init-js(href='#!' rel='slide-2-popup')
+              p    .art_inner-article-galery__img
+              p      a.art_inner-article-galery__play.popup-init-js(href='#!' rel='slide-3-popup')
+              p    .art_inner-article-galery__img
+              p      a.art_inner-article-galery__play.popup-init-js(href='#!' rel='slide-4-popup')
+              p  section#modaL.modaL
+              p    .popup.slide-1-popup
+              p      .popup__overlay
+              p        .popup__inner
+              p          i.icon-x.close-js
+              p          #player
+              p            video#player.player-1(poster='assets/img/article-1/img-1.webp' playsinline='' controls='')
+              p              source(src='assets/img/video-1.mp4' type='video/mp4')
+              p              source(src='assets/img/video-1.mp4' type='video/webm')
+              p              track(kind='captions' label='Английские субтитры' src='/path/to/captions.vtt' srclang='en' default='')
+              p  
+              p    .popup.slide-2-popup
+              p      .popup__overlay
+              p        .popup__inner
+              p          i.icon-x.close-js
+              p          #player.player-2(data-plyr-provider='youtube' data-plyr-embed-id="75UQsEeH0jo")
+              p    .popup.slide-3-popup
+              p      .popup__overlay
+              p        .popup__inner
+              p          i.icon-x.close-js
+              p          #player.player-3(data-plyr-provider='youtube' data-plyr-embed-id="vr0qNXmkUJ8")
+              p    .popup.slide-4-popup
+              p      .popup__overlay
+              p        .popup__inner
+              p          i.icon-x.close-js
+              p          #player.player-4(data-plyr-provider='youtube' data-plyr-embed-id="x4Xb8yACha4")
+
+              p  .art_inner-article__galery-title 
+              p    padding: 11px 0 20px
+              p    grid-area: galery-title
+              p  .art_title-2 
+              p    font-size: 16px
+              p    color: #4a4a4a
+              p  .art_inner-article-galery 
+              p    display: -webkit-box
+              p    display: -ms-flexbox
+              p    display: flex
+              p    -ms-flex-wrap: wrap
+              p    flex-wrap: wrap
+              p    -webkit-box-pack: justify
+              p    -ms-flex-pack: justify
+              p    justify-content: space-between
+              p    margin: 0 0 13px
+              p    &__img:first-child 
+              p      background-image: url(/assets/img/i-1.png)
+              p      background-repeat: no-repeat
+              p      background-size: cover
+              p      background-position: 50%
+              p  
+              p    &__img 
+              p      width: 20%
+              p      height: 150px
+              p      border-radius: 4px
+              p      position: relative
+              p      &::after 
+              p        content: ""
+              p        background: rgba(0,0,0,.6)
+              p        position: absolute
+              p        width: 100%
+              p        height: 100%
+              p        top: 0
+              p        left: 0
+              p        z-index: 2
+              p        border-radius: 4px
+              p    &__play 
+              p      position: absolute
+              p      width: 30px
+              p      height: 30px
+              p      top: 50%
+              p      left: 50%
+              p      right: auto
+              p      -webkit-transform: translate(-50%,-50%)
+              p      -ms-transform: translate(-50%,-50%)
+              p      transform: translate(-50%,-50%)
+              p      border-radius: 50%
+              p      background-image: url(/assets/img/img-6.svg)
+              p      background-repeat: no-repeat
+              p      background-size: cover
+              p      background-position: 50%
+              p      z-index: 3
+              p      -webkit-transition: all 1s ease-in-out
+              p      -o-transition: all 1s ease-in-out
+              p      transition: all 1s ease-in-out
+              p  .art_inner-article__galery 
+              p    grid-area: galery
+              p  .art_inner-article-galery__play:hover 
+              p    cursor: pointer
+              p    -webkit-transform: translate(-50%,-50%) rotate(560deg)
+              p    -ms-transform: translate(-50%,-50%) rotate(560deg)
+              p    transform: translate(-50%,-50%) rotate(560deg)
+              p  .art_inner-article-galery__img::after 
+              p    content: ""
+              p    background: rgba(0,0,0,.6)
+              p    position: absolute
+              p    width: 100%
+              p    height: 100%
+              p    top: 0
+              p    left: 0
+              p    z-index: 2
+              p    border-radius: 4px
+              p  .popup
+              p    position: fixed
+              p    width: 100%
+              p    height: 100%
+              p    top: 0
+              p    left: 0
+              p    +bg(rgba(0, 0, 0, 0.8))
+              p    display: none
+              p    z-index: 1000
+              p    &__overlay
+              p      width: 100%
+              p      min-height: 100vh
+              p      background-color: rgba(0, 0, 0, 0.9)
+              p      overflow: auto
+              p      z-index: 1000
+              p      +center()
+              p    &__inner
+              p      position: relative
+              p      flex: 0 1 80%
+              p      padding: 0 0 
+              p      // min-height: 80vh
+              p      +bg(  #ff9419)
+              p      border: 30px solid DARKSLATEGRAY
+              p      border-radius: 10px
+              p      z-index: 1010
+              p      i
+              p        display: block
+              p        color: lighten(DARKSLATEGRAY, 20%)
+              p        +absolute(20px,20px,-24px,null,-22px,0%,0%)
+              p        font-size: 20px
+              p        &:hover
+              p          cursor: pointer
+              p  .player
+              p    +pro
+              p    min-height: 80vh
+              p    margin: 0px auto
+              p    background-color: #bee1ff
+              p    position: relative
+              p    iframe
+              p      +absolute(100%,100%,0,0,auto,0%,0%)
+
+              p  import Plyr from "plyr";
+              p  
+              p  $(document).ready(function() {
+              p      let Popup = $(".popup");
+              p      Popup.fadeOut(200);
+              p      const player1 = new Plyr(".player-1");
+              p      const player2 = new Plyr(".player-2");
+              p      const player3 = new Plyr(".player-3");
+              p      const player4 = new Plyr(".player-4");
+              p  
+              p      $(".popup-init-js").on("click", function() {
+              p          let rel = $(this).attr("rel");
+              p          let pop = $("div." + rel);
+              p          pop.fadeIn(200);
+              p          $("body").css("overflow", "hidden");
+              p      });
+              p  
+              p      $(".close-js").on("click", function() {
+              p          Popup.fadeOut(200);
+              p          $("body").css("overflow", "visible");
+              p          player1.stop();
+              p          player2.stop();
+              p          player3.stop();
+              p          player4.stop();
+              p      });
+              p  
+              p      $(document).on("mouseup", function(e) {
+              p          if ($(".popup__overlay").is(e.target)) {
+              p              Popup.fadeOut(200);
+              p              $("body").removeClass("lock");
+              p              $("body").css("overflow", "visible");
+              p              player1.stop();
+              p              player2.stop();
+              p              player3.stop();
+              p              player4.stop();
+              p          }
+              p      });
+              p  });
+
+
+

@@ -8,7 +8,8 @@
                         li.akr__item.akr-item
                           h2(style="color: blue") подсмотреть можно на uniformos или на split
                           h2 1. делаем пустой сайт на openserver
-                          h2 2. закидываем туда wp и делаем бд. 
+                          h2 2. закидываем туда wp и делаем бд.
+                          h4  http://localhost/openserver/phpmyadmin
                           p на phpmyadmin:  
                           p Пользователь: root
                           p Пароль: пусто
@@ -24,6 +25,24 @@
                           h2 3. https://underscores.me
                           p здесь миша рассказывает о натяжке на wp https://www.youtube.com/watch?v=C1vnS8dkmd8&list=PLyKl7JlkPve6wRFRgVgImBWZ3xMQnYUQa&index=6
                           h2 4. после загрузки темы underscores 
+                          h3 необходимые плагины
+                          p Advanced Custom Fields PRO
+                          p All In One WP Security
+                          p Carousel Upsells and Related Product for Woocommerce
+                          p Contact Form 7
+                          p Cyr to Lat enhanced
+                          p Imsanity
+                          p Kama SpamBlock
+                          p Max Mega Menu
+                          p Product CSV Import Export (BASIC)
+                          p Product Slider for WooCommerce
+                          p Redirection for Contact Form 7
+                          p Safe SVG
+                          p Smash Balloon Instagram Feed
+                          p WooCommerce
+                          p YITH WooCommerce Ajax Product Filter
+
+                          p ======================
                           p создать страницу главная .
                           p потом изменить настройки чтения на статическую страницу.
                           p поменять страницу главная на главную
@@ -90,11 +109,15 @@ h2 МЕНЮ
                             p для вывода меню.при этом чтобы вывелись классы меню их нужно специально прописать в поле админки
                             p а именно нажать на плашку страницы и раскроются настройки. выбрать классы меню и добавить класс пункта menu 
                             p --самы простой способ вывода
-                            p <`?php wp_nav_menu([
-                            p         'theme_location' => 'menu_main_header',
-                            p 	'container'       => null, 
-                            p 	'menu_class'      => 'header-page__ul', 
-                            p ])?>
+                            p <'?php wp_nav_menu([
+                            p 'theme_location' => 'main-menu',
+                            p 'menu'            => 'main-menu',
+                            p 'container' => null,
+                            p 'menu_class' => 'menu__list',
+                            p 'echo'            => true,
+                            p 'depth'           => 0,
+                            p ])
+                            p ?>
                             p <`?php wp_nav_menu([
                             p         'theme_location' => 'menu-header',
                             p 	'menu'            => 'menu-header', 
@@ -107,6 +130,7 @@ h2 МЕНЮ
                             p   'items_wrap'      => '<``ul class="menu__body">
                             p                %3$s
                             p                   <``/ul>',
+                            p   'echo'            => true,
                             p 	'depth'           => 0,
                             p 	// 'walker'          => '',
                             p ])?>
@@ -127,6 +151,7 @@ h2 МЕНЮ
                             p 	'link_after'      => '',
                             p 	'items_wrap'      => '<``ul id="%1$s" class="%2$s">%3$s<``/ul>',
                             p 	'depth'           => 0,
+                            p   'echo'            => true,
                             p 	'walker'          => '',
                             p ] );
 
@@ -692,6 +717,67 @@ h2 другое
                         li.akr__item.akr-item
                           p <``iframe width="560" height="315" src="https://www.youtube.com/embed/3jT_q7dt-cM" frameborder="0" allowfullscreen>
                           p <``/iframe>
+.tabs-item
+                  .tabs-item__title.tabs-title-js
+                    h3._0 ajax 
+                    i.icon-chevron-down.tabs-item__img.tabs-img-js
+                  .tabs__drop.tabs-drop.tabs-drop-js
+                    ul.akr__body
+                        li.akr__item.akr-item
+                          h3 js
+                          p o()(document).ready(function() {
+                          p   function fetch(e) {
+                          p     var param = o()(e.target).attr("data");
+                          p   o().post(
+                          p   "http://bereklamosnegerai.skarzinskas.lt/wp-admin/admin-ajax.php", { action: "my_action", param: param },
+                          p   function(response) {
+                          p       o()(".куда__вывод ").html(response);
+                          p   }
+                          p );
+                          p }
+                          p o()(document).on("click", ".куда__кликать", function(e) {
+                          p   fetch(e);
+                          p });
+                          p }),
+                          h3 functions.php
+                          p add_action('wp_ajax_my_action', 'data_fetch');
+                          p add_action('wp_ajax_nopriv_my_action', 'data_fetch');
+                          p require get_template_directory() . '/includes/fetch.php';
+                          h3 fetch.php
+                          p <?php 
+                          p function data_fetch($postID){
+                          p $postID =  $_POST['param'];
+                          p  ?>
+                          p 
+                          p <?php  
+                          p       global $post;
+                          p       $args = array(       
+                          p          'post_type'=>'cases',
+                          p          'publish' => true,
+                          p          'numberposts' => 20,
+                          p           'p' => $postID
+                          p         );
+                          p         
+                          p       $projects = get_posts($args);  
+                          p       $reversed = array_reverse($projects);
+                          p      
+                          p      if ($projects ) {
+                               p 
+                          p       foreach($reversed as $post){
+                          p         setup_postdata( $post );
+                          p         $post_id = $post->ID;
+                          p         $post_title = $post->post_title; 
+                          p         $post_text=$post->post_content;  
+                          p         $image=get_the_post_thumbnail_url($post_id, 'cases');  
+                          p ?>
+                          p сюда верстку html
+                          p <?php 
+                          p   	}
+                          p   } 
+                          p } 
+                          h3 кнопка  
+                          p a class="btn btn--success tabs__button js-port-button " href="#!"  data="<?php echo $post_id ?>" >Daugiau informacijos
+
 
 
 

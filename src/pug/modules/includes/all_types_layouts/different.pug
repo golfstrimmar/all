@@ -1,168 +1,186 @@
 //- разное
 .tabs-item
-                  .tabs-item__title.tabs-title-js
-                    h3._0  разное
-                    i.icon-chevron-down.tabs-item__img.tabs-img-js
-                  .tabs__drop.tabs-drop.tabs-drop-js
-                    ul.akr__body
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-5.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                                p section#forward_leasing_questions.forward_leasing_questions
-                                p           .forward_leasing_questions__title.forward_leasing__title
-                                p             h2 Остались вопросы?
-                                p           .forward_leasing_questions-item__description 
-                                p             p Почему сервис выгоднее, чем рассрочка?
-                                p             p Подписка на технику Acer, выгоднее, чем рассрочка, за счет того, что остаточная                                 p стоимость не входит в сумму ежемесячных платежей.
-                                p           .forward_leasing_questions__content
-                                p               .forward_leasing_questions-item__img
-                                p                 p Рассрочка 5 200 ₽ / мес.
-                                p                 p 159 900 ₽ 
-                                p                 p.forward_leasing__questions-last Сумма выплат за 18 мес.
-                                p               .forward_leasing_questions-item__images
-                                p                 img.forward_leasing_questions-item__img-arrow(src="assets/img/svg/arrow-right.svg",                               p alt="img")
-                                p                 img.forward_leasing_questions-item__img-arrow(src="assets/img/svg/arrow-right.svg",                               p alt="img")
-                                p               .forward_leasing_questions-item__img
-                                p                 p.forward_leasing__active-color По подписке 3 200 ₽ / мес.
-                                p                 p 105 900 ₽ 
-                                p                 p.forward_leasing__questions-last Сумма выплат за 18 мес.
-                                p                 p.forward_leasing__questions-small 159 900 ₽ за ноутбук + 8 000 ₽ в лизинг
-                                p                 p 54 000 ₽ 
-                                p                 p.forward_leasing__questions-last Остаточная стоимость
-                                p           button.forward_leasing_questions-item__button(type="button").forward_leasing_btn.forward_leasing_btn--success Оформить по подписке                               p 
-                                
-                                
-                                
-                                
-                                h2._1 sass
-                                p .forward_leasing_questions
-                                p   padding: 5rem 0 0 0
-                                p   @media (min-width: 752px) and (max-width: 1199px)
-                                p     padding: 77px 0 0 0
-                                p   @media (max-width: 751px)		
-                                p     padding: 1.4rem 0 0 0
-                                p   &__title
-                                p     padding: 40px 0 40px 0
-                                p     @media (min-width: 752px) and (max-width: 1199px)
-                                p       padding: 34px 0
-                                p     @media (max-width: 751px)		
-                                p       padding: 38px 0 26px
-                                p   &__content
-                                p       display: grid
-                                p       grid-template-columns: 36.7% 13.15% 36.7%
-                                p       column-gap: 1rem
-                                p       justify-content: center
-                                p       padding: 4.8rem 0 0 0
-                                p       @media (min-width: 752px) and (max-width: 1199px)
-                                p         padding: 32px 0 0 0
-                                p         grid-template-columns: 43% 11% 43%
-                                p         justify-items: center
-                                p       @media (max-width: 751px)		
-                                p         grid-template-columns: 100%
-                                p         justify-items: center
-                                p         padding: 29px 0 0 0
-                                p 
-                                p .forward_leasing_questions-item
-                                p   &__description
-                                p     p 
-                                p       color: #000000
-                                p       padding:  0 0 .5rem 0
-                                p       margin: 0 0 0 0
-                                p       @media (max-width: 751px)		
-                                p         font-size: 12px
-                                p         line-height: 1.35
-                                p         padding: 0 0 0 0
-                                p .forward_leasing_questions-item
-                                p   
-                                p   &__img
-                                p     +background-img("/assets/img/png/monitor.png")
-                                p     padding: 76px 66px 160px
-                                p     @media (min-width: 752px) and (max-width: 1199px)
-                                p       padding: 4.9rem 0 12rem 0
-                                p       width: 30.4rem
-                                p     @media (max-width: 751px)		
-                                p       width: 25.9rem
-                                p       height: 15.7rem
-                                p       padding: 38px 0 172px 0
-                                p     &:last-child
-                                p       padding: 3.3rem 0 0 0 
-                                p       @media (min-width: 752px) and (max-width: 1199px)
-                                p         padding: 2.3rem 0 0 0
-                                p       @media (max-width: 751px)		
-                                p         padding: 8px 0 204px 0
-                                p         .forward_leasing__active-color
-                                p           padding: 10px 0 0 0
-                                p           margin: 0 0 -3px 0
-                                p     p
-                                p       font-size: 2.4rem
-                                p       line-height: 2.8rem
-                                p       font-weight: bold
-                                p       text-align: center
-                                p       margin: 0 0 0 0
-                                p       @media (min-width: 752px) and (max-width: 1199px)
-                                p        font-size: 20px
-                                p       @media (max-width: 751px)		
-                                p         font-size: 16px
-                                p         
-                                p       &:nth-child(1)
-                                p         padding: 0 0 20px 0
-                                p         @media (min-width: 0px) and (max-width: 1199px)
-                                p           padding: 0 
-                                p       &:nth-child(2)	
-                                p         margin: 3px 0
-                                p       &:last-child
-                                p         margin: -3px 0 0 0
-                                p 
-                                p   &__images
-                                p     +fdc
-                                p     +alic
-                                p     padding: 5.7rem 0 0 0
-                                p     @media (min-width: 752px) and (max-width: 1199px)
-                                p       padding: 4rem 0 0 0
-                                p     @media (max-width: 751px)		
-                                p       flex-direction: row
-                                p       padding: 0 0 0 0
-                                p       margin: 14px 0 21px
-                                p   &__img-arrow
-                                p     width: 8.4rem
-                                p     margin: 0 0 .2rem 0
-                                p     @media (min-width: 752px) and (max-width: 1199px)
-                                p       width: 5.8rem
-                                p       margin: 0 0 3rem 0
-                                p     @media (max-width: 751px)		
-                                p       margin: 0 .4rem
-                                p       width:  37px
-                                p       transform: rotate(90deg)
-                                p     &:last-child
-                                p       transform: rotate(180deg)
-                                p       @media (max-width: 751px)		
-                                p         order: -1
-                                p         transform: rotate(-90deg)
-                                p   &__button
-                                p     margin: 5rem auto 4.8rem
-                                p     @media (max-width: 751px)		
-                                p       width: 100%
-                                p       margin: 39px auto 48px
-                                p p.forward_leasing__questions-last
-                                p   font-size: 1.6rem
-                                p   line-height: 1.9rem
-                                p   font-weight: 400
-                                p   @media (min-width: 752px) and (max-width: 1199px)
-                                p     font-size: 1.4rem
-                                p   @media (max-width: 751px)		
-                                p     font-size: 1.1rem
-                                p     margin: -12px 0 -13px 0
-                                p p.forward_leasing__questions-small
-                                p   font-size: 1.3rem
-                                p   line-height: 1.5rem
-                                p   font-weight: 400
-                                p   padding: .9rem 0 1.4rem 0
-                                p   @media (min-width: 752px) and (max-width: 1199px)
-                                p     font-size: 1.2rem
-                                p     padding: 0 0 .4rem
-                                p   @media (max-width: 751px)		
-                                p     font-size: 10px
-                                p     margin: 0 0 0 0
-                                p     padding: 9px 0 5px
+  .tabs-item__title.tabs-title-js
+    h3._0 different 
+    i.icon-chevron-down.tabs-item__img.tabs-img-js
+  .tabs__drop.tabs-drop.tabs-drop-js
+    ul.akr__body
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-5.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+              p  section#today 
+              p    section#forward_leasing_questions.forward_leasing_questions.container
+              p      .forward_leasing_questions__title.forward_leasing__title
+              p        h2 Остались вопросы?
+              p      .forward_leasing_questions-item__description
+              p        p Подписка на технику Acer, выгоднее
+              p        p Почему сервис выгоднее, чем рассрочка?
+              p      .forward_leasing_questions__content
+              p          .forward_leasing_questions-item__img
+              p            p Рассрочка 5 200 ₽ / мес.
+              p            p 159 900 ₽
+              p            p.forward_leasing__questions-last Сумма выплат за 18 мес.
+              p          .forward_leasing_questions-item__images
+              p            img.forward_leasing_questions-item__img-arrow(src="assets/img/clock.svg",alt="img")
+              p            img.forward_leasing_questions-item__img-arrow(src="assets/img/clock.svg",alt="img")
+              p          .forward_leasing_questions-item__img
+              p            p.forward_leasing__active-color По подписке 3 200 ₽ / мес.
+              p            p 105 900 ₽
+              p            p.forward_leasing__questions-last Сумма выплат за 18 мес.
+              p            p.forward_leasing__questions-small 159 900 ₽ за ноутбук + 8 000 ₽ в лизинг
+              p            p 54 000 ₽
+              p            p.forward_leasing__questions-last Остаточная стоимость
+              p      button.forward_leasing_questions-item__button(type="button").btn.btn--success Оформить по подписке
+
+
+
+              P .forward_leasing_questions
+              P   padding: 50px 0 0 0
+              P   @media (min-width: 752px) and (max-width: 1199px)
+              P     padding: 77px 0 0 0
+              P   @media (max-width: 751px)		
+              P     padding: 14px 0 0 0
+              P   &__title
+              P     padding: 40px 0 40px 0
+              P     @media (min-width: 752px) and (max-width: 1199px)
+              P       padding: 34px 0
+              P     @media (max-width: 751px)		
+              P       padding: 38px 0 26px
+              P   &__content
+              P       display: grid
+              P       grid-template-columns: 36.7% 13.15% 36.7%
+              P       column-gap: 10px
+              P       justify-content: center
+              P       padding: 48px 0 0 0
+              P       @media (min-width: 752px) and (max-width: 1199px)
+              P         padding: 32px 0 0 0
+              P         grid-template-columns: 43% 11% 43%
+              P         justify-items: center
+              P       @media (max-width: 751px)		
+              P         grid-template-columns: 100%
+              P         justify-items: center
+              P         padding: 29px 0 0 0
+              P 
+              P .forward_leasing_questions-item
+              P   &__description
+              P     p 
+              P       color: #000000
+              P       padding:  0 0 5px 0
+              P       margin: 0 0 0 0
+              P       @media (max-width: 751px)		
+              P         font-size: 12px
+              P         line-height: 1.35
+              P         padding: 0 0 0 0
+              P .forward_leasing_questions-item
+              P   
+              P   &__img
+              P     +background-img("/assets/img/p.jpg")
+              P     padding: 76px 66px 160px
+              P     @media (min-width: 752px) and (max-width: 1199px)
+              P       padding: 49px 0 12rem 0
+              P       width: 300px
+              P     @media (max-width: 751px)		
+              P       width: 250px
+              P       height: 157px
+              P       padding: 38px 0 172px 0
+              P     &:last-child
+              P       padding: 3.3rem 0 0 0 
+              P       @media (min-width: 752px) and (max-width: 1199px)
+              P         padding: 23px 0 0 0
+              P       @media (max-width: 751px)		
+              P         padding: 8px 0 204px 0
+              P         .forward_leasing__active-color
+              P           padding: 10px 0 0 0
+              P           margin: 0 0 -3px 0
+              P     p
+              P       font-size: 24px
+              P       font-weight: bold
+              P       text-align: center
+              P       margin: 0 0 0 0
+              P       @media (min-width: 752px) and (max-width: 1199px)
+              P        font-size: 20px
+              P       @media (max-width: 751px)		
+              P         font-size: 16px
+              P         
+              P       &:nth-child(1)
+              P         padding: 0 0 20px 0
+              P         @media (min-width: 0px) and (max-width: 1199px)
+              P           padding: 0 
+              P       &:nth-child(2)	
+              P         margin: 3px 0
+              P       &:last-child
+              P         margin: -3px 0 0 0
+              P 
+              P   &__images
+              P     +fdc
+              P     +alic
+              P     padding: 57px 0 0 0
+              P     @media (min-width: 752px) and (max-width: 1199px)
+              P       padding: 40px 0 0 0
+              P     @media (max-width: 751px)		
+              P       flex-direction: row
+              P       padding: 0 0 0 0
+              P       margin: 14px 0 21px
+              P   &__img-arrow
+              P     width: 84px
+              P     margin: 0 0 2px 0
+              P     @media (min-width: 752px) and (max-width: 1199px)
+              P       width: 58px
+              P       margin: 0 0 30px 0
+              P     @media (max-width: 751px)		
+              P       margin: 0 4px
+              P       width:  37px
+              P       transform: rotate(90deg)
+              P     &:last-child
+              P       transform: rotate(180deg)
+              P       @media (max-width: 751px)		
+              P         order: -1
+              P         transform: rotate(-90deg)
+              P   &__button
+              P     margin: 50px auto 48px auto
+              P     padding: 10px 15px
+              P     border-radius: 5px
+              P     @media (max-width: 751px)
+              P       width: 100%
+              P       margin: 39px auto 48px
+              P p.forward_leasing__questions-last
+              P   font-size: 16px
+              P   line-height: 19px
+              P   font-weight: 400
+              P   @media (min-width: 752px) and (max-width: 1199px)
+              P     font-size: 14px
+              P   @media (max-width: 751px)		
+              P     font-size: 11px
+              P     margin: -12px 0 -13px 0
+              P p.forward_leasing__questions-small
+              P   font-size: 13px
+              P   line-height: 15px
+              P   font-weight: 400
+              P   padding: 9px 0 14px 0
+              P   @media (min-width: 752px) and (max-width: 1199px)
+              P     font-size: 12px
+              P     padding: 0 0 4px
+              P   @media (max-width: 751px)		
+              P     font-size: 10px
+              P     margin: 0 0 0 0
+              P     padding: 9px 0 5px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

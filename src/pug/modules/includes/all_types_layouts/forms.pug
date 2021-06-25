@@ -1,12 +1,302 @@
 //- forms
 .tabs-item
                   .tabs-item__title.tabs-title-js
-                    h3._0 forms
+                    h3._0 forms 
                     i.icon-chevron-down.tabs-item__img.tabs-img-js
                   .tabs__drop.tabs-drop.tabs-drop-js
                     ul.akr__body
                         li.akr__item.akr-item
                           .akr-item__title.akr-title-js
-                              img(src="assets/img/i-2.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
+                            img(src="assets/img/i-14.png",alt="img") 
+                            i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            button.copy#buttonSave.btn.btn--success copy code
+                            div.fadeOut
+                              p  .container
+                              p    .contacts-bunner__form
+                              p      .con-form
+                              p        form.connect__form.connect__form--contacts
+                              p          .connect__form-item
+                              p            input#name(type='text' required='' placeholder=' Denzel Washington')
+                              p            label(for='name') What is your name?
+                              p          .connect__form-item
+                              p            input#email(type='address' required='' placeholder=' thebestmail@mail.com')
+                              p            label(for='email') What is your address?
+                              p          .connect__form-item.connect__form-item--message
+                              p            textarea#message(type='text' required='' placeholder=' Your awesome message' cols='40' rows='6')
+                              p            label(for='message') Žinutė
+                              p          .form__submit-button
+                              p              button#submit-button(type='submit').btn--success Siųsti
+                              p  .contacts-bunner__form
+                              p    position: absolute
+                              p    width: 430px
+                              p    top: 47%
+                              p    right: calc((100vw-1170px)/2)
+                              p    padding: 50px 92px
+                              p    +bg(white)
+                              p    z-index: 20
+                              p    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1)
+                              p    @media (min-width: 768px) and (max-width: 1199px)
+                              p      width: 300px
+                              p      height: 450px
+                              p      right: 30px
+                              p      padding: 30px 60px
+                              p    @media (max-width: 767px)
+                              p      top: 70%
+                              p      right: 50%
+                              p      width: calc(100%-6rem)
+                              p      height: 450px
+                              p      padding: 30px 60px
+                              p      transform: translateX(50%)
+                              p    @media (max-width: 500px)
+                              p      padding: 20px
+                              p      height: auto
+                              p    .connect__form-item
+                              p      margin: 3px 0 67px!important
+                              p      @media (min-width: 0px) and (max-width: 1199px)
+                              p        margin: 3px 0 4px!important
+                              p      label
+                              p        justify-content: flex-start!important
+                              p  
+                              p  .connect__form--contacts
+                              p    width: 100%!important
+                              p    padding: 0 0 0 0!important
+                              p    .form__submit-button
+                              p      button
+                              p        margin: -20px 0 0 0
+                              p        padding: 10px 15px
+                              p        border-radius: 5px
+                              p    .connect__form-item
+                              p        label
+                              p          @media (max-width: 500px)
+                              p            font-size: 1rem!important
+                              p  .connect__form-item--message
+                              p    border: 1px solid #000000
+                              p    position: relative
+                              p    &:after
+                              p      content: ""
+                              p      background-color: #000000
+                              p      position: absolute
+                              p      width: 1rem
+                              p      height: 1px
+                              p      bottom: 5px
+                              p      right: 0
+                              p      z-index: 2
+                              p      transform: rotate(-45deg)
+                              p      &:before
+                              p        content: ""
+                              p        background-color: #000000
+                              p        position: absolute
+                              p        width: 15px
+                              p        height: 1px
+                              p        bottom: 8px
+                              p        right: 0
+                              p        z-index: 2
+                              p        transform: rotate(-45deg)
+                              p      textarea
+                              p        border: none
+                              p  
+                              p  .contacts-form__item
+                              p    min-height: 30px
+                              p    margin: 30px 0 0 0
+                              p    position: relative
+                              p    label
+                              p      position: absolute
+                              p      top: 50%
+                              p      left: 10px
+                              p      transition: 0.3s
+                              p      transform: translateY(-50%)
+                              p      pointer-events: none
+                              p      width: 100%
+                              p    input
+                              p      color: transparent
+                              p    input::-webkit-input-placeholder
+                              p      color: transparent
+                              p  
+                              p  .contacts-form__item input:focus + label,
+                              p  .contacts-form__item textarea:focus + label
+                              p    transform: translateY(-34px)
+                              p    font-size: 12px
+                              p    left: 0
+                              p    color: lighten($active, 20%)
+
+
+
+                        li.akr__item.akr-item
+                          .akr-item__title.akr-title-js
+                            img(src="assets/img/i-21.png",alt="img") 
+                            i.icon-chevron-down.akr-item__img.akr-item-img-js
+                            button.copy#buttonSave.btn.btn--success copy code
+                            div.fadeOut
+                              p section#contacts.contacts
+                              p  .contacts__wrapper
+                              p       .contacts__body.catalog__container
+                              p         form.connect__form
+                              p           .contacts__title
+                              p             h2 Заполните заявку
+                              p           .contacts__text Наша команда, 
+                              p           .connect__form-item
+                              p             input#name(type='text' required='' placeholder=' Denzel Washington')
+                              p             label(for='name') What is your name?
+                              p           .connect__form-item
+                              p             input#email(type='phone' required='' placeholder=' thebestmail@mail.com')
+                              p             label(for='phone') What is your email?
+                              p           .form__submit-button
+                              p             button#submit-button.btn-primary.btn-primary-all(type='submit') Send message
+                              p  .contacts
+                              p    &__wrapper
+                              p      width: 100%
+                              p      +background-img("/assets/img/png/field.png")
+                              p      padding: 30px 0
+                              p    .connect__form
+                              p      width: 45%
+                              p      padding: 43px 30px 43px 43px
+                              p      border-radius: 16px
+                              p      border: solid 1px rgba(255, 255, 255, 0.1)
+                              p      background-color: rgba(255, 255, 255, 0.3)
+                              p      backdrop-filter: blur(40px)
+                              p  
+                              p    &__text
+                              p      font-size: 16px
+                              p      color: #222222
+                              p      line-height: 1.7
+
+                              p  // ==========form ===============
+                              p  .connect__form 
+                              p    background-color: white
+                              p    box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.83)
+                              p    &-item 
+                              p      position: relative
+                              p      margin-bottom: 52px
+                              p      background-color: red
+                              p      label 
+                              p        position: absolute
+                              p        top: 0
+                              p        left: 0
+                              p        transition: 0.3s
+                              p        transform: translateY(0)
+                              p        pointer-events: none
+                              p        color: blue
+                              p        width: 100%
+                              p        font-size: 19px
+                              p        line-height: 25px
+                              p        font-weight: 500
+                              p      input, textarea 
+                              p        width: 100%
+                              p        outline: none
+                              p        border: 1px solid transparent
+                              p        background-color: transparent
+                              p        background-repeat: no-repeat
+                              p        background-position: 100% 5px
+                              p        border-bottom: 1px solid #d8d8d8
+                              p        padding-bottom: 17px
+                              p        resize: none
+                              p        font-size: 19px
+                              p        line-height: 25px
+                              p        font-weight: 500
+                              p        &:focus + label, &:not(:placeholder-shown) + label, &:-webkit-autofill + label 
+                              p          transform: translateY(-34px)
+                              p  
+                              p    @media (max-width: 767px) 
+                              p      padding-bottom: 100px
+                              p    @media (max-width: 576px) 
+                              p      padding-bottom: 40px
+                              p  
+                              p  /* ------------------------ */
+                              p  .connect__form-item input:focus + label
+                              p    transform: translateY(-34px)
+                              p  
+                              p  
+                              p  .connect__form-item textarea:focus + label
+                              p    transform: translateY(-34px)
+                              p  
+                              p  .connect__form-item input:not(:placeholder-shown) + label
+                              p    transform: translateY(-34px)
+                              p  
+                              p  
+                              p  .connect__form-item textarea:not(:placeholder-shown) + label
+                              p    transform: translateY(-34px)
+                              p  
+                              p  .connect__form-item input:-webkit-autofill + label
+                              p    transform: translateY(-34px)
+                              p  
+                              p  .connect__form-item textarea:-webkit-autofill + label
+                              p    transform: translateY(-34px)
+                              p  
+                              p  /* -------------------------------------- */
+                              p  
+                              p  .connect__form-item input::-webkit-input-placeholder, .connect__form-item                               p  textarea::-webkit-input-placeholder 
+                              p    color: transparent
+                              p    
+                              p  
+                              p  .connect__form-item input::-moz-placeholder, .connect__form-item textarea::-moz-placeholder 
+                              p    color: transparent
+                              p  .connect__form-item input:-ms-input-placeholder, .connect__form-item textarea:-ms-input-placeholder 
+                              p    color: transparent
+                              p  .connect__form-item input:-moz-placeholder, .connect__form-item textarea:-moz-placeholder 
+                              p     color: transparent
+                              p  .connect__form-item input:not(:placeholder-shown):invalid, .connect__form-item textarea:not                             p  (:placeholder-shown):invalid 
+                              p    color: #fa333c
+                              p    border-bottom: 1px solid #fa333c
+                              p    // background-image: url("warning.svg")
+                              p    font-size: 15px
+                              p    font-weight: 400
+                              p  .connect__file-add 
+                              p    margin-top: 92px
+                              p    padding-bottom: 15px
+                              p    border-bottom: 1px solid #d8d8d8
+                              p    cursor: pointer
+                              p    height: 33px
+                              p  .connect__file-add 
+                              p    input
+                              p      opacity: 0
+                              p  .connect__file-add 
+                              p    label
+                              p      top: 33px
+                              p  
+                              p  @media (max-width:767px) 
+                              p    .connect__form
+                              p      .form__submit-button 
+                              p        button
+                              p          width: 100%
+                              p  
+                              p  .connect__form
+                              p      .custom-file 
+                              p        display: flex
+                              p        justify-content: flex-end
+                              p        align-items: center
+                              p        flex-direction: row
+                              p        height: 33px
+                              p        input 
+                              p          opacity: 0
+                              p          visibility: hidden
+                              p          position: absolute
+                              p          left: 0
+                              p          pointer-events: none
+                              p          font-size: 15px
+                              p          line-height: 25px
+                              p          font-weight: 400
+                              p          z-index: 5
+                              p        label 
+                              p          transform: translateY(0) 
+                              p          font-size: 19px
+                              p          line-height: 25px
+                              p          font-weight: 400
+                              p  
+                              p        &__lb 
+                              p          display: inline-block
+                              p          width: 100%
+                              p          height: 24px
+                              p          border: none
+                              p          position: relative
+                              p          margin: 0
+                              p          &.close 
+                              p            width: 24px
+                              p          &:before 
+                              p            transform: rotate(405deg)
+                              p          .bg 
+                              p              width: 27px
+                              p              height: 27px
+                              p              left: 100%
+                              p              transform: translate(-120%)
+
+

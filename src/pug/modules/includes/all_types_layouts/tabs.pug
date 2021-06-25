@@ -1,135 +1,440 @@
 //- разное
 .tabs-item
-                  .tabs-item__title.tabs-title-js
-                    h3._0  tabs 
-                    i.icon-chevron-down.tabs-item__img.tabs-img-js
-                  .tabs__drop.tabs-drop.tabs-drop-js
-                    ul.akr__body
-                        li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-12.png",alt="img")  
-                              i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                              p section#a-tabs.a-tabs
-                              p    .container
-                              p      .a-tabs__title
-                              p        h3 Veiklos sritys
-                              p      .a-tabs__content
-                              p              .tabs
-                              p                  nav.tabs__items
-                              p                    a(href="#tab-1" data="active").tabs__item Vyriški drabužiai HERMANN
-                              p                    a(href="#tab-2").tabs__item Uniformos
-                              p                    a(href="#tab-3").tabs__item Koncertinė apranga
-                              p                    a(href="#tab-4").tabs__item Individualūs užsakymai
-                              p                  ul.tabs__body
-                              p                    li.tabs__block#tab-1  
-                              p                      p.akr-drop__info Jau virš 20 metų mūsų siuvėjų rankomis pasiūti vyriški                               pdrabužiai puošia stipriąją lytį. Klasikiniai kostiumai, švarkai pagaminti                               ppagal šiuolaikinės mados tendencijas, sudaro didelę dalį mūsų produkcijos.                              pVyrai mėgsta jaustis patogiai ir gerai atrodyti. Pastaruoju metu vis dažniau                              ppirkėjų žvilgsniai krypsta į mūsų siūlomus sportiško stiliaus drabužius,                            psuderintus su klasika, kurie dvelkia nuosaikumu ir šiuolaikiškumu. Tam                              pbūdinga – papildomos kišenės, įvairūs dekoratyviniai apdirbimai: alkūniniai                             plopai, skeltukai, kišenių įdurai, dirželiai. Šios detalės padeda įgyvendinti                            pmūsų pirkėjų lūkesčius.
-                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
-                              p                    li.tabs__block#tab-2 
-                              p                      p.akr-drop__info sta į mūsų siūlomus sportiško stiliaus drabužius, suderintus                               psu klasika, kurie dvelkia nuosaikumu ir šiuolaikiškumu. Tam būdinga –                               ppapildomos kišenės, įvairūs dekoratyviniai apdirbimai: alkūniniai lopai,                              pskeltukai, kišenių įdurai, dirželiai. Šios detalės padeda įgyvendinti mūsų                              ppirkėjų lūkesčius.
-                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
-                              p                    li.tabs__block#tab-3
-                              p                      p.akr-drop__info Jau virš 20 metų mūsų siuvėjų rankomis pasiūti vyriški                               pdrabužiai puošia stipriąją lytį. Klasikiniai kostiumai, švarkai pagaminti                               ppagal šiuolaikinės mados ten
-                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
-                              p                    li.tabs__block#tab-4
-                              p                      p.akr-drop__info Jau virš 20 metų mūsų siuvėjų rankomis pasiūti vyriški                               pdrabužiai puošia stipriąją lytį. Klasikiniai kostiumai, švarkai pagaminti                               ppagal šiuolaikinės mados tendencijas, sudaro didelę dalį mūsų produkcijos.                              pVyrai mėgsta jaustis patogiai ir gerai atrodyti. Pastaruoju metu vis dažniau                              ppirkėjų žvilgsniai krypsta į mūsų siūlomus sportiško stiliaus drabužius,                            psuderintus su klasika, kurie dvelkia nuosaikumu ir šiuolaikiškumu. Tam                              pbūdinga – papildomos kišenės, įvairūs dekoratyviniai apdirbimai: alkūniniai                             plopai, skeltukai, kišenių įdurai, dirželiai. Šios detalės padeda įgyvendinti                            pmūsų pirkėjų lūkesčius.
-                              p                      p.akr-drop__info Nereikia pamiršti ir apie aksesuarus. Peteliškės,                              pkaklaskarės, kaklaraiščio segtukas, marškinių sąsagos – viskas tai tobulo                             pįvaizdžio detalės.
+  .tabs-item__title.tabs-title-js
+    h3._0 tabs
+    i.icon-chevron-down.tabs-item__img.tabs-img-js
+  .tabs__drop.tabs-drop.tabs-drop-js
+    ul.akr__body
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-12.png",alt="img") 
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            div.fadeOut
+                p  section#a-tabs.a-tabs
+                p    .container
+                p      .a-tabs__title
+                p        h3 Veiklos sritys
+                p      .a-tabs__content
+                p        .tabs
+                p          nav.tabs__items
+                p            a(href="#tab-1" data="active").tabs__item Vyriški drabužiai HERMANN
+                p            a(href="#tab-2").tabs__item Uniformos
+                p            a(href="#tab-3").tabs__item Koncertinė apranga
+                p            a(href="#tab-4").tabs__item Individualūs užsakymai
+                p          ul.tabs__body
+                p            li.tabs__block#tab-1  
+                p              p.akr-drop__info 
+                p              p.akr-drop__info 
+                p            li.tabs__block#tab-2 
+                p              p.akr-drop__info 
+                p              p.akr-drop__info 
+                p            li.tabs__block#tab-3
+                p              p.akr-drop__info 
+                p               p.akr-drop__info 
+                p            li.tabs__block#tab-4
+                p              p.akr-drop__info 
+                p              p.akr-drop__info 
 
                               h2._1 sass
 
-                              p  .a-tabs
-                              p    margin: 7.4rem 0 0 0
-                              p    @media (max-width: 767px) 
-                              p      margin: 3.4rem 0 0 0
-                              p    
-                              p    &__title
-                              p        h3
-                              p              font-weight: bold
-                              p              font-size: 30px
-                              p              line-height: 37px
-                              p              color: #000000
-                              p              text-align: center
-                              p    &__content
-                              p      margin: 5rem 12.3rem 0 0 
-                              p      @media (max-width: 767px) 
-                              p        margin: 3rem 0 0 0
-                              p               
-                              p    .tabs
-                              p  
-                              p      &__items
-                              p        +jucb	
-                              p        border-bottom: 1px solid #000000
-                              p        margin: 1rem 0 0 0
-                              p        padding: 0 0 3rem 0
-                              p        @media (max-width: 1199px) 
-                              p          flex-direction: column
-                              p        
-                              p      &__item
-                              p        font-weight: 400
-                              p        font-size: 2rem
-                              p        line-height: 2.4rem
-                              p        color: #000000
-                              p        display: inline-block
-                              p        transition: all 0.2s ease-in-out
-                              p        &:hover
-                              p          cursor: pointer
-                              p          color: $active
-                              p        @media (max-width: 767px) 
-                              p          font-size: 1.5rem
-                              p        
-                              p      &__item[data="active"]
-                              p        font-weight: 600
-                              p      &__body
-                              p        min-height: 27rem
-                              p        padding: 1rem 0 0 0
-                              p        @media (max-width: 767px)
-                              p          padding: .8rem 0 0 0
-                              p      &__block
-                              p        transition: all 0.2s ease-in-out
-                              p        p
-                              p      &__tags
-                              p        +jucs
-                              p        margin: 2rem 0 3.2rem 0
-                              p        @media (max-width: 767px)
-                              p          margin: 1.5rem 0 2.8rem 0
-                              p      &__tag
-                              p        font-weight: 500
-                              p        @media (max-width: 767px) 
-                              p          font-size: 1.5rem
-                              p        
-                              p      .akr-drop__info
-                              p        @media (max-width: 767px) 
-                              p          font-size: 1.5rem
+                p  .a-tabs
+                p    margin: 74px 0 0 0
+                p  
+                p    @media (max-width: 767px) 
+                p      margin: 34px 0 0 0
+                p    
+                p    &__title
+                p        h3
+                p              font-weight: bold
+                p              font-size: 30px
+                p              line-height: 37px
+                p              color: #000000
+                p              text-align: center
+                p    &__content
+                p      margin: 50px 120px 0 0 
+                p  
+                p      @media (max-width: 767px) 
+                p        margin: 30px 0 0 0
+                p               
+                p    .tabs
+                p  
+                p      &__items
+                p        +jucb	
+                p        border-bottom: 1px solid #000000
+                p        margin: 10px 0 0 0
+                p        padding: 0 0 30px 0
+                p        
+                p        @media (max-width: 1199px) 
+                p          flex-direction: column
+                p        
+                p      &__item
+                p        font-weight: 400
+                p        font-size: 20px
+                p        line-height: 24px
+                p        color: #000000
+                p        display: inline-block
+                p        transition: all 0.2s ease-in-out
+                p        &:hover
+                p          cursor: pointer
+                p          color: $active
+                p        @media (max-width: 767px) 
+                p          font-size: 15px
+                p        
+                p      &__item[data="active"]
+                p        font-weight: 600
+                p      &__body
+                p        min-height: 27px
+                p        padding: 10px 0 0 0
+                p        @media (max-width: 767px)
+                p          padding: 8px 0 0 0
+                p      &__block
+                p        transition: all 0.2s ease-in-out
+                p        // min-height: 300px
+                p        p
+                p      &__tags
+                p        +jucs
+                p        margin: 20px 0 32px 0
+                p        @media (max-width: 767px)
+                p          margin: 15px 0 28px 0
+                p      &__tag
+                p        font-weight: 500
+                p        @media (max-width: 767px) 
+                p          font-size: 15px
+                p        
+                p      .akr-drop__info
+                p        @media (max-width: 767px) 
+                p          font-size: 15px
       
-                              h2._1 js
-                              p import $ from "jquery";
-                              p 
-                              p 
-                              p $(document).ready(function (e) {
-                              p   $(".tabs__block").slideUp(1);
-                              p 
-                              p   $(".tabs__item").each(function () {
-                              p    if ($(this).attr("data") == "active") {
-                              p      let targetLink = $(this).attr("href");
-                              p      $(targetLink).slideDown(1);
-                              p    }
-                              p   });
-                              p 
-                              p   $(".tabs__item").on("click", function () {
-                              p     event.preventDefault();
-                              p     let targetLink = $(this).attr("href");
-                              p     $(".tabs__item").attr("data","none");
-                              p     $(".tabs__block").slideUp(1);
-                              p 
-                              p     $(this).attr("data", "active");
-                              p     $(targetLink).slideDown(200);
-                              p   });
-                              p });
+                p import $ from "jquery";
+                p 
+                p 
+                p $(document).ready(function(e) {
+                p     $(".tabs__block").slideUp(1);
+                p 
+                p     $(".tabs__item").each(function() {
+                p         if ($(this).attr("data") == "active") {
+                p             let targetLink = $(this).attr("href");
+                p             $(targetLink).slideDown(1);
+                p         }
+                p     });
+                p 
+                p     $(".tabs__item").on("click", function() {
+                p         event.preventDefault();
+                p         let targetLink = $(this).attr("href");
+                p         $(".tabs__item").attr("data", "none");
+                p         $(".tabs__block").slideUp(1);
+                p 
+                p         $(this).attr("data", "active");
+                p         $(targetLink).slideDown(200);
+                p     });
+                p });
+
+
+
+      li.akr__item.akr-item
+        .akr-item__title.akr-title-js
+            img(src="assets/img/i-17.png",alt="img") 
+            
+            i.icon-chevron-down.akr-item__img.akr-item-img-js
+            button.copy#buttonSave.btn.btn--success copy code
+            p полный код rendv
+            div.fadeOut
+
+              p  .header-select__filter.filter
+              p    .filter__body
+              p      .filter__item.filter-item
+              p        .filter-item__title.filterDep-title-js Купить
+              p        .filter__drop.filter__drop_sub.filter-drop.filterDep-drop-js
+              p          .filter-drop__body
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js 
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Коммерческую
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js 
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Комнат
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Стоимость
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Стоимость
+              p            .filter-drop__properties
+              p              a.filter-drop__property.filter-drop__property--adress(href='#!') Адрес или ЖК
+              p              a.filter-drop__property.filter-drop__property--metro(href='#!')
+              p                | Метро
+              p      .filter__item.filter-item
+              p        .filter-item__title.filterDep-title-js Снять
+              p        .filter__drop.filter__drop_sub.filter-drop.filterDep-drop-js
+              p          .filter-drop__body
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Коммерческую
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Коммерческую
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Комнат
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Комнат
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Стоимость
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Стоимость
+              p            .filter-drop__properties
+              p              a.filter-drop__property.filter-drop__property--adress(href='#!') Адрес или ЖК
+              p              a.filter-drop__property.filter-drop__property--metro(href='#!')
+              p                | Метро
+              p      .filter__item.filter-item
+              p        .filter-item__title.filterDep-title-js Посуточно
+              p        .filter__drop.filter__drop_sub.filter-drop.filterDep-drop-js
+              p          .filter-drop__body
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Коммерческую
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Коммерческую
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Комнат
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Комнат
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Стоимость
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Стоимость
+              p            .filter-drop__properties
+              p              a.filter-drop__property.filter-drop__property--adress(href='#!') Адрес или ЖК
+              p              a.filter-drop__property.filter-drop__property--metro(href='#!')
+              p                | Метро
+              p      .filter__item.filter-item
+              p        .filter-item__title.filterDep-title-js Новостройки
+              p        .filter__drop.filter__drop_sub.filter-drop.filterDep-drop-js(style='display: none')
+              p          .filter-drop__body
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Коммерческую
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Коммерческую
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Комнат
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Комнат
+              p            .filter__item.filter-item
+              p              .filter-item__title.filter-item__title--sub.filterDep-title-js
+              p                | Стоимость
+              p                .filter-item__img.icon-chevron-down.filterDep-img-js(style='transform: rotate(0deg)')
+              p              .filter__drop.filter-drop.filterDep-drop-js
+              p                .filter-drop__body
+              p                  p какой-то контент для
+              p                  span Стоимость
+              p            .filter-drop__properties
+              p              a.filter-drop__property.filter-drop__property--adress(href='#!') Адрес или ЖК
+              p              a.filter-drop__property.filter-drop__property--metro(href='#!')
+              p                | Метро
 
 
 
 
 
-
-
+              p  .header__select 
+              p    position: relative
+              p    width: 100%
+              p    @media (max-width: 1199px) 
+              p      display: none
+              p    
+              p  .header-select 
+              p    +jucc	
+              p    +background-img("/assets/img/test.jpg")
+              p    &__body 
+              p      width: 1070px
+              p      padding: 4.8% 0 4.65%
+              p      @media (max-width: 1199px) 
+              p        width: 960px
+              p    &__title 
+              p      z-index: 2
+              p      position: relative
+              p      font-weight: bold
+              p      font-size: 48px
+              p      line-height: 100%
+              p      color: white
+              p    &__filter 
+              p      margin: 4.5% 0 0 0
+              p      // width: 47.3%
+              p      width: 500px
+              p      position: relative
+              p      z-index: 100000
+              p  
+              p  .filter
+              p    &__body
+              p      +bg( #2B3036) 
+              p      border-radius: 5px
+              p      padding: 0 0 0 0
+              p      +jucb
+              p    &__item
+              p      flex-grow: 1 
+              p  
+              p  
+              p  .filter-item 
+              p    box-shadow: none
+              p    border-radius: 5px
+              p    +bg( #2B3036)
+              p    border: none
+              p    max-height: 50px
+              p    +center
+              p  
+              p  $bej: #2B3036
+              p  $dark-1: #000000
+              p  $grey: #615d5d
+              p  
+              p  .filter-item__title
+              p    padding: 17px 0
+              p    &:hover
+              p      cursor: pointer
+              p    +pro
+              p    +center
+              p    font-weight: normal
+              p    color: white
+              p    transition: all 0.2s ease-in-out
+              p    &.act
+              p      +bg(#F4F4F4)
+              p      border-radius: 5px
+              p      border-bottom-right-radius: 0
+              p      border-bottom-left-radius: 0
+              p      color: $dark-1
+              p      
+              p  .filterDep-img-js 
+              p    transition: all 0.2s ease-in-out
+              p  
+              p    
+              p  .filter-item__title--sub
+              p    color: $dark-1
+              p    
+              p    
+              p  .filter__drop
+              p    &_sub
+              p      border-radius: 5px
+              p      border-top-left-radius: 0px
+              p      .filter-item
+              p        +bg(white)
+              p      .filter-item__title
+              p        font-weight: normal
+              p        padding: 17px 0 17px 30px
+              p        +pro
+              p      .filter-item__img
+              p        margin: 0 20px 0 auto
+              p        font-size: 18px
+              p      .filter-drop
+              p        width: 100%
+              p  
+              p  
+              p  .filter-drop
+              p    display: none
+              p    +absolute( 1070px, 50px, 100%,  0%,  null,0,0)
+              p    +bg(white)
+              p    @media (max-width: 1199px) 
+              p      width: 960px
+              p    &__body
+              p      +jucb
+              p    &__properties
+              p      flex: 0 1 48.7%
+              p      padding: 0 30px	
+              p      +jucb
+              p      +alic
+              p  .filter-drop__property
+              p    font-weight: normal
+              p    color: $grey
+              p    &--metro
+              p      color: #586EB6
+              p  
+              p  .header-select__buttons 
+              p    +juce
+              p    position: relative
+              p    z-index: 2
+              p    margin: 6.7% 0 0
+              p    z-index: 2
+              p  .header-select__button
+              p    width: 220px
+              p    height: 50px
+              p    margin: 0 10px 0 0
+              p    &:last-child
+              p      margin: 0 0 0 0
+              p $(document).ready(function(e) {
+              p     let titleTab = $(".filterDep-title-js");
+              p 
+              p     titleTab.on("click", function() {
+              p         let dropTab = $(this).siblings(".filterDep-drop-js");
+              p         let imgTab = $(this).find(".filterDep-img-js");
+              p         let parent = $(this).closest(".filter__item");
+              p 
+              p         if ($(this).hasClass("act")) {
+              p             dropTab.slideUp(200);
+              p             $(this).removeClass("act");
+              p             imgTab.css("transform", "rotate(0deg)");
+              p         } else {
+              p             $(this).addClass("act");
+              p             imgTab.css("transform", "rotate(-180deg)");
+              p             dropTab.slideDown(200);
+              p             parent.siblings(".filter__item").find(".filterDep-drop-js").slideUp(200);
+              p             parent
+              p                 .siblings(".filter__item")
+              p                 .find(".filterDep-title-js")
+              p                 .removeClass("act");
+              p             parent
+              p                 .siblings(".filter__item")
+              p                 .find(".filterDep-img-js")
+              p                 .css("transform", "rotate(0deg)");
+              p         }
+              p     });
+              p 
+              p     $(document).mouseup(function(e) {
+              p         // событие клика по веб-документу
+              p         var div = $(".filter"); // тут указываем ID элемента
+              p         if (!div.is(e.target) && // если клик был не по нашему блоку
+              p             div.has(e.target).length === 0
+              p         ) {
+              p             // и не по его дочерним элементам
+              p             $(".filterDep-drop-js").slideUp(200);
+              p             $(".filterDep-title-js").removeClass("act");
+              p             $(".filterDep-img-js").css("transform", "rotate(0deg)");
+              p         }
+              p     });
+              p });
 

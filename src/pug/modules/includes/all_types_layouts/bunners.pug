@@ -6,89 +6,185 @@
                   .tabs__drop.tabs-drop.tabs-drop-js
                     ul.akr__body
                         li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-2.png",alt="img")  
+                            .akr-item__title.akr-title-js
+                              img(src="assets/img/i-2.png",alt="img") 
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
-                                p    section#forward_leasing_bunner.forward_leasing_bunner
-                                p          .forward_leasing_bunner__body 
-                                p            .forward_leasing_bunner__title 
-                                p              h2  Низкий платеж
-                                p            .forward_leasing_bunner__text 
-                                p              span от 
-                                p              span.forward_leasing__big-span 3 200  ₽
-                                p              span / мес.
-                                p            button(type="button").forward_leasing_btn.forward_leasing_btn--empty.forward_leasing_bunner__button СМОТРЕТЬ КАТАЛОГ
-                                
-                                h2._1 sass
-                                p .forward_leasing_bunner
-                                p   &__body
-                                p     width: 100%
-                                p     padding: 9.5rem 0 12.2rem 10rem
-                                p     background: #000000
-                                p     +background-img("/assets/img/png/img-1.png")
-                                p     background-size: 75% 100%
-                                p     background-position: right
-                                p     @media (min-width: 752px) and (max-width: 1199px)
-                                p       padding: 44px 0 76px 42px
-                                p       background-size: 101.5% 100%
-                                p     @media (max-width: 751px)		
-                                p       padding: 17.3rem 2.3rem 3.8rem 
-                                p       background-position: top
-                                p       background-size: 100% 39%
-                                p   &__text
-                                p     font-weight: bold
-                                p     font-size: 2.4rem
-                                p     line-height: 2.8rem
-                                p     color: #88BD32
-                                p     padding: 0 0 2rem 0
-                                p     @media (max-width: 751px)		
-                                p       font-size: 1.4rem
-                                p       padding: 0 0 0 0
-                                p     .forward_leasing__big-span
-                                p         line-height: 4.5rem
-                                p         font-size: 3.8rem
-                                p         padding: 0  10px 0 0 
-                                p         padding: 0 3px 0 8px
-                                p         @media (max-width: 751px)		
-                                p           font-size: 2.8rem
-                                p   &__title
-                                p     padding: 1rem 3rem 0 0
-                                p     background: #000000
-                                p     display: inline-block
-                                p     margin: 1px 0 5px
-                                p     @media (max-width: 1199px)		
-                                p       padding: 10px 30px
-                                p       margin: 0 0 -18px -30px
-                                p   &__button
-                                p     font-size: 1.4rem
-                                p     line-height: 1.6rem
-                                p     color: #FFFFFF
-                                p     text-transform: uppercase
-                                p     width: 197px
-                                p     height: 40px
-                                p     border-radius: .3rem
-                                p     margin: 18px 0 0 0
-                                p     letter-spacing: .04rem
-                                p     font-weight: 400
-                                p     border-radius: 3px
-                                p     border: solid 2px $white!important
-                                p     @media (min-width: 752px) and (max-width: 1199px)
-                                p       margin: 14px 0 56px 0
-                                p     @media (max-width: 751px)		
-                                p       margin: 21px auto 0
-                                p       width: 180px
-                                p       height: 40px
-                                p       font-size: 12px
+                              button.copy#buttonSave.btn.btn--success copy code
+                              div.fadeOut
+
+                                p      section#forward_leasing_bunner.forward_leasing_bunner
+                                p            .forward_leasing_bunner__body 
+                                p              .forward_leasing_bunner__title 
+                                p                h2  Низкий платеж
+                                p              .forward_leasing_bunner__text 
+                                p                span от 
+                                p                span.forward_leasing__big-span 3 200  ₽
+                                p                span / мес.
+                                p              button(type="button").btn--empty.btn                           
+                                p                СМОТРЕТЬ КАТАЛОГ
+                                p  
+                                p  .forward_leasing_bunner
+                                p    &__body
+                                p      width: 100%
+                                p      padding: 95px 0 120px 100px
+                                p      background: #000000
+                                p      +background-img("/assets/img/i-1.png")
+                                p      background-size: 75% 100%
+                                p      background-position: right
+                                p      @media (min-width: 752px) and (max-width: 1199px)
+                                p        padding: 44px 0 76px 42px
+                                p        background-size: 101.5% 100%
+                                p      @media (max-width: 751px)
+                                p        padding: 17.3rem 2.3rem 3.8rem
+                                p        background-position: top
+                                p        background-size: 100% 39%
+                                p    &__text
+                                p      font-weight: bold
+                                p      font-size: 24px
+                                p      color: #88BD32
+                                p      padding: 0 0 20px 0
+                                p      @media (max-width: 751px)
+                                p        font-size: 14px
+                                p        padding: 0 0 0 0
+                                p      .forward_leasing__big-span
+                                p        font-size: 38px
+                                p        padding: 0 10px 0 0
+                                p        padding: 0 3px 0 8px
+                                p        @media (max-width: 751px)
+                                p          font-size: 28px
+                                p    &__title
+                                p      padding: 10px 30px 0 0
+                                p      background: #000000
+                                p      display: inline-block
+                                p      margin: 1px 0 5px
+                                p      @media (max-width: 1199px)
+                                p        padding: 10px 30px
+                                p        margin: 0 0 -18px -30px
+                                p    &__button
+                                p      font-size: 14px
+                                p      color: #FFFFFF
+                                p      text-transform: uppercase
+                                p      width: 197px
+                                p      height: 40px
+                                p      border-radius: .3rem
+                                p      margin: 18px 0 0 0
+                                p      letter-spacing: .04rem
+                                p      font-weight: 400
+                                p      border-radius: 3px
+                                p      border: solid 2px white!important
+                                p      +bg($active)
+                                p      @media (min-width: 752px) and (max-width: 1199px)
+                                p        margin: 14px 0 56px 0
+                                p      @media (max-width: 751px)
+                                p        margin: 21px auto 0
+                                p        width: 180px
+                                p        height: 40px
+                                p        font-size: 12px
+
+
 
                         li.akr__item.akr-item
-                          .akr-item__title.akr-title-js
-                              img(src="assets/img/i-.png",alt="img")  
+                            .akr-item__title.akr-title-js
+                              img(src="assets/img/i-20.png",alt="img") 
                               i.icon-chevron-down.akr-item__img.akr-item-img-js
-                          .akr__drop.akr-drop.akr-drop-js
+                              button.copy#buttonSave.btn.btn--success copy code
+                              div.fadeOut
+                                p .catalog
+                                p   .catalog__wrapper
+                                p       .catalog__container
+                                p         .catalog__title
+                                p           h2 Услуги
+                                p         .catalog__numbers.catalog__container
+                                p             .catalog__num 01
+                                p             .catalog__num 02
+                                p             .catalog__num 03
+                                p       .catalog__body
+                                p         .catalog__container
+                                p             ul.catalog__items
+                                p                li.catalog__item.catalog-item
+                                p                  .catalog-item__title Фасовка корма
+                                p                  .catalog-item__description Вам будет необходимо 
+                                p                li.catalog__item.catalog-item
+                                p                  .catalog-item__title Доставка
+                                p                  .catalog-item__description Вам будет необходимо предоставить 
+                                p                li.catalog__item.catalog-item
+                                p                  .catalog-item__title Складирование
+                                p                  .catalog-item__description Вам будет необходимо 
+                                p  .catalog *
+                                p    text-decoration: none
+                                p    list-style: none
+                                p    margin: 0 
+                                p    padding: 0 0 0 0
+                                p    color: white
+                                p    ul,li
+                                p      margin: 0 
+                                p      padding: 0 0 0 0
+                                p  .catalog__wrapper
+                                p    +pro
+                                p    +background-img("/assets/img/png/test.png")
+                                p    position: relative
+                                p    min-height: 470px
+                                p  .catalog__numbers
+                                p    width: 100%
+                                p    +absolute(100%,auto,50%,50%,auto,-50%,-50%)
+                                p    +grid(0)
+                                p    +columns(repeat(3,1fr))
+                                p  .catalog__num 
+                                p    font-family: Roboto
+                                p    font-size: 220px
+                                p    font-weight: bold
+                                p    font-stretch: normal
+                                p    font-style: normal
+                                p    line-height: normal
+                                p    letter-spacing: normal
+                                p    text-align: left
+                                p    color: rgba(184, 211, 29, 0.6)
+                                p  .catalog__body
+                                p    margin: 0 auto 0 auto
+                                p    background: rgba(0, 0, 0, 0.6)
+                                p    +absolute(100%,auto,auto,50%,auto,-50%,0%)
+                                p    bottom: 30px
+                                p  .catalog__items
+                                p    +grid(0)
+                                p    +columns(repeat(3,1fr))
+                                p    min-height: 180px
+                                p    padding: 7px 0 0 0
+                                p  .catalog__item
+                                p  .catalog-item
+                                p  .catalog-item__title
+                                p    font-size: 28px
+                                p    font-weight: bold
+                                p    color: $white 
+                                p    padding:  0 0 20px  0
+                                p  .catalog-item__description 
+                                p    font-size: 16px
+                                p    font-weight: normal
+                                p    font-stretch: normal
+                                p    font-style: normal
+                                p    line-height: 1.5
+                                p    letter-spacing: normal
+                                p    text-align: left
+                                p    color: $white
+                                p  .catalog__container
+                                p    
+                                p    max-width: 1200px
+                                p    margin: 0 auto 0 auto 
+                                p    outline: 1px solid #4164ff
+                                p  
+                                p  .catalog__title
+                                p    padding: 50px 0 10px 0
+                                p    border-bottom: 2px solid white
+                                p    display: inline-block
 
-                                h2._1 sass
+                        li.akr__item.akr-item
+                            .akr-item__title.akr-title-js
+                              img(src="assets/img/i-.png",alt="img") 
+                              i.icon-chevron-down.akr-item__img.akr-item-img-js
+                              button.copy#buttonSave.btn.btn--success copy code
+                              div.fadeOut
 
+
+                       
 
 
 
